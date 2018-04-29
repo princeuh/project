@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-
-
   root 'pages#home'
 
   get  '/about', to: 'pages#about'
@@ -20,6 +18,14 @@ Rails.application.routes.draw do
   get '/contact', to: 'pages#contact'
 
   get  '/open_account', to: 'investors#new'
+
+  post  '/open_account', to: 'investors#create'
+
+  get '/login', to: 'sessions#new'
+
+  post '/login', to: 'sessions#create'
+
+  delete '/logout', to: 'sessions#destroy'
 
 
   resources :investors

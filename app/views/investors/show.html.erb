@@ -1,0 +1,39 @@
+<% provide(:title, @investor.firstname) %>
+<div id="dash-content">
+	<div id="investor-updates" class="allOptions" >
+		<p> SHows investor updates </p>
+</div>
+
+<div id="investor-news" class="allOptions" >
+		<p> Contains the News Items pulled from the Admins news cycle </p>
+</div>
+
+<div  id="investor-myClubs" class="allOptions" >
+		<p> Lists the Investors Clubs </p>
+</div>
+
+
+<div id="investor-allClubs" class="allOptions">
+		<p> Lists all the Clubs in the system </p>
+		
+</div>
+
+<div id="investor-proposal" class="allOptions">
+		<h2> My Proposals </h2>
+</div>
+
+<div id="investor-account" class="allOptions">
+		<p> Shows the investor their account settings </p>
+</div>
+</div>
+<h1>
+	<%= gravatar_for @investor %>
+</h1>
+
+<p id="show-news" class="investor-bttn-options">News</p>
+<p id="show-myClubs" class="investor-bttn-options">my Clubs</p>
+<p id="show-allClubs" class="investor-bttn-options">Join Clubs</p>
+<p id="show-proposal" class="investor-bttn-options">Proposal</p>
+<p id="show-account" class="investor-bttn-options">Account</p>
+
+

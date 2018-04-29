@@ -1,13 +1,18 @@
 <header>
 	<nav>
 		<ul>
+      <% if logged_in? %>
+        <%= link_to "Log out", logout_path, method: :delete %>
+
+      <% else %>
 		  <li><%= link_to "Home", root_url,  :id => "home-link"  %></li>
         <li><%= link_to "Open Account", open_account_path , :id  => "account-link"%></li>
         <li><%= link_to "Enterprise",  enterprise_path,  :id  => "enterprise-link"  %></li>
         <li><%= link_to "Venture Clubs", ventures_path,  :id  => "venture-link"  %></li>
         <li><%= link_to "About", about_path,  :id  => "about-link"  %></li>
   		<li><%= link_to "Team", team_path,  :id  => "team-link" %></li>
-  		<li><%= link_to "Log In", '#',  :id  => "logIn-link"  %></li>
+  		<li><%= link_to "Log In", login_path,  :id  => "logIn-link"  %></li>
+      <% end %> 
   		</ul>
   	</nav>
   </header>

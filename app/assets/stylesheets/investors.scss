@@ -52,9 +52,28 @@ input[type=email], input[type=password]{
     left: 18%;
 }
 
-#acct-header{
-	text-align: center;
+
+
+#dash-content{
+	background-color: #361d4e;
+	width: 85%;
+	height: 960px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+
 }
+
+.investor-bttn-options{
+	padding: 34px 50px;
+	cursor: pointer;
+}
+.allOptions{
+	display:none;
+}
+
+
 }
 @media screen and (max-width: 480px) {
 	
