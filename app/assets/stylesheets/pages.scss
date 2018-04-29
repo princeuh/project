@@ -1,0 +1,197 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media screen and (max-width: 2560px) {
+
+header{
+	position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    font-family: 'Catamaran', sans-serif;
+
+
+}
+
+li {
+    display: inline;
+}
+
+li a {
+    display: inline-block;
+    color: #C7E1F5;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+    pointer: cursor;
+}
+
+footer{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+}
+
+li a:hover {
+    color: #7F60A9;
+    background-color: 2px solid #482768;
+    pointer: cursor;
+}
+
+current_link{
+    color: #E04398;
+    border: 2px solid #E04398;
+}
+
+body{
+	background-color: #572C7A;
+}
+
+.content{
+	background-color: #361d4e;
+	width: 100%;
+	height: 650px;
+	position: absolute;
+	top: 15%;
+	left: 0;
+}
+
+h4{
+	color: #E04398;
+	
+	position: relative;
+	left: 15%;
+	font-family: 'Zilla Slab', serif;
+}
+
+h1{
+	color: #E04398;
+	font-family: 'Catamaran', sans-serif;
+}
+.deem-paragraph{
+	color: #c7e1f51c;
+	width: 180px;
+	text-align: center;
+	font-family: 'Zilla Slab', serif;
+	font-size: 0.85em;
+}
+
+.main-content{
+	width: 220px;
+	cursor: pointer;
+}
+
+#main{
+	position: absolute;
+	left: 45%;
+	top: 20%;
+}
+
+#fund{
+	position: absolute;
+	left: 10%;
+	top: 60%;
+}
+
+#growth{
+	position: absolute;
+	left: 10%;
+	top: 10%;
+}
+
+#connect{
+	position: absolute;
+	left: 80%;
+	top: 60%;
+}
+
+#roi{
+	position: absolute;
+	left: 80%;
+	top: 10%;
+}
+
+.sicon{
+	position: absolute;
+	left: 20%;
+	top: -60%;
+}
+p{
+	font-family: 'Zilla Slab', serif;
+	font-size: 0.85em;
+	color: #C7E1F5;
+}
+
+#about{
+	width: 550px;
+	text-align:center;
+	position: relative;
+	left: 35%;
+	top: 17%;
+}
+
+
+
+
+}
+
+@media screen and (max-width: 480px) {
+
+#main{
+	position: absolute;
+	left: 35%;
+	top: 20%;
+}
+
+#fund{
+	position: absolute;
+	left: 5%;
+	top: 75%;
+}
+
+#growth{
+	position: absolute;
+	left: 5%;
+	top: 2%;
+}
+
+#connect{
+	position: absolute;
+	left: 60%;
+	top: 75%;
+}
+
+#roi{
+	position: absolute;
+	left: 55%;
+	top: 2%;
+}
+
+.sicon{
+	position: absolute;
+	left: 20%;
+	top: -60%;
+}
+p{
+	font-family: 'Zilla Slab', serif;
+	font-size: 0.85em;
+	color: #C7E1F5;
+}
+#about{
+	width: 450px;
+	text-align:center;
+	position: relative;
+	left: 2%;
+	top: 17%;
+}
+}

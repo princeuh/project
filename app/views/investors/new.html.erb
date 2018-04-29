@@ -1,0 +1,31 @@
+<% provide(:title, "Open Account") %>
+<div class="content">
+<div class="forms-investor">
+	<h1 id="acct-header"> Open Account </h1>
+<%= form_for(@investor, url: investors_path) do |f| %>
+	<%= render 'shared/error_messages' %>
+	<%= f.label :firstname %><br>
+	<%= f.text_field :firstname %><br>
+	<div id="lastname">
+	<%= f.label :lastname%><br>
+	<%= f.text_field :lastname %><br>
+</div>
+
+	<%= f.label :email%><br>
+	<%= f.email_field :email %><br>
+
+	<%= f.label :password %><br>
+	<%= f.password_field :password %><br>
+
+	<%= f.label :password_confirmation %><br>
+	<%= f.password_field :password_confirmation %><br>
+
+	<%= f.hidden_field :is_investor, :value => true %>
+
+	<%= f.submit "Open Account" %>
+
+<% end %>
+
+</div>
+
+</div>

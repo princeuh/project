@@ -1,0 +1,92 @@
+// Place all the styles related to the Investors controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@media screen and (max-width: 2560px) {
+
+body{
+    font-family: 'Zilla Slab', serif;
+    color: #C7E1F5;
+}
+.forms-investor{
+	position: relative;
+	left: 45%;
+    width: 50%;
+    padding: 10px;
+}
+
+input[type=text], input[type=email], input[type=password]{
+
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-family: 'Zilla Slab', serif;
+    font-size: 1.0em;
+    color: white;
+    background-color: #c7e1f561;
+    border: none;
+}
+
+#lastname{
+	position: absolute;
+	top: 22.2%;
+	left: 28%;
+}
+input[type=email], input[type=password]{
+	width: 470px;
+ }
+
+ input[type=submit]{
+    background-color: #E04398;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-family: 'Catamaran', sans-serif;
+    float: center;
+    position: relative;
+    left: 18%;
+}
+
+#acct-header{
+	text-align: center;
+}
+}
+@media screen and (max-width: 480px) {
+	
+	.content{
+	background-color: #361d4e;
+	width: 100%;
+	height: 650px;
+	position: relative;
+	top: 154px;
+	
+}
+
+#lastname{
+	position: absolute;
+	top: 25.8%;
+	left: 28%;
+}
+	
+.forms-investor{
+    position: relative;
+	left: 0;
+    width: 181%;
+    padding: 10px;
+    
+	}
+
+	input[type=email], input[type=password]{
+	width: 440px;
+ }
+#acct-header{
+	text-align: initial;
+}
+
+
+}
