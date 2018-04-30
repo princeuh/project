@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
 
-  resources :investors
+  resources :investors do
+    resources :executors, only: [:create, :edit, :update, :destroy]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

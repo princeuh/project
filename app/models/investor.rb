@@ -1,5 +1,6 @@
 class Investor < ApplicationRecord
 	before_save { email.downcase! }
+  has_many :executors, dependent: :destroy
 	validates :firstname, presence: true, length: { maximum: 50 }
 	validates :lastname, presence: true
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
@@ -9,6 +10,8 @@ class Investor < ApplicationRecord
 
      has_secure_password
      validates :password, presence: true, length: { minimum: 6 }
+
+     
 
 
    def Investor.digest(string)

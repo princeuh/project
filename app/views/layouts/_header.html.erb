@@ -2,7 +2,7 @@
 	<nav>
 		<ul>
       <% if logged_in? %>
-        <%= link_to "Log out", logout_path, method: :delete %>
+      
 
       <% else %>
 		  <li><%= link_to "Home", root_url,  :id => "home-link"  %></li>
@@ -11,8 +11,12 @@
         <li><%= link_to "Venture Clubs", ventures_path,  :id  => "venture-link"  %></li>
         <li><%= link_to "About", about_path,  :id  => "about-link"  %></li>
   		<li><%= link_to "Team", team_path,  :id  => "team-link" %></li>
-  		<li><%= link_to "Log In", login_path,  :id  => "logIn-link"  %></li>
+  		
+      <%= link_to image_tag("login.png", alt: "login", width: 80, height:80 ), login_path, :id => "login-logo"  %>
+
       <% end %> 
+
+
   		</ul>
   	</nav>
   </header>

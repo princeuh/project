@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  primary_firstname: MyString
+  primary_lastname: MyString
+  primary_phone_number: 1
+  primary_email: MyString
+  primary_country_of_residence: MyString
+  secondary_firstname: MyString
+  secondary_lastname: MyString
+  secondary_phone_number: 1
+  secondary_email: MyString
+  secondary_country_of_residence: MyString
+  investor: one
+
+two:
+  primary_firstname: MyString
+  primary_lastname: MyString
+  primary_phone_number: 1
+  primary_email: MyString
+  primary_country_of_residence: MyString
+  secondary_firstname: MyString
+  secondary_lastname: MyString
+  secondary_phone_number: 1
+  secondary_email: MyString
+  secondary_country_of_residence: MyString
+  investor: two

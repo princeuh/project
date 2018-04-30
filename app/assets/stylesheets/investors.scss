@@ -11,7 +11,7 @@ body{
 }
 .forms-investor{
 	position: relative;
-	left: 45%;
+	left: 35%;
     width: 50%;
     padding: 10px;
 }
@@ -30,7 +30,7 @@ input[type=text], input[type=email], input[type=password]{
 
 #lastname{
 	position: absolute;
-	top: 22.2%;
+	top: 21.6%;
 	left: 28%;
 }
 input[type=email], input[type=password]{
@@ -68,9 +68,129 @@ input[type=email], input[type=password]{
 .investor-bttn-options{
 	padding: 34px 50px;
 	cursor: pointer;
+	color: #7f60a9;
+	 font-family: 'Catamaran', sans-serif;
 }
 .allOptions{
 	display:none;
+}
+
+#logout-bttn{
+	color: #7f60a9;
+	text-decoration: none;
+    text-align: center;
+    pointer: cursor;
+    position: fixed;
+	bottom: 0;
+	left: 59px;
+	
+}
+
+.app-links{
+		color: #7f60a9;
+	text-decoration: none;
+    text-align: center;
+    pointer: cursor;
+}
+
+.app-links a:hover{
+	color: #E04398;
+}
+
+.dash-account{
+	background-color: #44235f;
+	height: 650px;
+	width: 30%;
+	margin: auto;
+	display: none;
+}
+
+#dash-contacts{
+	width: 60%;
+}
+
+.contact-box{
+	display: inline-block;
+	width: 200px;
+	height: 100px;
+	margin: 1em;
+}
+
+.acct-default{
+	display: block;
+}
+
+
+.dash-bttn{
+	 background-color: #E04398; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#dash-acct-opts{
+	position: fixed;
+	bottom: 0;
+	left: 34%;
+	width: 65%;
+
+}
+
+
+
+#show-news{
+	background-color: #361d4e;
+	color: #E04398;
+}
+
+.default-news{
+	display: block;
+}
+
+#news-header{
+	height: 100px;
+	width: 95%;
+	background-color: #44235f;
+	margin-left: 25px;
+	overflow: auto;
+}
+#news-reminders{
+	height: 100px;
+	width: 95%;
+	background-color: #44235f;
+	margin-left: 25px;
+	position: absolute;
+	bottom: 5%;
+	overflow: auto;
+}
+
+#news-sub{
+	height: 450px;
+	width: 30%;
+	background-color: #44235f;
+	margin-left: 25px;
+	position: absolute;
+	top: 25%;
+	left: 2%;
+	overflow: auto;
+}
+
+#news-main{
+	height: 650px;
+	width: 60%;
+	background-color: #44235f;
+	margin-left: 25px;
+	position: absolute;
+	right: 50px;
+	top: 13%;
+	overflow: auto;
 }
 
 
@@ -88,7 +208,7 @@ input[type=email], input[type=password]{
 
 #lastname{
 	position: absolute;
-	top: 25.8%;
+	top: 21.6%;
 	left: 28%;
 }
 	
@@ -106,6 +226,138 @@ input[type=email], input[type=password]{
 #acct-header{
 	text-align: initial;
 }
+
+.dash-account{
+	background-color: #572C7A;
+}
+
+	
+#dash-content{
+	background-color: #361d4e;
+	width: 75%;
+	height: 960px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+
+}
+
+#news-header{
+	height: 100px;
+	width: 40%;
+	background-color: #44235f;
+	margin-left: 25px;
+	overflow: auto;
+}
+
+#news-sub{
+	height: 100px;
+	width: 40%;
+	background-color: #44235f;
+	position: absolute;
+	left: 45%;
+	top: 10.4%;
+	overflow: auto;
+}
+
+#news-main{
+	height:350px;
+	width: 325px;
+	background-color: #44235f;
+	position: absolute;
+	right: 20px;
+	top: 22%;
+	overflow: auto;
+}
+
+#news-reminders{
+	height: 210px;
+	width: 325px;
+	background-color: #44235f;
+	position: absolute;
+	bottom: 18%;
+	overflow: auto;
+	right: 20px;
+}
+
+
+#logout-bttn{
+	color: #7f60a9;
+	text-decoration: none;
+    text-align: center;
+    pointer: cursor;
+    position: fixed;
+	bottom: 0;
+	left: 80%;
+	
+}
+.investor-bttn-options{
+	padding: 34px 20px;
+	cursor: pointer;
+		color: #7f60a9;
+	 font-family: 'Catamaran', sans-serif;
+}
+
+.dash-account{
+	background-color: #44235f;
+	height:550px;
+	width: 325px;
+	margin: auto;
+	display: none;
+	position: fixed;
+	left: 27%;
+	top: 15%;
+}
+
+.acct-default{
+	display: block;
+}
+
+#dash-header{
+	height: 100px;
+	width: 100%;
+	background-color: #572C7A;
+	overflow: auto;
+}
+
+#dash-footer{
+	height: 100px;
+	width: 100%;
+	background-color: #572C7A;
+	overflow: auto;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+
+.dash-bttn{
+	background-color: #E04398; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 8px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#dash-acct-opts{
+	position: fixed;
+	bottom: 10%;
+	left: 34%;
+	width: 65%;
+
+}
+
+#dash-contacts{
+	overflow: auto;
+}
+
 
 
 }

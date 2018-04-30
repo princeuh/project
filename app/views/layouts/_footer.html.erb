@@ -1,10 +1,15 @@
 <footer>
 <nav>
 <ul>
+	<% if logged_in? %>
+
+	<% else %>
 	<li><%= link_to "Terms", terms_path, :id => "terms-link"%></li>
   	<li><%= link_to "Privacy", privacy_path, :id => "privacy-link" %></li>
   	<li><%= link_to "Careers", careers_path , :id => "careers-link"%></li>
   	<li><%= link_to "Contact", contact_path, :id => "contact-link"  %></li>
+  	<% end %>
+
 </ul>
 </nav>
 </footer>

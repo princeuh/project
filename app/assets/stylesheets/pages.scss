@@ -4,6 +4,7 @@
 
 @media screen and (max-width: 2560px) {
 
+
 header{
 	position: fixed;
     top: 0;
@@ -138,6 +139,23 @@ p{
 	position: relative;
 	left: 35%;
 	top: 17%;
+}
+
+.policy-cards{
+	height: 600px;
+	overflow: auto;
+	text-align: center;
+	width: 75%;
+	margin: auto;
+	
+}
+
+.policy-cards p{
+	color: #c7e1f51c;
+}
+
+#login-logo{
+	position: absolute;right: 20%;
 }
 
 

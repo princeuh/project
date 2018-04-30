@@ -18,6 +18,7 @@ gem 'jquery-rails', '4.3.1'
 gem 'bcrypt', '3.1.11'
 gem 'jquery-turbolinks', '~> 2.1'
 gem 'gmaps-rails'
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
 
 
 gem 'braintree'

@@ -1,11 +1,24 @@
 <% provide(:title, @investor.firstname) %>
 <div id="dash-content">
-	<div id="investor-updates" class="allOptions" >
-		<p> SHows investor updates </p>
-</div>
+	<div id="dash-header">
+	</div>
 
-<div id="investor-news" class="allOptions" >
+<div id="investor-news" class="allOptions default-news" >
+	<div id="news-header">
+		<p> Clickable News scrolls across </p>
+	</div>
+
+	<div id="news-sub">
+		<p> Items of Interest </p>
+	</div>
+	<div id="news-main">
 		<p> Contains the News Items pulled from the Admins news cycle </p>
+	</div>
+
+	<div id="news-reminders">
+		<p> Contains reminders and notifications </p>
+	</div>
+		
 </div>
 
 <div  id="investor-myClubs" class="allOptions" >
@@ -23,7 +36,95 @@
 </div>
 
 <div id="investor-account" class="allOptions">
-		<p> Shows the investor their account settings </p>
+	<div id="dash-acct-opts">
+		<button class="dash-bttn" id="acct-profile"> Profile </button>
+		<button class="dash-bttn" id="acct-contacts">  Emergency Contacts </button>
+		<button class="dash-bttn" id="acct-email"> Update Email </button>
+		<button class="dash-bttn" id="acct-pass"> Reset Password </button>
+	</div>
+
+	<div id="dash-profile" class="dash-account acct-default"> <p> show user profile </p> </div>
+	<div id="dash-contacts" class="dash-account"> 
+		<% if @investor.executors.count < 2 %>
+			<p style="color:red;"> Please submit 2 Emergency Contacts </p>
+			<%= form_with(model: [@investor, @investor.executors.build], local: true) do |form| %>
+		<div class="contact-box">
+			<%= form.label :Primary_Firstname %><br>
+			<%= form.text_field :primary_firstname %>
+		</div>
+		<div class="contact-box">
+			<%= form.label :Primary_Lastname %><br>
+			<%= form.text_field :primary_lastname%>
+		</div>
+
+		<div class="contact-box">
+			<%= form.label :Primary_phone_number %><br>
+			<%= form.text_field :primary_phone_number %> 
+		</div>
+		<div class="contact-box">
+			<%= form.label :Primary_email %><br>
+			<%= form.text_field :primary_email %> 
+		</div>
+		<div class="contact-box">
+			<%= form.label :Primary_country_of_residence %><br>
+			<%= form.text_field :primary_country_of_residence %> 
+		</div>
+
+		<div class="contact-box">
+
+			<%= form.label :Secondary_Firstname %><br>
+			<%= form.text_field :secondary_firstname %> 
+		</div>
+
+		<div class="contact-box">
+			<%= form.label :Secondary_Lastname %><br>
+			<%= form.text_field :secondary_lastname%> 
+		</div>
+
+		<div class="contact-box">
+			<%= form.label :Secondary_phone_number %><br>
+			<%= form.text_field :secondary_phone_number %> 
+		</div>
+
+		<div class="contact-box">
+			<%= form.label :Secondary_email %><br>
+			<%= form.text_field :secondary_email %> 
+		</div>
+
+		<div class="contact-box">
+			<%= form.label :Secondary_country_of_residence %><br>
+			<%= form.text_field :secondary_country_of_residence %> 
+		</div>
+
+			<%= form.submit "Submit" %>
+
+			<% end %>
+		<% end %>
+		<% if @investor.executors.count == 2 %>
+		<% @investor.executors.each do |e| %>
+		<%= e.primary_firstname %>
+		<%= e.primary_lastname %>
+		<%= e.primary_phone_number %>
+		<%= e.primary_email %>
+		<%= e.primary_country_of_residence %>
+		<%= e.secondary_firstname%>
+		<%= e.secondary_lastname %>
+		<%= e.secondary_phone_number %>
+		<%= e.secondary_email %>
+		<%= e.secondary_country_of_residence%>
+		<%= link_to 'Edit', edit_investor_executor_path( e.investor, e) %>
+		<%= link_to 'Remove Contact Record', [e.investor, e],
+               method: :delete,
+               data: { confirm: 'Please submit another name?' }, :class => "app-links" %>
+		<% end %>
+		<% end %>
+
+		</div>
+	<div id="dash-email" class="dash-account"> <p> email </p> </div>
+	<div id="dash-pass" class="dash-account"> <p> password </p> </div>
+
+
+
 </div>
 </div>
 <h1>
@@ -36,4 +137,6 @@
 <p id="show-proposal" class="investor-bttn-options">Proposal</p>
 <p id="show-account" class="investor-bttn-options">Account</p>
 
-
+<div id="dash-footer">
+	</div>
+	<%= link_to "LogOut", logout_path, method: :delete, :id => "logout-bttn" %>

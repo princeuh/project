@@ -6,7 +6,7 @@ $(document).on "turbolinks:load", ->
 			$('.investor-bttn-options').click ->
 				$('.allOptions').hide()
 				$('.investor-bttn-options').css("background-color", "#572C7A")
-				$('.investor-bttn-options').css("color", "#C7E1F5")
+				$('.investor-bttn-options').css("color", "#7f60a9")
 				if @id == 'show-myClubs'
 					$('#investor-myClubs').show()
 					$(this).css("background-color", "#361d4e")
@@ -31,3 +31,14 @@ $(document).on "turbolinks:load", ->
 					$('#investor-news').show()
 					$(this).css("background-color", "#361d4e")
 					$(this).css("color", "#E04398")
+
+			$('.dash-bttn').click ->
+				$('.dash-account').hide()
+				if @id == 'acct-profile'
+					$('#dash-profile').show()
+				else if @id == 'acct-contacts'
+					$('#dash-contacts').show()
+				else if @id == 'acct-email'
+					$('#dash-email').show()
+				else if @id == 'acct-pass'
+					$('#dash-pass').show()
