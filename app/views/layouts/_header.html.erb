@@ -11,8 +11,8 @@
         <li><%= link_to "Venture Clubs", ventures_path,  :id  => "venture-link"  %></li>
         <li><%= link_to "About", about_path,  :id  => "about-link"  %></li>
   		<li><%= link_to "Team", team_path,  :id  => "team-link" %></li>
-  		
-      <%= link_to image_tag("login.png", alt: "login", width: 80, height:80 ), login_path, :id => "login-logo"  %>
+      <li style="float:right"> <%= link_to image_tag("login.png", alt: "login", width: 80, height:80 ), login_path %></li>
+      <li style="float:right"><%= link_to "Get Funded", '#' %></li>
 
       <% end %> 
 

@@ -1,0 +1,44 @@
+// Place all the styles related to the Careers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h3{
+	font-family: 'Catamaran', sans-serif;
+}
+
+#career-new, #show-career{
+	height: 450px;
+	width: 550px;
+	padding: 20px;
+	background-color: #44235f;
+	margin-left: 25px;
+	position: absolute;
+	left: 35%;
+	top: 13%;
+	overflow: auto;
+	
+}
+
+ #show-career{
+ 	 width: 450px;
+ }
+
+#center-career{
+	margin: auto;
+	width: 400px;
+
+}
+
+#career-details{
+	position: relative;
+	left: 34%;
+	
+	width: 65%;
+	top: -100px;
+}
+
+#show-career-options{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}

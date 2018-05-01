@@ -15,6 +15,7 @@ class PagesController < ApplicationController
   end
 
   def careers
+    @careers = Career.all
   end
 
   def contact

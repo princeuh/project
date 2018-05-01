@@ -1,0 +1,17 @@
+<%= provide(:title, "Edit") %>
+<div class="content">
+<%= form_with model: @career, local: true do |form| %>
+	<%= form.label :Job_title%><br>
+	<%= form.text_field :job_title %><br>
+
+	<%= form.label :Department %><br>
+	<%= form.text_field :department %><br>
+
+	<%= form.label :posting %><br>
+	<%= form.text_area :posting %><br>
+
+
+	<%= form.submit "Update Posting" %>
+
+	<% end %>
+</div>

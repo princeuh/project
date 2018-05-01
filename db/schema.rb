@@ -10,7 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180430203208) do
+ActiveRecord::Schema.define(version: 20180501180003) do
+
+  create_table "careers", force: :cascade do |t|
+    t.string "job_title"
+    t.string "department"
+    t.text "posting"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "club_members", force: :cascade do |t|
+    t.integer "investor_id"
+    t.integer "club_id"
+    t.integer "amount_invested"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "clubs", force: :cascade do |t|
+    t.string "name"
+    t.string "focus_country"
+    t.string "country_manager"
+    t.integer "fund_target"
+    t.integer "amt_invested"
+    t.integer "number_of_members"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "proposal"
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.string "email"
+    t.string "subject"
+    t.text "inquiry"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.string "role"
+    t.string "email"
+    t.string "job_category"
+    t.string "job_location"
+    t.string "reports_to"
+    t.string "department"
+    t.string "section"
+    t.string "contact_number"
+    t.string "employee_pid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.boolean "is_admin"
+    t.index ["email"], name: "index_employees_on_email", unique: true
+  end
 
   create_table "executors", force: :cascade do |t|
     t.string "primary_firstname"
@@ -37,7 +94,20 @@ ActiveRecord::Schema.define(version: 20180430203208) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "remember_digest"
+    t.integer "investment_total"
     t.index ["email"], name: "index_investors_on_email", unique: true
+  end
+
+  create_table "proposals", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "investor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "country"
+    t.integer "target_amt"
+    t.boolean "is_accepted"
+    t.index ["investor_id"], name: "index_proposals_on_investor_id"
   end
 
 end

@@ -1,0 +1,146 @@
+// Place all the styles related to the Proposals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media screen and (max-width: 2560px) {
+
+textarea{
+	 width: 450px;
+	height: 300px;
+    border-radius: 4px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-family: 'Zilla Slab', serif;
+    font-size: 1.0em;
+    color: white;
+    background-color: #c7e1f561;
+    border: none;
+}
+
+#proposal{
+	background-color: #44235f8c;
+	height: 650px;
+	width: 40%;
+	margin: auto;
+	position: absolute;
+	left: 35%;
+	top: 15%;
+	display: none;
+	
+}
+
+#prop-submit{
+	position: absolute;
+	top: 85%;
+	left: 73%;
+}
+
+#prop-container{
+	padding: 15px;
+
+}
+
+.p-avatar{
+	display: inline-block;
+	width: 150px;
+	height: 200px;
+}
+
+#add-proposal{
+	float: right;
+	cursor: pointer;
+}
+
+#honor, #sub-prop{
+	position:absolute;
+	right: 0;
+}
+#sub-prop{
+	top: 5%;
+	color: #7f60a9;
+	font-family: 'Catamaran', sans-serif;	
+}
+
+.delete-prop{
+	color: #840000;
+}
+
+#close-prop{
+	color: #7f60a9;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #7f60a926;
+    float: right;
+}
+
+#prop-accepted{
+	border: 2px solid #48f442;
+	padding: 10px 5px;
+	color: #48f442;
+	text-align: center;
+	width: 75px;
+
+}
+
+#prop-pending{
+	border: 2px solid #E04398;
+	padding: 10px 5px;
+	color: #E04398;
+	text-align: center;
+	width: 75px;
+}
+
+
+}
+
+@media screen and (max-width: 480px) {
+
+textarea{
+	width: 250px;
+	height: 350px;
+    border-radius: 4px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-family: 'Zilla Slab', serif;
+    font-size: 1.0em;
+    color: white;
+    background-color: #c7e1f561;
+    border: none;
+}
+
+#proposal{
+	background-color: #44235f8c;
+	height: 650px;
+	width: 450px;
+	overflow: auto;
+	
+}
+
+#honor, #sub-prop{
+	position:absolute;
+	right: 0;
+	top: 15px;
+}
+
+#sub-prop{
+	top: 35px;
+}
+
+#prop-submit{
+	position: relative;
+	top: 50px;
+	left: 25%;
+}
+
+#prop-container{
+	padding: 15px;
+
+}
+
+}

@@ -16,7 +16,19 @@ body{
     padding: 10px;
 }
 
-input[type=text], input[type=email], input[type=password]{
+.dash-profile{
+	padding: 20px;
+	
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-family: 'Zilla Slab', serif;
+    font-size: 1.0em;
+    color: white;
+    background-color: #c7e1f561;
+    border: none;
+}
+
+input[type=text], input[type=email], input[type=date], input[type=password], input[type=number], select{
 
     padding: 12px 20px;
     margin: 8px 0;
@@ -69,7 +81,7 @@ input[type=email], input[type=password]{
 	padding: 34px 50px;
 	cursor: pointer;
 	color: #7f60a9;
-	 font-family: 'Catamaran', sans-serif;
+	font-family: 'Catamaran', sans-serif;
 }
 .allOptions{
 	display:none;
@@ -87,7 +99,7 @@ input[type=email], input[type=password]{
 }
 
 .app-links{
-		color: #7f60a9;
+	color: #7f60a9;
 	text-decoration: none;
     text-align: center;
     pointer: cursor;

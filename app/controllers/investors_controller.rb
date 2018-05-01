@@ -5,6 +5,9 @@ class InvestorsController < ApplicationController
 
   def show
   	@investor = Investor.find(params[:id])
+      @clubs = Club.all
+      @membership = ClubMember.new
+      @joined = ClubMember.where(investor_id: current_user.id)
   end
 
   def create
@@ -22,6 +25,6 @@ class InvestorsController < ApplicationController
   private
 	def investor_params
 		params.require(:investor).permit(:firstname, :lastname, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :investment_total)
 	end
 end

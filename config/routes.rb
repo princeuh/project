@@ -27,9 +27,25 @@ Rails.application.routes.draw do
 
   delete '/logout', to: 'sessions#destroy'
 
+  get '/all_careers', to: 'careers#index'
+
+  post '/contact', to: 'contacts#create'
+
+  get  '/employee_account', to: 'employees#new'
+
+  post '/employee_account', to: 'employees#create'
+
 
   resources :investors do
     resources :executors, only: [:create, :edit, :update, :destroy]
+    resources :proposals
   end
+
+  resources :careers
+  resources :contacts
+  resources :employees
+
+  resources :clubs
+  resources :club_members, only: [:create, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

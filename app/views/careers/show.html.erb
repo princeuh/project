@@ -1,0 +1,35 @@
+<%= provide(:title, "Show")%>
+<div class="content">
+	<div id="show-career">
+
+	<div id="center-career">
+	<%= image_tag("careersHR.png", class: "clubIcon" , width: "120", height: "100") %><br>
+<div id="career-details">
+<strong>Job Title: </strong>
+<p><%= @career.job_title %>
+</p>
+
+<strong>Department: </strong>
+<p><%= @career.department  %>
+</p>
+
+
+	<strong>Posting: </strong>
+<p><%= @career.posting %>
+</p>
+</div>
+</div>
+</div>
+
+<div id="show-career-options">
+
+<%= link_to 'All Postings', careers_path, :class => "app-links" %>
+
+<%= link_to 'Edit', edit_career_path(@career), :class => "app-links" %>
+<%= link_to 'Delete', career_path(@career),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }, :class => "app-links" %>
+
+</div>
+</div>
+

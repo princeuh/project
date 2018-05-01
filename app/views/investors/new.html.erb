@@ -21,6 +21,7 @@
 	<%= f.password_field :password_confirmation %><br>
 
 	<%= f.hidden_field :is_investor, :value => true %>
+	<%= f.hidden_field :investment_total, :value => 0 %>
 
 	<%= f.submit "Open Account" %>
 

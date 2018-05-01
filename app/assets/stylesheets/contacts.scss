@@ -1,0 +1,22 @@
+// Place all the styles related to the Contacts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#contact-info{
+	width: 50%;
+	margin: auto;
+	height: 450px;
+	overflow: auto;
+}
+
+#contact-second{
+	position: absolute;
+	left: 40%;
+	top: 20%;
+}
+
+#contact-submit{
+	position: absolute;
+	left: 65%;
+	top: 73%;
+}

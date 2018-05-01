@@ -23,11 +23,13 @@ ul {
 }
 
 li {
-    display: inline;
+    #display: inline;
+    float: left;
 }
 
 li a {
-    display: inline-block;
+    #display: inline-block;
+    display: block;
     color: #C7E1F5;
     text-align: center;
     padding: 14px 16px;
@@ -69,7 +71,6 @@ body{
 
 h4{
 	color: #E04398;
-	
 	position: relative;
 	left: 15%;
 	font-family: 'Zilla Slab', serif;
@@ -151,11 +152,16 @@ p{
 }
 
 .policy-cards p{
-	color: #c7e1f51c;
+	color: #C7E1F5;
 }
 
 #login-logo{
 	position: absolute;right: 20%;
+}
+
+#co-address{
+	padding: 0px;
+	margin: 0;
 }
 
 

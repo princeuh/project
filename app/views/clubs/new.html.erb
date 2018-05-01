@@ -1,0 +1,38 @@
+<% provide(:title, "Clubs") %>
+<div class="content">
+<%= form_for(@club, url:  clubs_path) do |f| %>
+
+<div id="club-info-one">
+	<h4> Create A New Club </h4>
+
+	<%= f.label :Club_name %><br>
+	<%= f.text_field :name %><br>
+
+	<%= f.label :Country_of_Orign %><br>
+	<%= f.select :focus_country, ['Algeria', 'Angola', 'Benin', 'Botswana', 'Burkina Faso', 'Burundi', 'Cabo Verde', 'Cameroon', 'Central African Republic (CAR)', 'Chad', 'Comoros', 'Democratic Republic of the Congo
+', 'Republic of the Congo', "Cote d'Ivoire", 'Djibouti', 'Egypt', 'Equatorial Guinea', 'Eritrea', 'Ethiopia', 'Gabon', 'Gambia', 'Ghana', 'Guinea', 'Guinea-Bissau', 'Kenya', 'Lesotho', 'Liberia', 'Libya', 'Madagascar', 'Malawi', 'Mali', 'Mauritania', 'Mauritius', 'Morocco', 'Mozambique', 'Namibia', 'Niger', 'Nigeria', 'Rwanda', 'Sao Tome and Principe', 'Senegal', 'Seychelles', 'Sierra Leone', 'Somalia', 'South Africa', 'South Sudan', 'Sudan', 'Swaziland', 'Tanzania', 'Togo', 'Tunisia', 'Uganda', 'Zambia', 'Zimbabwe' ] %><br>
+
+
+
+	<%= f.label :Country_Manager %><br>
+	<%= f.text_field :country_manager %><br>
+
+	<%= f.label :Target_Amount %><br>
+	<%= f.number_field :fund_target %><br>
+
+	<%= f.label :Invested_Amount%><br>
+	<%= f.number_field :amt_invested %><br>
+
+	<%= f.label :Member_Count %><br>
+	<%= f.number_field :number_of_members %><br>
+	<div id="club-prop">
+	<%= f.label :proposal %><br>
+	<%= f.text_area :proposal %><br>
+</div>
+	<%= f.submit "Create Club" , :id => "sub-club" %>
+	</div>
+
+<% end %>
+
+
+</div>

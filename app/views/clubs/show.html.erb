@@ -1,0 +1,37 @@
+<%= provide(:title, "Club Details") %>
+<div class="content">
+
+<div id="show-club">
+	<%= image_tag("clubAvatar.png", id: "clubIcon" , width: "100", height: "100") %>
+<p>
+	<strong>Name: </strong>
+<%= @club.name %>
+</p>
+
+<p>
+	<strong>Country of Orign: </strong>
+<%= @club.focus_country  %>
+</p>
+
+<p>
+	<strong>Target Amount(USD) : </strong>
+<span> $ </span><%= @club.fund_target %>
+</p>
+
+<p> 
+	<strong>Invested Amount(USD):</strong>
+<span> $ </span><%= @club.amt_invested %>
+</p>
+
+<p> 
+	<strong>Number of Members:</strong>
+<%= @club.number_of_members %>
+</p>
+
+<p> 
+<strong>Proposal:</strong>
+<%= @club.proposal %>
+</p>
+</div>
+<%= link_to 'All Clubs', clubs_path , :class => "app-links" %>
+</div>

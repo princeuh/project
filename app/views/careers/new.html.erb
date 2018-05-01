@@ -1,0 +1,21 @@
+<%= provide(:title, "New Posting") %>
+<div class="content">
+<div id="career-new">
+<h1> Create a new career posting </h1>
+
+
+<%= form_with scope: :career, url: careers_path, local: true do |form| %>
+	<%= form.label :Job_title%><br>
+	<%= form.text_field :job_title %><br>
+
+	<%= form.label :Department %><br>
+	<%= form.text_field :department %><br>
+
+	<%= form.label :posting %><br>
+	<%= form.text_area :posting %><br>
+
+	<%= form.submit "Create Posting" %>
+
+<% end %>
+</div>
+</div>

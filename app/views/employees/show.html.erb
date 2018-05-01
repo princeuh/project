@@ -1,0 +1,89 @@
+<% provide(:title, @employee.firstname) %>
+<%= image_tag("employeeAvatar.png", class: "emp-avatar" , width: "100", height: "100") %>
+
+<div id="employee-dash">
+
+<% if @employee.is_admin %>
+<p> You are currently logged in as a system admin, viewing all options available to the admin. </p>
+
+<p id="emp-updates" class="emp-opts"> My Updates and News </p>
+<p id="emp-priviledges" class="emp-opts"> My Priviledges </p>
+<p id="emp-clubs" class="emp-opts"> All Clubs</p>
+<p id="emp-users" class="emp-opts"> All Users </p>
+<p id="emp-managers" class="emp-opts"> Country Managers </p>
+<p id="emp-owners" class="emp-opts"> Business Owners </p>
+<p id="emp-site" class="emp-opts"> Nemabollon Site </p>
+<p id="emp-add" class="emp-opts"> Add Employee </p>
+<p id="emp-allEmp" class="emp-opts"> All Employees </p>
+<p id="emp-proposals" class="emp-opts"> All Proposals </p>
+<p id="emp-contacts" class="emp-opts"> All Contacts </p>
+<p id="emp-news" class="emp-opts"> Add News </p>
+<% else %> 
+<p id="emp-updates" class="emp-opts"> My Updates and News </p>
+<p id="emp-priviledges"   class="emp-opts"> My Priviledges </p>
+<p id="emp-clubs"  class="emp-opts"> All Clubs</p>
+<p id="emp-users" class="emp-opts"> All Users </p>
+<p id="emp-managers" class="emp-opts"> Country Managers </p>
+<p id="emp-owners" class="emp-opts"> Beneficiaries </p>
+<p id="emp-news" class="emp-opts"> Add News </p>
+<% end %>
+</div>
+
+<div id="employee-content">
+
+<div id="add-employee" class="empl-opts">
+	<p> SHow employees </p>
+	<%= render 'employees/add_employee' %>
+</div>
+
+<div id="show-investors" class="empl-opts">
+	<p> Show all investors</p>
+	<%= render 'investors/all_investors' %>
+</div>
+
+<div id="show-updates" class="empl-opts">
+	<p> Show all updates and news for this employee </p>
+</div>
+
+<div id="show-clubs" class="empl-opts">
+	<p> Show all clubs in the system </p>
+	<%= link_to "All Clubs", clubs_path %>
+	<%= render 'clubs/employee_clubs' %>
+</div>
+
+<div id="show-investors" class="empl-opts">
+	<p> Show all investors in the system </p>
+</div>
+
+<div id="show-employees" class="empl-opts">
+	<%= link_to "All Employees", employees_path %>
+	<%= render 'employees/all_employees' %>
+</div>
+
+<div id="show-managers" class="empl-opts">
+	<p> Show all managers in the system </p>
+</div>
+
+<div id="show-owners" class="empl-opts">
+	<p> Show all business owners in the system </p>
+</div>
+
+<div id="show-proposals" class="empl-opts">
+	<p> Show all proposals in the system </p>
+</div>
+
+<div id="show-contacts" class="empl-opts">
+	<p> Show all contact messages submitted to the system </p>
+</div>
+
+<div id="show-priviledges" class="empl-opts">
+	<p> Show this user's system priviledges </p>
+</div>
+
+<div id="show-news" class="empl-opts">
+	<p> Show the News Section of the system </p>
+</div>
+
+</div>
+
+</div>

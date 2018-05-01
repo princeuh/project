@@ -1,0 +1,15 @@
+<h1> All Team Members </h1>
+
+<%  @allEmployees.each do |employee| %>
+	<%= employee.firstname %>
+	<%= employee.lastname %>
+	<%= employee.role %>
+	<%= employee.email %>
+	<%= employee.is_admin %>
+	<%= link_to "View Employee", employee_path(employee) %>
+	<%= link_to "Edit", edit_employee_path(employee) %>
+	<%= link_to 'Destroy', employee_path(employee),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+
+<% end %>

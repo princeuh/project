@@ -1,0 +1,27 @@
+<%= provide(:title, "All Postings") %>
+<div class="content">
+<h1> All Postings </h1>
+
+<%  @careers.each do |career| %>
+<div class="flip-container">
+	<div class="front">	
+		<%= image_tag("careersHR.png", class: "clubIcon" , width: "120", height: "100") %><br>
+	<%= career.job_title %>
+	</div>
+	<div class="back">
+	<%= career.department %>
+	<%= career.posting %><br>
+
+	<%= link_to "View Career", career_path(career), :class => "app-links" %><br>
+	<%= link_to "Edit", edit_career_path(career), :class => "app-links"%><br>
+	<%= link_to 'Destroy', career_path(career),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } , :class => "app-links"%><br>
+    	</div>
+</div>
+
+
+<% end %>
+
+<%= link_to "Add A Posting", new_career_path %>
+</div>

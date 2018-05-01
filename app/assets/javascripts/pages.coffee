@@ -61,11 +61,6 @@ $(document).on "turbolinks:load", ->
 			else if @id == 'roi-p'
 				$(this).css("color", "#c7e1f51c")
 
-		$('.policy-cards p').mouseenter ->
-			$(this).css("color", "#C7E1F5")
-
-		$('.policy-cards p').mouseleave ->
-			$(this).css("color", "#c7e1f51c")
 
 
 

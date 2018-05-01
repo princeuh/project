@@ -1,0 +1,15 @@
+<h1> Listing Inquiries </h1>
+
+<%  @contacts.each do |contact| %>
+	<%= contact.firstname %>
+	<%= contact.lastname %>
+	<%= contact.email %>
+	<%= contact.subject %>
+	<%= contact.inquiry%>
+
+	<%= link_to "View Club", contact_path(contact) %>
+	<%= link_to 'Destroy', contact_path(contact),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %><br>
+
+<% end %>

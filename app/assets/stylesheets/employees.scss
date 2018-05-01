@@ -1,0 +1,76 @@
+// Place all the styles related to the Employees controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@media screen and (max-width: 2560px) {
+	.emp-opts{
+		padding: 26px 25px;
+		cursor: pointer;
+		color: #7f60a9;
+		font-family: 'Catamaran', sans-serif;
+	}
+
+	.empl-opts{
+	display: none;
+	}
+
+	.emp-opts{
+		border: 2px solid pink;
+	}
+
+	#employee-dash{
+		width: 180px;
+		height: 750px;
+		overflow: auto;
+		position: fixed;
+		margin-top: 128px;
+	}
+
+	.emp-avatar{
+		display: block;
+		position: fixed;
+		margin-top: 25px;
+		margin-left: 25px;
+		top: 10px;
+
+	}
+
+	#employee-content{
+		background-color: #361d4e;
+		width: 89%;
+		height: 750px;
+		position: absolute;
+		top: 15%;
+		right: 0;
+	}
+
+	#add-employee{
+		position: fixed;
+		top: 140px;
+		right: 0;
+	}
+	#lastname-emp{
+		position: absolute;
+		top: 72px;
+		left: 28%;
+	}
+	.forms-investor{
+		height: 550px;
+		overflow:auto;
+	}
+}
+
+@media screen and (max-width: 480px) {
+		#lastname-emp{
+		position: absolute;
+		top: 71px;
+		left: 28%;
+	}
+
+	.forms-investor{
+		height: 550px;
+		overflow:auto;
+		border: 2px solid pink;
+	}
+}

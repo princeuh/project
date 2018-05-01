@@ -1,0 +1,34 @@
+
+<h4> All Clubs </h4>
+<%  @clubs.each do |club| %>
+
+<div class="flip-container">
+	<% if find_investor? %>
+		<%= image_tag("clubmember.png", class: "active-member" , width: "40", height: "40") %>
+	<% else %>
+		<%= form_for(:club_member, url: club_members_path) do |f| %>
+		<%= f.hidden_field :investor_id, :value => @investor.id %>
+		<%= f.hidden_field :club_id, :value => club.id %>
+		<%= f.submit "Join", :class => "joined-club" %>
+	<% end %>
+	<% end %>
+	<div class="flipper">
+		<div class="front">	
+<%= image_tag("clubAvatar.png", class: "clubIcon" , width: "100", height: "100") %><br>
+
+	<p> Club Name : <%= club.name %></p>
+	<p> Country   :<%= club.focus_country %></p>
+	<p> Country Manager :<%= club.country_manager %></p>
+
+</div>
+<div class="back">
+	<p> Target Amount USD :<%= club.fund_target %></p>
+	<p> Invested Amount :<%= club.amt_invested %></p>
+	<p> Member Count : <%= club.number_of_members %></p>
+	<p> Proposal : <%= club.proposal %></p>
+</div>
+</div>
+</div>
+
+
+<% end %>

@@ -18,24 +18,103 @@
 	<div id="news-reminders">
 		<p> Contains reminders and notifications </p>
 	</div>
-		
+	
 </div>
 
 <div  id="investor-myClubs" class="allOptions" >
-		<p> Lists the Investors Clubs </p>
+		<%= render 'club_members/my_clubs' %>
 </div>
 
 
 <div id="investor-allClubs" class="allOptions">
-		<p> Lists all the Clubs in the system </p>
+		<%= render 'clubs/all_clubs' %>
 		
 </div>
 
 <div id="investor-proposal" class="allOptions">
-		<h2> My Proposals </h2>
+		<div id="add-proposal">
+		<%= image_tag("proposal.png", id: "honor" , width: "40", height: "40") %>
+		<p id="sub-prop">Submit Proposal</p>
+		</div>
+
+		<% @investor.proposals.each do |proposal| %>
+
+		<div class="flip-container">
+		<div class="flipper">
+		<div class="front">	
+		<div class="p-avatar">
+			<%= image_tag("proposalAvatar.png", class: "honor" , width: "80", height: "100") %>
+			<p> Title : <%= proposal.title %></p>
+		<% if proposal.is_accepted? %>
+			<p id="prop-accepted"> Accepted </p>
+		<% else %>
+			<p id="prop-pending"> Pending </p>
+		<% end %>
+		</div>
+	</div>
+		<div class="back">
+
+		<div class="proposal">
+		
+		<p> Country : <%= proposal.country %></p>
+		<p> Target Amount : <%= proposal.target_amt %></p>
+		<p> Content :<%= proposal.content%></p>
+
+		<%= link_to 'Delete Proposal', [proposal.investor, proposal],
+               method: :delete,
+               data: { confirm: 'Are you sure?' }, :class => "app-links delete-prop" %>
+
+		</div>
+	</div>
+	</div>
+
+
+        </div>
+
+
+
+		<% end %>
+
+
+		<div id="proposal"> 
+		<button id="close-prop">X</button>
+		<h4> Submit Proposal </h4>
+		<div id="prop-container">
+		<%= form_with(model: [@investor, @investor.proposals.build], local: true) do |form| %>
+
+		<div>
+			<%= form.label :title %><br>
+			<%= form.text_field :title %> 
+		</div>
+
+
+
+		<div>
+			<%= form.label :Country %><br>
+			<%= form.text_field :country%> 
+		</div>
+
+		<div>
+			<%= form.label :Target_Amount %><br>
+			<%= form.number_field :target_amt %> 
+		</div>
+
+				<div>
+			<%= form.label :Proposal %><br>
+			<%= form.text_area :content%> 
+		</div>
+
+		<div id="prop-submit">
+			<%= form.submit "Submit Proposal" %>
+		</div>
+
+		<% end %>
+	</div>
+	</div>
 </div>
 
 <div id="investor-account" class="allOptions">
+
 	<div id="dash-acct-opts">
 		<button class="dash-bttn" id="acct-profile"> Profile </button>
 		<button class="dash-bttn" id="acct-contacts">  Emergency Contacts </button>
@@ -43,7 +122,15 @@
 		<button class="dash-bttn" id="acct-pass"> Reset Password </button>
 	</div>
 
-	<div id="dash-profile" class="dash-account acct-default"> <p> show user profile </p> </div>
+	<div id="dash-profile" class="dash-account acct-default">
+		<h4 style="text-align:center;"> Your Profile </h4>
+		<p class="dash-profile"> Name: <%= @investor.firstname %><span> </span><%= @investor.lastname %></p>
+		<p class="dash-profile">Email: <%= @investor.email %></p>
+		<p class="dash-profile">Investment Total:<%= @investor.investment_total %> </p>
+		<%= @investor.proposals.count %><br> <%= image_tag("proposalAvatar.png", class: "honor" , width: "80", height: "100") %> <br>
+		<%= @joined.count %> <br><%= image_tag("clubAvatar.png", class: "clubIcon" , width: "100", height: "100") %><br>
+
+	</div>
 	<div id="dash-contacts" class="dash-account"> 
 		<% if @investor.executors.count < 2 %>
 			<p style="color:red;"> Please submit 2 Emergency Contacts </p>

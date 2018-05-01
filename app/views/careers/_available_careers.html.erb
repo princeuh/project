@@ -1,0 +1,21 @@
+<% if @careers.count > 0 %>
+<%  @careers.each do |career| %>
+<div class="flip-container">
+	<div class="front">	
+		<%= image_tag("careersHR.png", class: "clubIcon" , width: "120", height: "100") %><br>
+	<p> Position: <%= career.job_title %></p>
+	</div>
+	<div class="back">
+	<p> Department: <%= career.department %></p>
+	<p> Summary: <%= career.posting %></p>
+	
+	<%= link_to "View Career", career_path(career), :class => "app-links" %><br>
+	</div>
+</div>
+
+<% end %>
+
+<% else %>
+<%= image_tag("careersHR.png", class: "clubIcon" , width: "120", height: "100") %><br>
+	<h3 style="color:#C7E1F5;"> There are no postings are the moment. Please look back soon. </h3>
+<% end %>
