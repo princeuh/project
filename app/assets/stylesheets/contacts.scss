@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@media screen and (max-width: 2560px) {
 #contact-info{
 	width: 50%;
 	margin: auto;
@@ -15,8 +16,23 @@
 	top: 20%;
 }
 
-#contact-submit{
-	position: absolute;
-	left: 65%;
-	top: 73%;
+
+}
+
+@media screen and (max-width: 480px) {
+#contact-info{
+	width: 100%;
+	position: fixed;
+	left: 0;
+	height: 450px;
+	overflow: auto;
+	}
+
+#contact-second{
+	position: fixed;
+	left: 210px;
+	top: 338px;
+}
+
+
 }
