@@ -42,6 +42,9 @@ Rails.application.routes.draw do
 
   delete '/employee_logout', to: 'employee_sessions#destroy'
 
+  get '/get_funded', to: 'beneficiaries#new'
+
+  post '/get_funded', to: 'beneficiaries#create'
 
   resources :investors do
     resources :executors, only: [:create, :edit, :update, :destroy]
@@ -51,6 +54,7 @@ Rails.application.routes.draw do
   resources :careers
   resources :contacts
   resources :employees
+  resources :beneficiaries
 
   resources :clubs
   resources :club_members, only: [:create, :destroy]
