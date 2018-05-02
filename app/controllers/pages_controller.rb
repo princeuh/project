@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_action :logout_users
+
   def home
   end
 
@@ -25,5 +27,11 @@ class PagesController < ApplicationController
   end
 
   def ventures
+  end
+
+  def logout_users
+    if logged_in?
+      log_out
+    end
   end
 end

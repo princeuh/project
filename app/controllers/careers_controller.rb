@@ -1,4 +1,5 @@
 class CareersController < ApplicationController
+  before_action :logged_in_employee
 	def index
     	@careers = Career.all
   	end
@@ -46,4 +47,13 @@ class CareersController < ApplicationController
 	def career_params
 		params.require(:career).permit(:job_title, :department, :posting, :posting_date)
 	end
+
+    def logged_in_employee
+      unless employee_logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to employee_account_url
+      end
+    end
+
+
 end

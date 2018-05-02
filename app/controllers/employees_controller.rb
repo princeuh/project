@@ -1,4 +1,5 @@
 class EmployeesController < ApplicationController
+  before_action :logged_in_employee
 	def index
     	@employees = Employee.all
   	end
@@ -50,6 +51,13 @@ class EmployeesController < ApplicationController
 	def employee_params
 		params.require(:employee).permit(:firstname, :lastname, :role, :email, :password, :password_confirmation, :is_admin, :job_category, :job_location, :reports_to, :department, :section, :contact_number, :employee_pid)
 	end
+
+   def logged_in_employee
+      unless employee_logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to employee_account_url
+      end
+    end
 
 end
 

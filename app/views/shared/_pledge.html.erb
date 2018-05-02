@@ -1,0 +1,20 @@
+    <%= form_for(:club_member, url: club_members_path) do |f| %>
+    <%= f.hidden_field :investor_id, :value => @investor.id %>
+    <%= f.hidden_field :club_id, :value => club.id %>
+    <%= f.submit "Join", :id => "join-club", :class => "joined-club" %>
+    <% end %>
+<div id="dropin-container"></div>
+  <script>
+    var button = document.querySelector('#join-club');
+
+    braintree.dropin.create({
+      authorization: '<%= @client_token%>',
+      container: '#dropin-container'
+    }, function (createErr, instance) {
+      button.addEventListener('click', function () {
+        instance.requestPaymentMethod(function (requestPaymentMethodErr, payload) {
+          // Submit payload.nonce to your server
+        });
+      });
+    });
+  </script>

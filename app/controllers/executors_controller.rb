@@ -1,4 +1,6 @@
 class ExecutorsController < ApplicationController
+	before_action :logged_in_user
+	before_action :correct_user
 	def create
 		@executor = current_user.executors.build(executor_params)
 		if @executor.save
@@ -36,4 +38,16 @@ class ExecutorsController < ApplicationController
 	def executor_params
 		params.require(:executor).permit(:primary_firstname, :primary_lastname, :primary_phone_number, :primary_email, :primary_country_of_residence, :secondary_firstname, :secondary_lastname, :secondary_phone_number, :secondary_email, :secondary_country_of_residence)
 	end
+
+	def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
+
+	def correct_user
+      @user = Investor.find(params[:investor_id])
+      redirect_to(root_url) unless @user == current_user
+    end
 end

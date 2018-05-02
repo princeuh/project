@@ -24,11 +24,12 @@
 <div id="show-career-options">
 
 <%= link_to 'All Postings', careers_path, :class => "app-links" %>
-
+<% if employee_logged_in? %>
 <%= link_to 'Edit', edit_career_path(@career), :class => "app-links" %>
 <%= link_to 'Delete', career_path(@career),
               method: :delete,
               data: { confirm: 'Are you sure?' }, :class => "app-links" %>
+<% end %>
 
 </div>
 </div>

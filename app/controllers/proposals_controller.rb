@@ -1,5 +1,7 @@
 class ProposalsController < ApplicationController
 		#employees to view all proposals in order of submission
+	before_action :logged_in_user, only: [:edit, :update]
+	before_action :correct_user
 
 	def index
 		@proposals = Proposal.all
@@ -39,5 +41,17 @@ class ProposalsController < ApplicationController
 	def proposal_params
 		params.require(:proposal).permit(:title, :content, :country, :target_amt)
 	end
+
+	def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
+
+	def correct_user
+      @user = Investor.find(params[:investor_id])
+      redirect_to(root_url) unless @user == current_user
+    end
 
 end

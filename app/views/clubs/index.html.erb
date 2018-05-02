@@ -17,6 +17,12 @@
 	<p> Invested Amount :<%= club.amt_invested %></p>
 	<p> Member Count : <%= club.number_of_members %></p>
 	<p> Proposal : <%= club.proposal %></p>
+	<% if employee_logged_in? %>
+	<%= link_to "Edit", edit_club_path(club) %>
+	<%= link_to 'Destroy', club_path(club),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+    <% end %>
 </div>
 </div>
 </div>

@@ -4,14 +4,17 @@
 
 <div class="flip-container">
 	<% if find_investor? %>
-		<%= image_tag("clubmember.png", class: "active-member" , width: "40", height: "40") %>
+		<%= image_tag("clubmember.png", :id => "active-member" , width: "40", height: "40") %>
 	<% else %>
 		<%= form_for(:club_member, url: club_members_path) do |f| %>
-		<%= f.hidden_field :investor_id, :value => @investor.id %>
-		<%= f.hidden_field :club_id, :value => club.id %>
-		<%= f.submit "Join", :class => "joined-club" %>
+    	<%= f.hidden_field :investor_id, :value => @investor.id %>
+    	<%= f.hidden_field :club_id, :value => club.id %>
+    	<%= f.submit "Join", :id => "join-club", :class => "joined-club" %>
+
+    <% end %>
+
 	<% end %>
-	<% end %>
+
 	<div class="flipper">
 		<div class="front">	
 <%= image_tag("clubAvatar.png", class: "clubIcon" , width: "100", height: "100") %><br>
@@ -26,9 +29,31 @@
 	<p> Invested Amount :<%= club.amt_invested %></p>
 	<p> Member Count : <%= club.number_of_members %></p>
 	<p> Proposal : <%= club.proposal %></p>
+	<p> Token : <%= @client_token %> </p>
 </div>
 </div>
 </div>
 
 
 <% end %>
+
+<div id="make-pledge">
+  <div id="dropin-container"></div>
+  <script>
+    var button = document.querySelector('#join-club');
+
+    braintree.dropin.create({
+      authorization: '<%= @client_token%>',
+      container: '#dropin-container'
+    }, function (createErr, instance) {
+      button.addEventListener('click', function () {
+        instance.requestPaymentMethod(function (requestPaymentMethodErr, payload) {
+          // Submit payload.nonce to your server
+        });
+      });
+    });
+  </script>
+
+</div>
+
+

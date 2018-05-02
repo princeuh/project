@@ -11,7 +11,7 @@
 	<div class="back">
 	<%= career.department %>
 	<%= career.posting %><br>
-
+	<% if employee_logged_in? %>
 	<%= link_to "View Career", career_path(career), :class => "app-links" %><br>
 	<%= link_to "Edit", edit_career_path(career), :class => "app-links"%><br>
 	<%= link_to 'Destroy', career_path(career),
@@ -25,3 +25,5 @@
 
 <%= link_to "Add A Posting", new_career_path %>
 </div>
+
+<% end %>

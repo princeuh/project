@@ -1,4 +1,5 @@
 class ClubsController < ApplicationController
+	before_action :logged_in_employee
 	def index
 		@clubs = Club.all
 	end
@@ -44,4 +45,11 @@ class ClubsController < ApplicationController
 	def club_params
 		params.require(:club).permit(:name, :focus_country, :country_manager, :fund_target, :amt_invested, :number_of_members, :proposal)
 	end
+
+	 def logged_in_employee
+      unless employee_logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to employee_account_url
+      end
+    end
 end

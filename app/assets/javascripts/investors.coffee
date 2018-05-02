@@ -42,3 +42,6 @@ $(document).on "turbolinks:load", ->
 					$('#dash-email').show()
 				else if @id == 'acct-pass'
 					$('#dash-pass').show()
+
+			$('#active-member').click ->
+					$('#more-payment').show()
