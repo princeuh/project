@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'employee_sessions/new'
+
   root 'pages#home'
 
   get  '/about', to: 'pages#about'
@@ -34,6 +36,12 @@ Rails.application.routes.draw do
   get  '/employee_account', to: 'employees#new'
 
   post '/employee_account', to: 'employees#create'
+
+  get '/employee_login', to: 'employee_sessions#new'
+
+  post '/employee_login', to: 'employee_sessions#create'
+
+  delete '/employee_logout', to: 'employee_sessions#destroy'
 
 
   resources :investors do

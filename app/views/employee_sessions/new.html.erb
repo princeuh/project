@@ -1,0 +1,15 @@
+<% provide(:title, "Employee Log In") %>
+<div class="content">
+<div class="forms-investor">
+<h2> Employee Log In </h2>
+<%= form_for(:employee_session, url: employee_login_path) do |f| %>
+	<%= f.label :email %> <br>
+	<%= f.email_field :email %> </br>
+	<%= f.label :password %> <br>
+	<%= f.password_field :password %> </br>
+	<%= f.submit "Log In" %>
+<% end %>
+
+</div>
+</div>
+
