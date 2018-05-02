@@ -1,5 +1,6 @@
 <% provide(:title, @employee.firstname) %>
 <%= image_tag("employeeAvatar.png", class: "emp-avatar" , width: "100", height: "100") %>
+<p><%= link_to "Hello #{current_employee.firstname}", current_employee, :id => "employee-profile" , :class => "app-links" %></p>
 
 <div id="employee-dash">
 
@@ -29,15 +30,16 @@
 <% end %>
 </div>
 
+<%= link_to "LogOut", employee_logout_path, :id => "emp-logout", method: :delete, :class=> "app-links" %>
+
 <div id="employee-content">
 
 <div id="add-employee" class="empl-opts">
-	<p> SHow employees </p>
 	<%= render 'employees/add_employee' %>
 </div>
 
 <div id="show-investors" class="empl-opts">
-	<p> Show all investors</p>
+
 	<%= render 'investors/all_investors' %>
 </div>
 
@@ -46,8 +48,6 @@
 </div>
 
 <div id="show-clubs" class="empl-opts">
-	<p> Show all clubs in the system </p>
-	<%= link_to "All Clubs", clubs_path %>
 	<%= render 'clubs/employee_clubs' %>
 </div>
 

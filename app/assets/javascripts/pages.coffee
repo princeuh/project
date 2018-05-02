@@ -47,6 +47,15 @@ $(document).on "turbolinks:load", ->
 				$(this).css("color", "#C7E1F5")
 			else if @id == 'roi-p'
 				$(this).css("color", "#C7E1F5")
+			else if @id == 'venture-member-parag'
+				$(this).css("color", "#C7E1F5")
+			else if @id == 'venture-ben-parag'
+				$(this).css("color", "#C7E1F5")
+			else if @id == 'venture-imp-parag'
+				$(this).css("color", "#C7E1F5")
+			else if @id == 'venture-roi-parag'
+				$(this).css("color", "#C7E1F5")
+
 
 
 		$('.deem-paragraph').mouseleave ->
@@ -59,6 +68,14 @@ $(document).on "turbolinks:load", ->
 			else if @id == 'con-p'
 				$(this).css("color", "#c7e1f51c")
 			else if @id == 'roi-p'
+				$(this).css("color", "#c7e1f51c")
+			else if @id == 'venture-member-parag'
+				$(this).css("color", "#c7e1f51c")
+			else if @id == 'venture-ben-parag'
+				$(this).css("color", "#c7e1f51c")
+			else if @id == 'venture-imp-parag'
+				$(this).css("color", "#c7e1f51c")
+			else if @id == 'venture-roi-parag'
 				$(this).css("color", "#c7e1f51c")
 
 

@@ -21,6 +21,151 @@ ul {
 
 
 }
+.ventureIcon{
+	z-index: 5;
+	position: absolute;
+	left: 20%;
+	top: 30%;
+	width: 800px;
+	height: 350px;
+}
+
+#venture-join{
+	position: absolute;
+	top: 55%;
+	left: 20%;
+	 font-family: 'Catamaran', sans-serif;
+}
+
+#venture-member-parag{
+	position: absolute;
+	color: #c7e1f51c;
+	width: 150px;
+	text-align: center;
+	top: 58%;
+	left: 20%;
+	font-family: 'Catamaran', sans-serif;
+	cursor: pointer;
+	animation-name: venture-anim;
+    animation-duration: 12s;
+   	animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+#venture-ben-parag{
+	position: absolute;
+	color: #c7e1f51c;
+	width: 150px;
+	text-align: center;
+	top: 78%;
+	left: 37%;
+	font-family: 'Catamaran', sans-serif;
+	cursor: pointer;
+	animation-name: venture-anim;
+    animation-duration: 12s;
+   	animation-delay: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+#venture-imp-parag{
+	position: absolute;
+	color: #c7e1f51c;
+	width: 150px;
+	text-align: center;
+	top: 60%;
+	left: 55%;
+	font-family: 'Catamaran', sans-serif;
+	cursor: pointer;
+	animation-name: venture-anim;
+    animation-duration: 12s;
+   	animation-delay: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+#venture-roi-parag{
+	position: absolute;
+	color: #c7e1f51c;
+	width: 150px;
+	text-align: center;
+	top: 35%;
+	left: 53%;
+	font-family: 'Catamaran', sans-serif;
+	cursor: pointer;
+	animation-name: venture-anim;
+    animation-duration: 12s;
+   	animation-delay: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+#venture-fund{
+	position: absolute;
+	top: 75%;
+	left: 40%;
+	 font-family: 'Catamaran', sans-serif;
+}
+
+#venture-improve{
+	position: absolute;
+	top: 55%;
+	left: 55%;
+	 font-family: 'Catamaran', sans-serif;
+}
+
+#venture-provide{
+	position: absolute;
+	top: 30%;
+	left: 55%;
+	 font-family: 'Catamaran', sans-serif;
+}
+
+
+#venture-member{
+	position: absolute;
+	top: 45%;
+	 font-family: 'Catamaran', sans-serif;
+}
+
+#venture-club{
+	position: absolute;
+	 font-family: 'Catamaran', sans-serif;
+	 top: 85%;
+	 left: 30%;
+}
+
+#venture-ben{
+	position: absolute;
+	 font-family: 'Catamaran', sans-serif;
+	 top: 85%;
+	 left: 50%;
+}
+
+#venture-econ{
+	position: absolute;
+	 font-family: 'Catamaran', sans-serif;
+	 top: 45%;
+	 left: 65%;
+}
+
+#venture-roi{
+	position: absolute;
+	 font-family: 'Catamaran', sans-serif;
+	 top: 25%;
+	 left: 40%;
+}
+
+
+@keyframes venture-anim{
+from{
+		 color:  #C7E1F5;
+}
+to{
+		color: #c7e1f51c;
+}
+}
 
 li {
     #display: inline;
@@ -218,6 +363,15 @@ to{
 
 @media screen and (max-width: 480px) {
 
+.content{
+	background-color: #361d4e;
+	width: 100%;
+	height: 650px;
+	position: fixed;
+	top: 15%;
+	left: 0;
+}
+
 #main{
 	position: absolute;
 	left: 35%;
@@ -265,4 +419,12 @@ p{
 	left: 2%;
 	top: 17%;
 }
+
+.ventureIcon{
+	position: absolute;
+	left: 10%;
+	top: 44%;
+	width: 400px;
+	height: 150px;
+}	
 }

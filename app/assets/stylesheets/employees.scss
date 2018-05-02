@@ -5,18 +5,15 @@
 
 @media screen and (max-width: 2560px) {
 	.emp-opts{
-		padding: 26px 25px;
+		padding: 25px 50px;
 		cursor: pointer;
 		color: #7f60a9;
 		font-family: 'Catamaran', sans-serif;
+	
 	}
 
 	.empl-opts{
 	display: none;
-	}
-
-	.emp-opts{
-		border: 2px solid pink;
 	}
 
 	#employee-dash{
@@ -25,6 +22,12 @@
 		overflow: auto;
 		position: fixed;
 		margin-top: 128px;
+	}
+
+	#employee-profile{
+		position: absolute;
+		top: 15%;
+		left: 3%;
 	}
 
 	.emp-avatar{
@@ -36,11 +39,19 @@
 
 	}
 
+	#emp-logout{
+		position: fixed;
+		bottom: 15px;
+		left: 55%;
+		cursor: pointer;
+		z-index: 5;
+	}
+
 	#employee-content{
 		background-color: #361d4e;
-		width: 89%;
-		height: 750px;
-		position: absolute;
+		width: 90%;
+		height: 720px;
+		position: fixed;
 		top: 15%;
 		right: 0;
 	}
@@ -60,18 +71,11 @@
 		overflow:auto;
 	}
 
-	@keyframes home-page-anim{
-	from{
-		 color:  #C7E1F5;
-	}
-	to{
-		color: #c7e1f51c;
-	}
-}
 }
 
+
 @media screen and (max-width: 480px) {
-		#lastname-emp{
+	#lastname-emp{
 		position: absolute;
 		top: 71px;
 		left: 28%;
