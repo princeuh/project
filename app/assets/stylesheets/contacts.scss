@@ -20,18 +20,19 @@
 }
 
 @media screen and (max-width: 480px) {
+
 #contact-info{
 	width: 100%;
 	position: fixed;
-	left: 0;
-	height: 450px;
+	left: 50px;
+	height: 550px;
 	overflow: auto;
-	}
+}
 
 #contact-second{
 	position: fixed;
-	left: 210px;
-	top: 338px;
+	left: 100px;
+	top: 580px;
 }
 
 

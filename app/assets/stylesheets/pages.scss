@@ -361,6 +361,7 @@ to{
 }
 
 
+
 }
 
 @media screen and (max-width: 480px) {
@@ -373,6 +374,11 @@ to{
 	right: 0;
 	top: 15%;
 	left: 0;
+}
+
+#contact-content{
+	height: 500px;
+	width: 100%;
 }
 
 #main{
