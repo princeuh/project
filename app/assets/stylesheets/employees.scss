@@ -59,6 +59,15 @@
 		height: 550px;
 		overflow:auto;
 	}
+
+	@keyframes home-page-anim{
+	from{
+		 color:  #C7E1F5;
+	}
+	to{
+		color: #c7e1f51c;
+	}
+}
 }
 
 @media screen and (max-width: 480px) {

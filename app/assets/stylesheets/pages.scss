@@ -99,10 +99,26 @@ h1{
 	top: 20%;
 }
 
+#main p{
+	animation-name: home-page-anim;
+    animation-duration: 12s;
+   	animation-delay: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
 #fund{
 	position: absolute;
 	left: 10%;
 	top: 60%;
+}
+
+#fund p{
+	animation-name: home-page-anim;
+    animation-duration: 12s;
+   	animation-delay: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
 }
 
 #growth{
@@ -111,16 +127,40 @@ h1{
 	top: 10%;
 }
 
+#growth p{
+	animation-name: home-page-anim;
+    animation-duration: 12s;
+   	animation-delay: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
 #connect{
 	position: absolute;
 	left: 80%;
 	top: 60%;
 }
 
+#connect p{
+	animation-name: home-page-anim;
+    animation-duration: 12s;
+   	animation-delay: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
 #roi{
 	position: absolute;
 	left: 80%;
 	top: 10%;
+}
+
+#roi p{
+	animation-name: home-page-anim;
+    animation-duration: 12s;
+   	animation-delay: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
 }
 
 .sicon{
@@ -134,6 +174,15 @@ p{
 	color: #C7E1F5;
 }
 
+
+@keyframes home-page-anim{
+from{
+		 color:  #C7E1F5;
+}
+to{
+		color: #c7e1f51c;
+}
+}
 #about{
 	width: 550px;
 	text-align:center;
