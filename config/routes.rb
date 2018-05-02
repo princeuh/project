@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   get '/careers', to: 'pages#careers'
 
-  get '/contact', to: 'pages#contact'
+  get '/contact_us', to: 'pages#contact'
 
   get  '/open_account', to: 'investors#new'
 
