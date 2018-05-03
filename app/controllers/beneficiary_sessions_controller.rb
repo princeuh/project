@@ -3,11 +3,11 @@ class BeneficiarySessionsController < ApplicationController
   end
 
   def create
-  	  beneficiary = Beneficiary.find_by(email: params[:session][:email].downcase)
-    if beneficiary && beneficiary.authenticate(params[:session][:password])
+  	  beneficiary = Beneficiary.find_by(email: params[:beneficiary_session][:email].downcase)
+    if beneficiary && beneficiary.authenticate(params[:beneficiary_session][:password])
       # Log the user in and redirect to the user's show page.
           log_in beneficiary
-          params[:session][:remember_me] == '1' ? remember(beneficiary) : forget(beneficiary)
+          params[:beneficiary_session][:remember_me] == '1' ? remember(beneficiary) : forget(beneficiary)
           redirect_to beneficiary
     else
       # Create an error message.

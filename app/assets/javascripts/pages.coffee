@@ -78,6 +78,12 @@ $(document).on "turbolinks:load", ->
 			else if @id == 'venture-roi-parag'
 				$(this).css("color", "#c7e1f51c")
 
+		$('#show-login-opts').mouseover ->
+			$('#login-opts').slideDown()
+
+		$('#login-opts').mouseleave ->
+			$('#login-opts').hide()
+
 
 
 

@@ -3,7 +3,7 @@
 	<nav>
 		<ul>
       <%= image_tag("nema-bollon-logo.png", :alt => "icon", :id => "nemaIcon") %>
-      <% if logged_in? %>
+      <% if logged_in? || beneficiary_logged_in?  %>
 
 
       <% else %>
@@ -13,7 +13,7 @@
         <li><%= link_to "Venture Clubs", ventures_path,  :id  => "venture-link"  %></li>
         <li><%= link_to "About", about_path,  :id  => "about-link"  %></li>
   		<li><%= link_to "Team", team_path,  :id  => "team-link" %></li>
-      <li style="float:right;"> <%= link_to image_tag("login.png", alt: "login", width: 60, height:60 ), login_path %></li>
+      <li style="float:right;"> <%=  image_tag("login.png", alt: "login", width: 60, height:60, :id => "show-login-opts" ) %></li>
       <li style="float:right"><%= link_to "Get Funded", get_funded_path %></li>
 
       <% end %> 
@@ -22,5 +22,9 @@
   		</ul>
   	</nav>
   </header>
+        <div id="login-opts">
+          <div class="log-opts"><%= link_to "Investors", login_path , :class => "app-links" , :id => "login-investor" %></div>
+          <div class="log-opts"><%= link_to "Beneficiaries", beneficiary_login_path, :class => "app-links", :id => "login-beneficiary" %></div>
+      </div>  
   
 

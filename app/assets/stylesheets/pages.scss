@@ -368,6 +368,30 @@ to{
 	color: #E04398;
 }
 
+#login-opts{
+	width: 150px;
+	height: 90px;
+	position: fixed;
+	right: 12px;
+	top: 75px;
+	z-index: 5;
+	display: none;
+}
+
+.log-opts{
+	background-color: #fbf7ff94;
+	border-bottom: 1px solid #361d4e38;
+	padding: 12px;
+	border-radius: 5px;
+}
+
+#login-investor:hover{
+	color: 	#C7E1F5;
+}
+
+#login-beneficiary:hover{
+	color: 	#C7E1F5;
+}
 
 
 }
@@ -444,4 +468,14 @@ p{
 	width: 400px;
 	height: 150px;
 }	
+
+#login-opts{
+	width: 150px;
+	height: 90px;
+	position: fixed;
+	right: 12px;
+	top: 145px;
+	z-index: 5;
+	display: none;
+}
 }

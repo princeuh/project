@@ -1,5 +1,5 @@
 module BeneficiarySessionsHelper
-	def log_in(beneficiary)
+	def beneficiary_log_in(beneficiary)
 		session[:beneficiary_id] = beneficiary.id
 	end
 
@@ -24,7 +24,7 @@ module BeneficiarySessionsHelper
 
 
 	#returns true if the user is logged in, false otherwise
-	def logged_in?
+	def beneficiary_logged_in?
 		!current_user.nil?
 	end
 
@@ -37,7 +37,7 @@ module BeneficiarySessionsHelper
   end
 
 	#logs out the current user
-	def log_out
+	def beneficiary_log_out
 		forget(current_user)
 		session.delete(:beneficiary_id)
 		@current_user = nil
