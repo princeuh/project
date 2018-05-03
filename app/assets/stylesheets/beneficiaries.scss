@@ -1,3 +1,35 @@
 // Place all the styles related to the Beneficiaries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media screen and (max-width: 2560px) {
+.ben-form{
+	display: inline-block;
+}
+
+#ben-holder{
+	padding-left: 30px;
+	padding-right: 30px;
+	height: 620px;
+	overflow: auto;
+	width: 550px;
+	margin: auto;
+	background-color: #572c7a29;
+	border: 10px solid #572c7a29;
+}
+
+
+
+}
+
+@media screen and (max-width: 480px) {
+	#ben-holder{
+	padding-left: 30px;
+	padding-right: 30px;
+	height: 620px;
+	overflow: auto;
+	width: 400px;
+	background-color: #572c7a29;
+	border: 10px solid #572c7a29;
+}
+}

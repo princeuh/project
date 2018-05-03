@@ -1,0 +1,19 @@
+<% provide(:title, "Beneficiary Log In") %>
+<div class="content">
+<div class="forms-investor">
+<h1> Log In </h1>
+<%= form_for(:beneficiary_session, url: beneficiary_login_path) do |f| %>
+	<%= f.label :email %> <br>
+	<%= f.email_field :email %> </br>
+	<%= f.label :password %> <br>
+	<%= f.password_field :password %> </br>
+	<%= f.label :remember_me, class: "checkbox inline" do %>
+  		<%= f.check_box :remember_me %>
+  		<span>Remember me on this computer</span><br>
+	<% end %>
+
+	<%= f.submit "Log In" %>
+<% end %>
+
+</div>
+</div>

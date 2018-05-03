@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180501180003) do
+ActiveRecord::Schema.define(version: 20180503143223) do
+
+  create_table "beneficiaries", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.string "email"
+    t.string "address"
+    t.string "city"
+    t.string "country"
+    t.string "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.string "remember_digest"
+    t.index ["email"], name: "index_beneficiaries_on_email", unique: true
+  end
 
   create_table "careers", force: :cascade do |t|
     t.string "job_title"

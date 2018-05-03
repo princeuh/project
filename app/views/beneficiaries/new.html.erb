@@ -1,4 +1,47 @@
 <% provide(:title, "Beneficiaries")%>
 <div class="content">
-<h4 style="text-align:center;"> Please create an account to receive funding for your enterprise </h4>
+<div id="ben-holder">
+<h4> PLEASE CREATE AN ACCOUNT TO RECEIVE FUNDING </h4>
+<%= form_for(@beneficiary, url:  get_funded_path) do |f| %>
+
+	<div class="ben-form">
+		<%= f.label :firstname %><br>
+		<%= f.text_field :firstname %><br>
+	</div>
+	<div class="ben-form">
+		<%= f.label :lastname %><br>
+		<%= f.text_field :lastname %><br>
+	</div>
+	<br>
+
+	<%= f.label :address %><br>
+	<%= f.text_field :address %><br>
+
+	<%= f.label :city %><br>
+	<%= f.text_field :city %><br>
+
+	<%= f.label :country %><br>
+	<%= f.select :country, [ 'Algeria', 'Angola', 'Benin', 'Botswana', 'Burkina Faso', 'Burundi', 'Cabo Verde', 'Cameroon', 'Central African Republic (CAR)', 'Chad', 'Comoros', 'Democratic Republic of the Congo
+', 'Republic of the Congo', "Cote d'Ivoire", 'Djibouti', 'Egypt', 'Equatorial Guinea', 'Eritrea', 'Ethiopia', 'Gabon', 'Gambia', 'Ghana', 'Guinea', 'Guinea-Bissau', 'Kenya', 'Lesotho', 'Liberia', 'Libya', 'Madagascar', 'Malawi', 'Mali', 'Mauritania', 'Mauritius', 'Morocco', 'Mozambique', 'Namibia', 'Niger', 'Nigeria', 'Rwanda', 'Sao Tome and Principe', 'Senegal', 'Seychelles', 'Sierra Leone', 'Somalia', 'South Africa', 'South Sudan', 'Sudan', 'Swaziland', 'Tanzania', 'Togo', 'Tunisia', 'Uganda', 'Zambia', 'Zimbabwe' ] %><br>
+
+	<%= f.label :phone_number %><br>
+	<%= f.text_field :phone_number %><br>
+
+	<%= f.label :email %><br>
+	<%= f.email_field :email %><br>
+
+	<%= f.label :password %><br>
+	<%= f.password_field :password %><br>
+
+	<%= f.label :password_confirmation %><br>
+	<%= f.password_field :password_confirmation %><br>
+
+
+	<%= f.submit "Create Account"%>
+
+
+<% end %>
+</div>
+
+
 </div>

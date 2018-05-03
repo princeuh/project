@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   root 'pages#home'
 
   get  '/about', to: 'pages#about'
@@ -45,6 +44,12 @@ Rails.application.routes.draw do
   get '/get_funded', to: 'beneficiaries#new'
 
   post '/get_funded', to: 'beneficiaries#create'
+
+  get '/beneficiary_login', to: 'beneficiary_sessions#new'
+
+  get '/beneficiary_login', to: 'beneficiary_sessions#create'
+
+  delete '/beneficiary_logout', to: 'beneficiary_sessions#destroy'
 
   resources :investors do
     resources :executors, only: [:create, :edit, :update, :destroy]
