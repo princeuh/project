@@ -1,5 +1,8 @@
 class BeneficiariesController < ApplicationController
+	 before_action :logged_in_beneficiary, only: [ :edit, :update, :destroy]
+	 before_action :logged_in_employee, only: [:index]
 	def index
+		@beneficaries = Beneficiary.all
 	end
 
 	def new
@@ -37,4 +40,18 @@ class BeneficiariesController < ApplicationController
 		params.require(:beneficiary).permit(:firstname, :lastname, :email, :password,
                                    :password_confirmation, :country, :address, :city, :phone_number)
 	end
+
+	 def logged_in_beneficiary
+      unless beneficiary_logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to beneficiary_login_url
+      end
+    end
+
+    def logged_in_employee
+      unless employee_logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to employee_account_url
+      end
+    end
 end

@@ -6,8 +6,8 @@ class BeneficiarySessionsController < ApplicationController
   	  beneficiary = Beneficiary.find_by(email: params[:beneficiary_session][:email].downcase)
     if beneficiary && beneficiary.authenticate(params[:beneficiary_session][:password])
       # Log the user in and redirect to the user's show page.
-          log_in beneficiary
-          params[:beneficiary_session][:remember_me] == '1' ? remember(beneficiary) : forget(beneficiary)
+          beneficiary_log_in beneficiary
+          params[:beneficiary_session][:remember_me] == '1' ? remember(beneficiary) : forget_b(beneficiary)
           redirect_to beneficiary
     else
       # Create an error message.
@@ -21,3 +21,4 @@ class BeneficiarySessionsController < ApplicationController
     redirect_to root_url
   end
 end
+

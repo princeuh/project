@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_action :logout_users
+   before_action :logout_beneficiaries
 
   def home
   end
@@ -32,6 +33,12 @@ class PagesController < ApplicationController
   def logout_users
     if logged_in?
       log_out
+    end
+  end
+
+    def logout_beneficiaries
+    if beneficiary_logged_in?
+      beneficiary_log_out
     end
   end
 end

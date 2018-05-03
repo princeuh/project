@@ -13,9 +13,9 @@ class Beneficiary < ApplicationRecord
                     uniqueness: { case_sensitive: false }
 
     has_secure_password
-     validates :password, presence: true, length: { minimum: 6 }
+    validates :password, presence: true, length: { minimum: 6 }
 
-      def Beneficiary.digest(string)
+  def Beneficiary.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
@@ -32,7 +32,7 @@ class Beneficiary < ApplicationRecord
   end
 
   # Forgets a user.
-  def forget
+  def forget_beneficiary
     update_attribute(:remember_digest, nil)
   end
 end

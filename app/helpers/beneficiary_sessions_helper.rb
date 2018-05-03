@@ -10,11 +10,11 @@ module BeneficiarySessionsHelper
     cookies.permanent[:remember_token] = beneficiary.remember_token
   end
 
-	def current_user
+	def beneficiary_current_user
 		if (user_id = session[:beneficiary_id])
-      		@current_user ||= beneficiary.find_by(id: user_id)
+      		@current_user ||= Beneficiary.find_by(id: user_id)
     	elsif (user_id = cookies.signed[:beneficiary_id])
-      		user = beneficiary.find_by(id: user_id)
+      		user = Beneficiary.find_by(id: user_id)
       		if user && user.authenticated?(cookies[:remember_token])
         		log_in user
         		@current_user = user
@@ -25,20 +25,20 @@ module BeneficiarySessionsHelper
 
 	#returns true if the user is logged in, false otherwise
 	def beneficiary_logged_in?
-		!current_user.nil?
+		!beneficiary_current_user.nil?
 	end
 
 
 	# Forgets a persistent session.
-  def forget(user)
-    user.forget
+  def forget_b(user)
+    user.forget_beneficiary
     cookies.delete(:beneficiary_id)
     cookies.delete(:remember_token)
   end
 
 	#logs out the current user
 	def beneficiary_log_out
-		forget(current_user)
+		forget_b(beneficiary_current_user)
 		session.delete(:beneficiary_id)
 		@current_user = nil
 	end

@@ -47,7 +47,7 @@ Rails.application.routes.draw do
 
   get '/beneficiary_login', to: 'beneficiary_sessions#new'
 
-  get '/beneficiary_login', to: 'beneficiary_sessions#create'
+  post '/beneficiary_login', to: 'beneficiary_sessions#create'
 
   delete '/beneficiary_logout', to: 'beneficiary_sessions#destroy'
 
