@@ -1,0 +1,32 @@
+
+<div class="outer-form">
+
+<h4 class="contact-header" > CREATE HIGHLIGHT FOR HOME PAGE </h4>
+
+<%= form_with scope: :page, url: pages_path, local: true do |form| %>
+	<%= form.label :Caption %><br>
+	<%= form.text_field :caption %><br>
+
+	<%= form.label :Summary %><br>
+	<%= form.text_area :summary, cols: "50", rows: "10"%><br>
+
+	
+	<%= form.file_field :picture, :class => "fileInput", :id => "file_bttn", accept: 'image/jpeg,image/gif,image/png'%>
+	<%= form.label :UploadImage %><br>
+
+	<%= form.submit "Create Highlight" %>
+
+<% end %>
+
+</div>
+
+
+
+<script type="text/javascript">
+  $('#file_bttn').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>

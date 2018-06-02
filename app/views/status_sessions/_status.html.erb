@@ -1,0 +1,11 @@
+<div class="forms" style="height: 300px;">
+<h4  class="contact-header"> CAREER APPLICATION STATUS </h4>
+<%= form_for(:status_session, url: status_login_path) do |f| %>
+	<%= f.label :email %> <br>
+	<%= f.email_field :email %> </br>
+	<%= f.label :password %> <br>
+	<%= f.password_field :password %> </br>
+	<%= f.submit "Status" %>
+<% end %>
+<button class="close">X</button>
+</div>

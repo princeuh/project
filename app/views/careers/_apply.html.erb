@@ -1,0 +1,9 @@
+<div class="forms" style="height: 250px;">
+<h4  class="contact-header"> CAREER APPLICATION STATUS </h4>
+<%= form_for(:career, url: apply_career_path) do |f| %>
+	<%= f.label :email %> <br>
+	<%= f.email_field :email %> </br>
+	<%= f.submit "Status" %>
+<% end %>
+<button class="close">X</button>
+</div>

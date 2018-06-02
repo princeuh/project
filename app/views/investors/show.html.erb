@@ -1,37 +1,53 @@
 <% provide(:title, @investor.firstname) %>
-<div id="dash-content">
-	<div id="dash-header">
-	</div>
+<div class="content">
 
-<div id="investor-news" class="allOptions default-news" >
 	<div id="news-header">
-		<p> Clickable News scrolls across </p>
+		<h4 style="color:#4caf50;"> HIGHLIGHTS </h4>
 	</div>
 
-	<div id="news-sub">
-		<p> Items of Interest </p>
-	</div>
-	<div id="news-main">
-		<p> Contains the News Items pulled from the Admins news cycle </p>
+
+	<div class="notification-slider">
+		<input type="range" min="0" max="1" value="0" class="slider" id="myNofication">
 	</div>
 
-	<div id="news-reminders">
-		<p> Contains reminders and notifications </p>
+
+	<% if !current_user.paid %>
+		<% @charge = 1 %>
+		<% @charge_type = "monthly-fee" %>
+		<%= render 'payments/process_payment' %>
+	<% else %>
+
+	<div id="dash-header">
+			<p id="show-news" class="investor-bttn-options">News</p>
+			<p id="show-myClubs" class="investor-bttn-options">my Clubs</p>
+			<p id="show-allClubs" class="investor-bttn-options">Join Clubs</p>
+			<p id="show-proposal" class="investor-bttn-options">Proposal</p>
+			<p id="show-account" class="investor-bttn-options">Account</p>
 	</div>
-	
-</div>
-
-<div  id="investor-myClubs" class="allOptions" >
-		<%= render 'club_members/my_clubs' %>
-</div>
 
 
-<div id="investor-allClubs" class="allOptions">
-		<%= render 'clubs/all_clubs' %>
+<div id="investor-dash">
+	<div id="investor-news" class="allOptions default-news" >
 		
-</div>
+		<div id="news-main">
+			<p> Contains the News Items pulled from the Admins news cycle </p>
+		</div>
 
-<div id="investor-proposal" class="allOptions">
+		<div id="news-reminders">
+			<p> Contains reminders and notifications </p>
+		</div>
+	</div>
+
+	<div  id="investor-myClubs" class="allOptions" >
+
+	</div>
+
+
+	<div id="investor-allClubs" class="allOptions">
+		<%= render 'clubs/all_clubs' %>	
+	</div>
+
+	<div id="investor-proposal" class="allOptions">
 		<div id="add-proposal">
 		<%= image_tag("proposal.png", id: "honor" , width: "40", height: "40") %>
 		<p id="sub-prop">Submit Proposal</p>
@@ -68,52 +84,46 @@
 	</div>
 	</div>
 
-
         </div>
 
-
-
 		<% end %>
-
 
 		<div id="proposal"> 
-		<button id="close-prop">X</button>
-		<h4> Submit Proposal </h4>
-		<div id="prop-container">
-		<%= form_with(model: [@investor, @investor.proposals.build], local: true) do |form| %>
-
-		<div>
-			<%= form.label :title %><br>
-			<%= form.text_field :title %> 
-		</div>
+			<div class="forms" id="investor-prop">
+			<h4 class="contact-header" style="margin-top: 0;"> PROPOSAL </h4>
+			<%= form_with(model: [@investor, @investor.proposals.build], local: true) do |form| %>
 
 
+				<%= form.label :title %><br>
+				<%= form.text_field :title %><br> 
+		
 
-		<div>
+
+
 			<%= form.label :Country %><br>
-			<%= form.text_field :country%> 
-		</div>
+			<%= form.text_field :country%><br>
+	
 
-		<div>
-			<%= form.label :Target_Amount %><br>
-			<%= form.number_field :target_amt %> 
-		</div>
+	
+			<%= form.label :Target_Amount_USD %>
+			<%= form.number_field :target_amt, min: 0 %> <br>
 
-				<div>
+	
 			<%= form.label :Proposal %><br>
-			<%= form.text_area :content%> 
-		</div>
-
-		<div id="prop-submit">
+			<%= form.text_area :content, cols: "50", rows: "10"%><br>
+	
 			<%= form.submit "Submit Proposal" %>
-		</div>
-
 		<% end %>
+		<button id="close-prop">X</button>
+	</div>
 	</div>
 	</div>
 </div>
 
-<div id="investor-account" class="allOptions">
+
+
+ <div id="investor-acct" class="allOptions">
+
 
 	<div id="dash-acct-opts">
 		<button class="dash-bttn" id="acct-profile"> Profile </button>
@@ -123,70 +133,62 @@
 	</div>
 
 	<div id="dash-profile" class="dash-account acct-default">
-		<h4 style="text-align:center;"> Your Profile </h4>
 		<p class="dash-profile"> Name: <%= @investor.firstname %><span> </span><%= @investor.lastname %></p>
 		<p class="dash-profile">Email: <%= @investor.email %></p>
 		<p class="dash-profile">Investment Total:<%= @investor.investment_total %> </p>
-		<%= @investor.proposals.count %><br> <%= image_tag("proposalAvatar.png", class: "honor" , width: "80", height: "100") %> <br>
-		<%= @joined.count %> <br><%= image_tag("clubAvatar.png", class: "clubIcon" , width: "100", height: "100") %><br>
-
+		<p> <%= @investor.proposals.count %> Proposals </p> <br> <%= image_tag("proposalAvatar.png", class: "honor" , width: "80", height: "100") %><br>
+		
 	</div>
+	
+
+
 	<div id="dash-contacts" class="dash-account"> 
 		<% if @investor.executors.count < 2 %>
-			<p style="color:red;"> Please submit 2 Emergency Contacts </p>
-			<%= form_with(model: [@investor, @investor.executors.build], local: true) do |form| %>
-		<div class="contact-box">
-			<%= form.label :Primary_Firstname %><br>
-			<%= form.text_field :primary_firstname %>
-		</div>
-		<div class="contact-box">
-			<%= form.label :Primary_Lastname %><br>
-			<%= form.text_field :primary_lastname%>
-		</div>
+			<p style="color:red; text-align: center;"> Please submit 2 Emergency Contacts </p>
+			<div class="forms" style="width: 90%; overflow: auto;">
+				<%= form_with(model: [@investor, @investor.executors.build], local: true) do |form| %>
 
-		<div class="contact-box">
-			<%= form.label :Primary_phone_number %><br>
-			<%= form.text_field :primary_phone_number %> 
-		</div>
-		<div class="contact-box">
-			<%= form.label :Primary_email %><br>
-			<%= form.text_field :primary_email %> 
-		</div>
-		<div class="contact-box">
-			<%= form.label :Primary_country_of_residence %><br>
-			<%= form.text_field :primary_country_of_residence %> 
-		</div>
+				<%= form.label :Primary_Firstname %><br>
+				<%= form.text_field :primary_firstname %>
+	
+	
+				<%= form.label :Primary_Lastname %><br>
+				<%= form.text_field :primary_lastname%>
+	
 
-		<div class="contact-box">
+				<%= form.label :Primary_phone_number %><br>
+				<%= form.text_field :primary_phone_number %> 
 
-			<%= form.label :Secondary_Firstname %><br>
-			<%= form.text_field :secondary_firstname %> 
-		</div>
+				<%= form.label :Primary_email %><br>
+				<%= form.text_field :primary_email %> 
 
-		<div class="contact-box">
-			<%= form.label :Secondary_Lastname %><br>
-			<%= form.text_field :secondary_lastname%> 
-		</div>
+				<%= form.label :Primary_country_of_residence %><br>
+				<%= form.text_field :primary_country_of_residence %> 
 
-		<div class="contact-box">
-			<%= form.label :Secondary_phone_number %><br>
-			<%= form.text_field :secondary_phone_number %> 
-		</div>
 
-		<div class="contact-box">
-			<%= form.label :Secondary_email %><br>
-			<%= form.text_field :secondary_email %> 
-		</div>
+				<%= form.label :Secondary_Firstname %><br>
+				<%= form.text_field :secondary_firstname %> 
 
-		<div class="contact-box">
-			<%= form.label :Secondary_country_of_residence %><br>
-			<%= form.text_field :secondary_country_of_residence %> 
-		</div>
+				<%= form.label :Secondary_Lastname %><br>
+				<%= form.text_field :secondary_lastname%> 
 
-			<%= form.submit "Submit" %>
+				<%= form.label :Secondary_phone_number %><br>
+				<%= form.text_field :secondary_phone_number %> 
+
+				<%= form.label :Secondary_email %><br>
+				<%= form.text_field :secondary_email %> 
+
+				<%= form.label :Secondary_country_of_residence %><br>
+				<%= form.text_field :secondary_country_of_residence %> 
+
+
+				<%= form.submit "Submit Contacts", id: "emerg-sub" %>
+		
 
 			<% end %>
 		<% end %>
+		</div>
+
 		<% if @investor.executors.count == 2 %>
 		<% @investor.executors.each do |e| %>
 		<%= e.primary_firstname %>
@@ -207,23 +209,19 @@
 		<% end %>
 
 		</div>
-	<div id="dash-email" class="dash-account"> <p> email </p> </div>
-	<div id="dash-pass" class="dash-account"> <p> password </p> </div>
+
+	<div id="dash-email" class="dash-account"> <p> shows email updates </p> </div>
+	<div id="dash-pass" class="dash-account"> <p> shows password updates </p> </div>
 
 
 
 </div>
+
 </div>
-<h1>
-	<%= gravatar_for @investor %>
-</h1>
 
-<p id="show-news" class="investor-bttn-options">News</p>
-<p id="show-myClubs" class="investor-bttn-options">my Clubs</p>
-<p id="show-allClubs" class="investor-bttn-options">Join Clubs</p>
-<p id="show-proposal" class="investor-bttn-options">Proposal</p>
-<p id="show-account" class="investor-bttn-options">Account</p>
 
-<div id="dash-footer">
-	</div>
-	<%= link_to "LogOut", logout_path, method: :delete, :id => "logout-bttn" %>
+</div>
+
+<% end %>
+
+<%= link_to "LogOut", logout_path, method: :delete, :id => "logout-bttn", :class => "app-links" %>

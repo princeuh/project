@@ -4,6 +4,7 @@ class Beneficiary < ApplicationRecord
 	 validates :firstname, presence: true, length: { maximum: 50 }
 	 validates :lastname, presence: true, length: { maximum: 50 }
 	 validates :address, presence: true
+   validates :enterprise_name, presence: true
 	 validates :city, presence: true
 	 validates :country, presence: true
 	 validates :phone_number, presence: true

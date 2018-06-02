@@ -2,34 +2,48 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 @media screen and (max-width: 2560px) {
-.ben-form{
-	display: inline-block;
+	
+	.allOptions{
+		display: none;
+	}
+
+	#ben-content,  #investor-dash{
+		overflow: auto;
+		position: fixed;
+		top: 100px;
+		width: 80%;
+		left: 15%;
+		height: 80%;
+		background-color: rgba(255, 255, 255, 0.35);
+		-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+     	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+     	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.90) inset;
+	}
+
+	#ben-opts{
+		position: fixed;
+		top: 150px;
+		left: 0;
+	}
+
+
 }
 
-.ben-holder{
-	padding-left: 30px;
-	padding-right: 30px;
-	height: 620px;
-	overflow: auto;
-	width: 550px;
-	margin: auto;
-	background-color: #572c7a29;
-	border: 10px solid #572c7a29;
-}
+@media screen and (max-width: 1242px) {
+	
+	#ben-content,  #investor-dash{
+		overflow: auto;
+		position: fixed;
+		top: 100px;
+		width: 80%;
+		left: 18%;
 
-
-
-}
-
-@media screen and (max-width: 480px) {
-	#ben-holder{
-	padding-left: 30px;
-	padding-right: 30px;
-	height: 620px;
-	overflow: auto;
-	width: 400px;
-	background-color: #572c7a29;
-	border: 10px solid #572c7a29;
-}
+		height: 80%;
+		background-color: rgba(255, 255, 255, 0.35);
+		-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+     	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+     	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.90) inset;
+	}
 }

@@ -1,22 +1,20 @@
-<%= image_tag("contact.png", class: "clubIcon" , width: "100", height: "100") %><br>
+<div class="forms">
+<div class="outer-form">
+</div>
+<h4 class="contact-header"> CONTACT </h4>
 <%= form_with scope: :contact, local: true do |form| %>
-	<%= form.label :firstname %><br>
-	<%= form.text_field :firstname %><br>
-
-	<%= form.label :lastname %><br>
+	
+	<%= form.label :Firstname %><br>
+	<%= form.text_field :firstname%><br>
+	<%= form.label :Lastname %><br>
 	<%= form.text_field :lastname %><br>
 
-	<%= form.label :email %><br>
+	<%= form.label :Email %><br>
 	<%= form.text_field :email %><br>
-	<div class="contact-second">
-	<%= form.label :subject %><br>
-	<%= form.text_field :subject %><br>
-
-	<%= form.label :inquiry %><br>
-	<%= form.text_area :inquiry %><br>
+	<%= form.label :Subject %><br>
+	<%= form.text_field :subject  %><br>
+	<%= form.label :Inquiry %><br>
+	<%= form.text_area :inquiry, cols: "50", rows: "10" %><br>
 	<%= form.submit "Contact", :id => "contact-submit" %>
-	</div>
-	
-
-
 <% end %>
+</div>

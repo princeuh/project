@@ -1,18 +1,21 @@
 <% provide(:title, "Beneficiaries")%>
 <div class="content">
-<div class="ben-holder">
-<h4> PLEASE CREATE AN ACCOUNT TO RECEIVE FUNDING </h4>
+<div class="outer-form">
+</div>
+<div class="forms" style="margin-top: 100px;">
+<h4  class="contact-header"> PLEASE CREATE AN ACCOUNT TO RECEIVE FUNDING </h4>
+<div id="ben-form">
 <%= form_for(@beneficiary, url:  get_funded_path) do |f| %>
 
-	<div class="ben-form">
-		<%= f.label :firstname %><br>
+		<%= f.label :Primary_Contact_Firstname %><br>
 		<%= f.text_field :firstname %><br>
-	</div>
-	<div class="ben-form">
-		<%= f.label :lastname %><br>
+
+		<%= f.label :Primary_Contact_Lastname  %><br>
 		<%= f.text_field :lastname %><br>
-	</div>
-	<br>
+
+
+	<%= f.label :Enterprise_Name %><br>
+	<%= f.text_field :enterprise_name %><br>
 
 	<%= f.label :address %><br>
 	<%= f.text_field :address %><br>
@@ -37,11 +40,11 @@
 	<%= f.password_field :password_confirmation %><br>
 
 
-	<%= f.submit "Create Account"%>
+	<%= f.submit "Create Account", id: "ben-submit"%>
 
 
 <% end %>
 </div>
-
+</div>
 
 </div>

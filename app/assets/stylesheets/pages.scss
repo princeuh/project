@@ -3,479 +3,452 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @media screen and (max-width: 2560px) {
+	body{
+		font-family: 'Catamaran', sans-serif;
+		font-size: 0.85em;
+	}
+	#nav-links{
+		position: fixed;
+		top: 0;
+		 background-color:  rgba(255, 255, 255, 0.80);
+  		-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 188, 212, 0.09) inset;
+		width: 100%;
+		left: 0;
+		z-index: 10;
+	}
+
+	.scrolling-wrapper{
+		overflow-x: scoll;
+		overflow-y: hidden;
+		white-space: nowrap;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.highlight{
+		display: inline-block;
+	}
+
+	ul {
+    	list-style-type: none;
+    	margin: 0;
+    	padding: 0;
+    	text-align: center;
+    	overflow: hidden;
+    	font-family: 'Catamaran', sans-serif;
+	}
+
+	li {
+   		#display: inline;
+    	float: left;
+	}
+
+	li a, .log-opts a{
+    	#display: inline-block;
+    	display: block;
+    	//color: #233766;
+    	color: #3f83b1;
+    	text-align: center;
+    	padding: 14px 70px;
+    	text-decoration: none;
+    	text-align: center;
+    	pointer: cursor;
+	}
+
+	a:hover{
+		letter-spacing: 2px;
+		padding-bottom: 10px;
+		font-family: 0.55em;
+	}
+
+	#nemaIcon{
+		position: fixed;
+		top: 25px;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.02;
+		display: none;
+	}
+
+	.content{
+		//background-color: rgba(0, 176, 255, 0.12);
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		overflow: auto;
+		left: 0;
+		bottom: 0;
+		background: linear-gradient(white, #b8e2ff);
+	}
+
+	#login-opts{
+		position: fixed;
+		top: 80px;
+		right: 2%;
+		z-index: 10;
+		background-color:  rgba(255, 255, 255, 1);
+  		-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 188, 212, 0.09) inset;
+        display: none;
+	}
+
+	.log-opts{
+		border-bottom: 1px solid #361d4e38;
+		padding: 12px;
+		border-radius: 5px;
+		font-family: 'Catamaran', sans-serif;
+	}
+
+
+	footer, #news-header{
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		width: 100%;
+		color: #111D33;
+		z-index: 50;
+		background-color: rgba(255, 255, 255, 0.35);
+				-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.90) inset;
+	}
+
+	#news-header{
+		top: 0;
+		height: 60px;
+	}
+
+	.outer-form{
+		position: fixed;
+		padding: 20px;
+		top: 80px;
+		height: 65%;
+		border-radius: 6px;
+		z-index: -5;
+		width: 31%;
+		left: 33.5%;
+		background-color: rgba(255, 255, 255, 0.35);
+		-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.90) inset;
+	}
+
+	footer a{
+		color: #3f83b1;
+		font-size: 0.65em;
+	}
+
+	.forms{
+		background-color: rgba(255, 255, 255, 0.65);
+		margin: auto;
+		width: 30%;
+		height: 65%;
+		border-radius: 10px;
+		-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.90) inset;
+        z-index: 50;
+	}
+
+	#ben-form, #employee-form{
+		height: 70%;
+		overflow: auto;
+	}
+
+	#add-employee-submit{
+		top: 595px;
+	}
+
+
+	label{
+		margin-left: 25px;
+		letter-spacing: 4px;
+		color: #3f83b1;
+	}
+
+	input[type=text], textarea, input[type=email],  input[type=number], input[type=password], select {
+    	width: 80%;
+    	padding: 12px 20px;
+    	margin-left: 25px;
+    	box-sizing: border-box;
+    	//border: 2px solid #03d3f4;
+    	border: 2px solid #b8e2ff;
+    	background-color: rgba(255, 255, 255, 1);
+    	border-radius: 5px;
+    	 z-index: 50;
+
+	}
+
+	teaxtarea{
+		cols: 50px;
+		rows: 50px;
+	}
+
+	select{
+		padding: 20px;
+	}
+
+	input[type=submit], .dash-bttn, #close-prop, #join_club{
+		background-color: rgba(255, 255, 255, 0.35);
+		color: #3f83b1;
+		border-radius: 27px;
+		padding: 15px 30px;
+		//border: 2px solid #03d3f4;
+		border: 2px solid #b8e2ff;
+		text-align: center;
+		text-decoration: none;
+		font-size: 14px;
+		margin-top: 10px;
+		cursor: pointer;
+		transition: all 200ms;
+		position: fixed;
+		left: 46%;
+	}
+
+	#join_club{
+		z-index: 50;
+		position: absolute;
+	}
+
+	.app-links{
+		color: #3f83b1;
+    	text-align: center;
+
+    	text-decoration: none;
+
+
+	}
+
+	#all-employee-path{
+		position: absolute;	
+		right: 5px;
+		bottom: 5px;
+	}
+
+	#ben-submit{
+		position: relative;
+		left: 30%;
+	}
+
+	.contact-header{
+		text-align:center;
+		margin-top: 0;
+		background-color: #b8e2ff;
+		padding: 15px;
+		color: white;
+	}
+
+	.about{
+		margin: auto;
+		width: 30%;
+		//color: #233766;
+
+	}
+	.about p{
+		color: #3f83b1;
+	}
+
+	.terms-content{
+		-webkit-column-count: 3; /* Chrome, Safari, Opera */
+    	-moz-column-count: 3; /* Firefox */
+    	column-count: 3;
+   	 	-webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    	-moz-column-gap: 40px; /* Firefox */
+    	column-gap: 40px;
+    	-webkit-column-rule-style: solid; /* Chrome, Safari, Opera */
+    	-moz-column-rule-style: solid; /* Firefox */
+    	column-rule-style: solid;
+    	color: #3f83b1;
+	}
+
+	#co-address{
+		color: #3f83b1;
+		position: fixed;
+		bottom: 40px;
+		font-size: 0.95em;
+
+	}
+
+	input[type=submit]:hover, input[type=submit]:focus {
+  		background-color: #b8e2ff;
+  		color: white;
+  		outline: 0;
+	}
+
+	.fileInput{
+		opacity: 0.01;
+		position: fixed;
+		top: 508px;
+		padding: 20px 2px;
+
+	}
+
+	.fileInput + label{
+		font-size: 1.25em;
+		font-weight: 100;
+		color: white;
+		background-color: #b8e2ff;
+		border-radius: 10px;
+		padding: 15px;
+		display: inline-block;
+	}
+
+	.fileInput:focus + label,
+	.fileInput + label:hover {
+    	background-color: #3f83b1;
+    	cursor: pointer;
+	}
+
+	.fileInput + label * {
+		pointer-events: none;
+	}
+
+	.alert-danger{
+		background-color: #ff000017;
+    	z-index: 50;
+    	color: red;
+    	position: fixed;
+    	top: 15px;
+    	padding: 14px;
+    	border-radius: 5px;
+    	width: 100%;
+    	left: 0;
+    	text-align: center;
+	}
+
+	.alert-success{
+		background-color:#00ff082e;
+    	z-index: 50;
+    	color: #4caf50;
+    	position: fixed;
+    	top: 15px;
+    	padding: 14px;
+    	border-radius: 5px;
+    	width: 100%;
+    	left: 0;
+    	text-align: center;
+	}
+
+	.ventureIcon{
+		z-index: 5;
+		position: absolute;
+		left: 20%;
+		top: 30%;
+		width: 800px;
+		height: 350px;
+	}
+
+	.venture-info{
+		display: inline-block;
+		margin: 1em;
+		margin-left: 250px;
+		width: 180px;
+		height: 250px;
+		border-radius: 10px;
+		overflow: auto;
+		-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.90) inset;
+        cursor: pointer;
+	}
+
+	.venture-paragraph{
+		text-align: center;
+		color: #3f83b1;
+		padding: 10px;
+		display: none;
+	}
+
+	#close-prop{
+		left: 35%;
+	}
+
+
+
+
+
+
+
+
+
+}
+
+@media screen and (max-width: 1242px) {
+	li a, .log-opts a{
+    	#display: inline-block;
+    	display: block;
+    	//color: #233766;
+    	color: #3f83b1;
+    	text-align: center;
+    	padding: 14px 5px;
+    	text-decoration: none;
+    	text-align: center;
+    	pointer: cursor;
+    	font-size: 0.75em;
+	}
+
+	label{
+		margin-left: 25px;
+		letter-spacing: 4px;
+		color: #3f83b1;
+	}
+
+
+	.forms{
+		background-color: rgba(255, 255, 255, 0.65);
+		width: 70%;
+		margin: auto;
+		overflow: auto;
+	}
+
+	input[type=submit]{
+		left: 40%;
+	}
+	.about{
+		margin: auto;
+		width: 50%;
+		color: #3f83b1;
+	}
+
+	.outer-form{
+		position: fixed;
+		padding: 20px;
+		top: 80px;
+		height: 65%;
+		border-radius: 6px;
+		z-index: -5;
+		width: 75%;
+		left: 8%;
+		overflow: auto;
+	}
+
+
+	.terms-content{
+		-webkit-column-count: 2; /* Chrome, Safari, Opera */
+    	-moz-column-count: 2; /* Firefox */
+    	column-count: 2;
+    	-webkit-column-gap: 40px; /* Chrome, Safari, Opera */
+    	-moz-column-gap: 40px; /* Firefox */
+    	column-gap: 40px;
+    	-webkit-column-rule-style: solid; /* Chrome, Safari, Opera */
+    	-moz-column-rule-style: solid; /* Firefox */
+    	column-rule-style: solid;
+    	color: #3f83b1;
+	}
+
+	.mobile-form{
+		width:73%; 
+		left:10%;
+	}
+
+	#close-prop{
+		left: 30%;
+		top: 600px;
+	}
 
 
-header{
-	position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    overflow: hidden;
-    font-family: 'Catamaran', sans-serif;
-
-
-}
-
-#nemaIcon{
-	width: 160px;
-	height: 60px;
-	float: left;
-
-}
-.ventureIcon{
-	z-index: 5;
-	position: absolute;
-	left: 20%;
-	top: 30%;
-	width: 800px;
-	height: 350px;
-}
-
-#venture-join{
-	position: absolute;
-	top: 55%;
-	left: 20%;
-	 font-family: 'Catamaran', sans-serif;
-}
-
-#venture-member-parag{
-	position: absolute;
-	color: #c7e1f51c;
-	width: 150px;
-	text-align: center;
-	top: 58%;
-	left: 20%;
-	font-family: 'Catamaran', sans-serif;
-	cursor: pointer;
-	animation-name: venture-anim;
-    animation-duration: 12s;
-   	animation-delay: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-}
-
-#venture-ben-parag{
-	position: absolute;
-	color: #c7e1f51c;
-	width: 150px;
-	text-align: center;
-	top: 78%;
-	left: 37%;
-	font-family: 'Catamaran', sans-serif;
-	cursor: pointer;
-	animation-name: venture-anim;
-    animation-duration: 12s;
-   	animation-delay: 4s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-}
-
-#venture-imp-parag{
-	position: absolute;
-	color: #c7e1f51c;
-	width: 150px;
-	text-align: center;
-	top: 60%;
-	left: 55%;
-	font-family: 'Catamaran', sans-serif;
-	cursor: pointer;
-	animation-name: venture-anim;
-    animation-duration: 12s;
-   	animation-delay: 6s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-}
-
-#venture-roi-parag{
-	position: absolute;
-	color: #c7e1f51c;
-	width: 150px;
-	text-align: center;
-	top: 35%;
-	left: 53%;
-	font-family: 'Catamaran', sans-serif;
-	cursor: pointer;
-	animation-name: venture-anim;
-    animation-duration: 12s;
-   	animation-delay: 8s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-}
-
-#venture-fund{
-	position: absolute;
-	top: 75%;
-	left: 40%;
-	 font-family: 'Catamaran', sans-serif;
-}
-
-#venture-improve{
-	position: absolute;
-	top: 55%;
-	left: 55%;
-	 font-family: 'Catamaran', sans-serif;
-}
-
-#venture-provide{
-	position: absolute;
-	top: 30%;
-	left: 55%;
-	 font-family: 'Catamaran', sans-serif;
-}
-
-
-#venture-member{
-	position: absolute;
-	top: 45%;
-	 font-family: 'Catamaran', sans-serif;
-}
-
-#venture-club{
-	position: absolute;
-	 font-family: 'Catamaran', sans-serif;
-	 top: 85%;
-	 left: 30%;
-}
-
-#venture-ben{
-	position: absolute;
-	 font-family: 'Catamaran', sans-serif;
-	 top: 85%;
-	 left: 50%;
-}
-
-#venture-econ{
-	position: absolute;
-	 font-family: 'Catamaran', sans-serif;
-	 top: 45%;
-	 left: 65%;
-}
-
-#venture-roi{
-	position: absolute;
-	 font-family: 'Catamaran', sans-serif;
-	 top: 25%;
-	 left: 40%;
-}
-
-
-@keyframes venture-anim{
-from{
-		 color:  #C7E1F5;
-}
-to{
-		color: #c7e1f51c;
-}
-}
-
-li {
-    #display: inline;
-    float: left;
-}
-
-li a {
-    #display: inline-block;
-    display: block;
-    color: #C7E1F5;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    text-align: center;
-    pointer: cursor;
-}
-
-footer{
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	width: 100%;
-}
-
-li a:hover {
-    color: #7F60A9;
-    background-color: 2px solid #482768;
-    pointer: cursor;
-}
-
-current_link{
-    color: #E04398;
-    border: 2px solid #E04398;
-}
-
-body{
-	background-color: #572C7A;
-}
-
-.content{
-	background-color: #361d4e;
-	width: 100%;
-	height: 650px;
-	position: absolute;
-	top: 15%;
-	left: 0;
-}
-
-h4{
-	color: #E04398;
-	position: relative;
-	left: 15%;
-	font-family: 'Zilla Slab', serif;
-}
-
-h1{
-	color: #E04398;
-	font-family: 'Catamaran', sans-serif;
-}
-.deem-paragraph{
-	color: #c7e1f51c;
-	width: 180px;
-	text-align: center;
-	font-family: 'Zilla Slab', serif;
-	font-size: 0.85em;
-}
-
-.main-content{
-	width: 220px;
-	cursor: pointer;
-}
-
-#main{
-	position: absolute;
-	left: 45%;
-	top: 20%;
-}
 
-#main p{
-	animation-name: home-page-anim;
-    animation-duration: 12s;
-   	animation-delay: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-}
-
-#fund{
-	position: absolute;
-	left: 10%;
-	top: 60%;
-}
-
-#fund p{
-	animation-name: home-page-anim;
-    animation-duration: 12s;
-   	animation-delay: 4s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-}
-
-#growth{
-	position: absolute;
-	left: 10%;
-	top: 10%;
-}
-
-#growth p{
-	animation-name: home-page-anim;
-    animation-duration: 12s;
-   	animation-delay: 6s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-}
-
-#connect{
-	position: absolute;
-	left: 80%;
-	top: 60%;
-}
-
-#connect p{
-	animation-name: home-page-anim;
-    animation-duration: 12s;
-   	animation-delay: 8s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-}
-
-#roi{
-	position: absolute;
-	left: 80%;
-	top: 10%;
-}
-
-#roi p{
-	animation-name: home-page-anim;
-    animation-duration: 12s;
-   	animation-delay: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-}
-
-.sicon{
-	position: absolute;
-	left: 20%;
-	top: -60%;
-}
-p{
-	font-family: 'Zilla Slab', serif;
-	font-size: 0.85em;
-	color: #C7E1F5;
-}
-
-
-@keyframes home-page-anim{
-from{
-		 color:  #C7E1F5;
-}
-to{
-		color: #c7e1f51c;
-}
-}
-#about{
-	width: 550px;
-	text-align:center;
-	position: relative;
-	left: 30%;
-	top: 17%;
-}
-
-.policy-cards{
-	height: 600px;
-	overflow: auto;
-	text-align: center;
-	width: 75%;
-	margin: auto;
-	
-}
-
-.policy-cards p{
-	color: #C7E1F5;
-}
-
-#login-logo{
-	position: absolute;right: 20%;
-}
-
-#co-address{
-	padding: 0px;
-	margin: 0;
-	position:fixed;
-	bottom: 50px;
-	color: #E04398;
-}
-
-#login-opts{
-	width: 150px;
-	height: 90px;
-	position: fixed;
-	right: 12px;
-	top: 75px;
-	z-index: 5;
-	display: none;
-}
-
-.log-opts{
-	background-color: #fbf7ff94;
-	border-bottom: 1px solid #361d4e38;
-	padding: 12px;
-	border-radius: 5px;
-}
-
-#login-investor:hover{
-	color: 	#C7E1F5;
-}
-
-#login-beneficiary:hover{
-	color: 	#C7E1F5;
-}
-
-
-}
-
-@media screen and (max-width: 480px) {
-
-.content{
-	background-color: #361d4e;
-	width: 480px;
-	height: 850px;
-	position: fixed;
-	right: 0;
-	top: 15%;
-	left: 0;
-}
-
-#contact-content{
-	height: 500px;
-	width: 100%;
-}
-
-#main{
-	position: absolute;
-	left: 35%;
-	top: 20%;
-}
-
-#fund{
-	position: absolute;
-	left: 5%;
-	top: 75%;
-}
-
-#growth{
-	position: absolute;
-	left: 5%;
-	top: 2%;
-}
-
-#connect{
-	position: absolute;
-	left: 60%;
-	top: 75%;
-}
-
-#roi{
-	position: absolute;
-	left: 55%;
-	top: 2%;
-}
-
-.sicon{
-	position: absolute;
-	left: 20%;
-	top: -60%;
-}
-p{
-	font-family: 'Zilla Slab', serif;
-	font-size: 0.85em;
-	color: #C7E1F5;
-}
-#about{
-	width: 450px;
-	text-align:center;
-	position: relative;
-	left: 2%;
-	top: 17%;
-}
-
-.ventureIcon{
-	position: absolute;
-	left: 10%;
-	top: 44%;
-	width: 400px;
-	height: 150px;
-}	
-
-#login-opts{
-	width: 150px;
-	height: 90px;
-	position: fixed;
-	right: 12px;
-	top: 145px;
-	z-index: 5;
-	display: none;
-}
 }

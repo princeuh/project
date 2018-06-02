@@ -1,67 +1,86 @@
 Rails.application.routes.draw do
+  get 'resumes/status'
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#home'
 
-  get  '/about', to: 'pages#about'
+  get '/about', to: 'pages#about'
 
-  get '/enterprise', to: 'pages#enterprises'
+  get '/contact', to: 'pages#contact'
 
-  get '/ventures', to: 'pages#ventures'
+  get '/terms', to: 'pages#terms'
 
-  get  '/team', to: 'pages#team'
+   get '/privacy', to: 'pages#privacy'
 
-  get  '/terms', to: 'pages#terms'
+   get '/enterprises', to: 'pages#enterprises'
 
-  get  '/privacy', to: 'pages#privacy'
+   get '/ventures', to: 'pages#ventures'
 
-  get '/careers', to: 'pages#careers'
+   get '/team', to: 'pages#team'
 
-  get '/contact_us', to: 'pages#contact'
+   get '/careers', to: 'pages#careers'
 
-  get  '/open_account', to: 'investors#new'
+   get '/apply_funding', to: 'beneficiaries#new'
 
-  post  '/open_account', to: 'investors#create'
+   post '/get_funded', to: 'beneficiaries#create'
 
-  get '/login', to: 'sessions#new'
+   get '/login', to: 'sessions#new'
 
-  post '/login', to: 'sessions#create'
+   post '/login', to: 'sessions#create'
 
-  delete '/logout', to: 'sessions#destroy'
+   delete '/logout', to: 'sessions#destroy'
 
-  get '/all_careers', to: 'careers#index'
+   get '/beneficiary_login', to: 'beneficiary_sessions#new'
 
-  post '/contact', to: 'contacts#create'
+   post '/beneficiary_login', to: 'beneficiary_sessions#create'
 
-  get  '/employee_account', to: 'employees#new'
+   delete '/beneficiary_logout', to: 'beneficiary_sessions#destroy'
 
-  post '/employee_account', to: 'employees#create'
+   get '/employee_login', to: 'employee_sessions#new'
 
-  get '/employee_login', to: 'employee_sessions#new'
+   post '/employee_login', to: 'employee_sessions#create'
 
-  post '/employee_login', to: 'employee_sessions#create'
+   delete '/employee_logout', to: 'employee_sessions#destroy'
 
-  delete '/employee_logout', to: 'employee_sessions#destroy'
+   get '/open_account', to: 'investors#new'
 
-  get '/get_funded', to: 'beneficiaries#new'
+   post '/open_account', to: 'investors#create'
 
-  post '/get_funded', to: 'beneficiaries#create'
+   get '/check_out', to: 'payments#check'
 
-  get '/beneficiary_login', to: 'beneficiary_sessions#new'
+   post '/process_payment', to: 'payments#check_out'
 
-  post '/beneficiary_login', to: 'beneficiary_sessions#create'
+   get '/news', to: 'posts#index'
 
-  delete '/beneficiary_logout', to: 'beneficiary_sessions#destroy'
+   get '/career', to: 'careers#show'
 
-  resources :investors do
-    resources :executors, only: [:create, :edit, :update, :destroy]
-    resources :proposals
-  end
+   get '/apply_career', to: 'resumes#new'
 
-  resources :careers
-  resources :contacts
-  resources :employees
-  resources :beneficiaries
+   post '/apply_career', to: 'resumes#create'
 
-  resources :clubs
-  resources :club_members, only: [:create, :destroy]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+   post '/career_status', to:  'resumes#status'
+
+   get '/status_login', to: 'status_sessions#new'
+
+   post '/status_login', to: 'status_sessions#create'
+
+   delete '/status_logout', to: 'status_sessions#destroy'
+
+   resources :beneficiaries
+   
+   resources :investors do
+   	 resources :proposals
+   	 resources :executors
+   end
+
+   resources :employees
+   resources :clubs 
+   resources :club_members
+   resources :club_news
+   resources :posts
+
+   resources :careers do
+      resources :resumes, only: [:index, :new, :create, :show]
+   end
+
+   resources :pages
 end

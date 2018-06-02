@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails',        '5.1.4'
+gem 'rails',        '5.2.0'
 gem 'puma',         '3.9.1'
 gem 'sass-rails',   '5.0.6'
 gem 'uglifier',     '3.2.0'
@@ -14,15 +14,14 @@ gem 'jquery-rails', '4.3.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
 gem 'ruby_dep', '~> 1.3.1'
-gem 'jquery-rails', '4.3.1'
 gem 'bcrypt', '3.1.11'
 gem 'jquery-turbolinks', '~> 2.1'
-gem 'gmaps-rails'
-gem 'paperclip', '~> 4.3', '>= 4.3.6'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'bootsnap',  '>= 1.1.0'
+gem 'carrierwave',  '1.2.2'
+gem 'mini_magick',  '4.7.0'
 
 
-gem 'braintree'
-gem 'dotenv-rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
@@ -45,6 +44,7 @@ end
 
 group :production do
   gem 'pg', '0.18.4'
+  gem 'fog', '1.42'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

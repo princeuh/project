@@ -1,13 +1,13 @@
 <footer>
 <nav>
 <ul>
-	<% if logged_in?  || beneficiary_logged_in?%>
-
+	<% if logged_in?  || beneficiary_logged_in? || employee_logged_in? || status_logged_in?%>
+	
 	<% else %>
 	<li><%= link_to "Terms", terms_path, :id => "terms-link"%></li>
   	<li><%= link_to "Privacy", privacy_path, :id => "privacy-link" %></li>
-  	<li><%= link_to "Careers", careers_path , :id => "careers-link"%></li>
-  	<li><%= link_to "Contact", contact_us_path, :id => "contact-link"  %></li>
+  	<li><%= link_to "Careers", careers_path, :id => "careers-link"%></li>
+  	<li><%= link_to "Contact", contact_path , :id => "contact-link"  %></li>
   	<li style="float: right;"><%= link_to "Employees", employee_login_path, :id => "employee-link"  %></li>
   	<% end %>
 

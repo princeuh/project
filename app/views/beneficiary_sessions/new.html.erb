@@ -1,7 +1,9 @@
 <% provide(:title, "Beneficiary Log In") %>
 <div class="content">
-<div class="ben-holder">
-<h4> BENEFICIARY INVESTOR LOGIN </h4>
+<div class="outer-form" style="height: 360px;">
+</div>
+<div class="forms" style="height: 350px;">
+<h4  class="contact-header">  BENEFICIARY LOGIN </h4>
 <%= form_for(:beneficiary_session, url: beneficiary_login_path) do |f| %>
 	<%= f.label :email %> <br>
 	<%= f.email_field :email %> </br>

@@ -5,49 +5,52 @@
 $(document).on "turbolinks:load", ->
 		$('.emp-opts').click ->
 			$('.empl-opts').hide()
-			$('.emp-opts').css("background-color", "#572C7A")
-			$('.emp-opts').css("color", "#7f60a9")
+			$('.emp-opts').css("color", " #233766")
 			if @id == 'emp-add'
-				$(this).css("background-color", "#361d4e")
-				$(this).css("color", "#E04398")
+				$(this).css("letter-spacing", "2px")
+				$(this).css("color", "#4caf50")
 				$('#add-employee').show()
 			else if @id == 'emp-clubs'
-				$(this).css("background-color", "#361d4e")
-				$(this).css("color", "#E04398")
+				$(this).css("letter-spacing", "2px")
+				$(this).css("color", "#4caf50")
 				$('#show-clubs').show()
 			else if @id == 'emp-users'
-				$(this).css("background-color", "#361d4e")
-				$(this).css("color", "#E04398")
+				$(this).css("letter-spacing", "2px")
+				$(this).css("color", "#4caf50")
 				$('#show-investors').show()
 			else if @id == 'emp-allEmp'
-				$(this).css("background-color", "#361d4e")
-				$(this).css("color", "#E04398")
+				$(this).css("letter-spacing", "2px")
+				$(this).css("color", "#4caf50")
 				$('#show-employees').show()
 			else if @id == 'emp-priviledges'
-				$(this).css("background-color", "#361d4e")
-				$(this).css("color", "#E04398")
+				$(this).css("letter-spacing", "2px")
+				$(this).css("color", "#4caf50")
 				$('#show-priviledges').show()
 			else if @id == 'emp-managers'
-				$(this).css("background-color", "#361d4e")
-				$(this).css("color", "#E04398")
+				$(this).css("letter-spacing", "2px")
+				$(this).css("color", "#4caf50")
 				$('#show-managers').show()
 			else if @id == 'emp-owners'
-				$(this).css("background-color", "#361d4e")
-				$(this).css("color", "#E04398")
+				$(this).css("letter-spacing", "2px")
+				$(this).css("color", "#4caf50")
 				$('#show-owners').show()
 			else if @id == 'emp-proposals'
-				$(this).css("background-color", "#361d4e")
-				$(this).css("color", "#E04398")
+				$(this).css("letter-spacing", "2px")
+				$(this).css("color", "#4caf50")
 				$('#show-proposals').show()
 			else if @id == 'emp-contacts'
-				$(this).css("background-color", "#361d4e")
-				$(this).css("color", "#E04398")
+				$(this).css("letter-spacing", "2px")
+				$(this).css("color", "#4caf50")
 				$('#show-contacts').show()
 			else if @id == 'emp-updates'
-				$(this).css("background-color", "#361d4e")
-				$(this).css("color", "#E04398")
+				$(this).css("letter-spacing", "2px")
+				$(this).css("color", "#4caf50")
 				$('#show-updates').show()
 			else if @id == 'emp-news'
-				$(this).css("background-color", "#361d4e")
-				$(this).css("color", "#E04398")
+				$(this).css("letter-spacing", "2px")
+				$(this).css("color", "#4caf50")
 				$('#show-news').show()
+			else if @id == 'emp-site'
+				$(this).css("letter-spacing", "2px")
+				$(this).css("color", "#4caf50")
+				$('#show-highlights').show()

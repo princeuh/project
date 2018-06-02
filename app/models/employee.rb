@@ -1,4 +1,5 @@
 class Employee < ApplicationRecord
+	has_many :posts
 	before_save { email.downcase! }
 	validates :firstname, presence: true
 	validates :lastname, presence: true
@@ -9,6 +10,7 @@ class Employee < ApplicationRecord
 	validates :section, presence: true
 	validates :contact_number, presence: true
 	validates :employee_pid, presence: true
+	mount_uploader :avatar, PictureUploader
 
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   	validates :email, presence: true, length: { maximum: 255 },

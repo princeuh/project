@@ -3,14 +3,14 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on "turbolinks:load", ->
-		b = window.location.pathname
+		b = location.pathname
 		if b == '/'
 			$('li a').removeClass('current_link')
 			$('#home-link').addClass('current_link')
 		else if b == '/open_account'
 			$('li a').removeClass('current_link')
 			$('#account-link').addClass('current_link')
-		else if b == '/enterprise'
+		else if b == '/enterprises'
 			$('li a').removeClass('current_link')
 			$('#enterprise-link').addClass('current_link')
 		else if b == '/ventures'
@@ -34,55 +34,18 @@ $(document).on "turbolinks:load", ->
 		else if b == '/contact'
 			$('li a').removeClass('current_link')
 			$('#contact-link').addClass('current_link')
+		else if b == '/news'
+			$('li a').removeClass('current_link')
+			$('#news-link').addClass('current_link')
 
-		$('.deem-paragraph').mouseenter ->
-			$(this).css("color", "#c7e1f51c")
-			if @id == "main-p"
-				$(this).css("color", "#C7E1F5")
-			else if @id == 'fund-p'
-				$(this).css("color", "#C7E1F5")
-			else if @id == 'eco-p'
-				$(this).css("color", "#C7E1F5")
-			else if @id == 'con-p'
-				$(this).css("color", "#C7E1F5")
-			else if @id == 'roi-p'
-				$(this).css("color", "#C7E1F5")
-			else if @id == 'venture-member-parag'
-				$(this).css("color", "#C7E1F5")
-			else if @id == 'venture-ben-parag'
-				$(this).css("color", "#C7E1F5")
-			else if @id == 'venture-imp-parag'
-				$(this).css("color", "#C7E1F5")
-			else if @id == 'venture-roi-parag'
-				$(this).css("color", "#C7E1F5")
-
-
-
-		$('.deem-paragraph').mouseleave ->
-			if @id == "main-p"
-				$(this).css("color", "#c7e1f51c")
-			else if @id == 'fund-p'
-				$(this).css("color", "#c7e1f51c")
-			else if @id == 'eco-p'
-				$(this).css("color", "#c7e1f51c")
-			else if @id == 'con-p'
-				$(this).css("color", "#c7e1f51c")
-			else if @id == 'roi-p'
-				$(this).css("color", "#c7e1f51c")
-			else if @id == 'venture-member-parag'
-				$(this).css("color", "#c7e1f51c")
-			else if @id == 'venture-ben-parag'
-				$(this).css("color", "#c7e1f51c")
-			else if @id == 'venture-imp-parag'
-				$(this).css("color", "#c7e1f51c")
-			else if @id == 'venture-roi-parag'
-				$(this).css("color", "#c7e1f51c")
 
 		$('#show-login-opts').mouseover ->
 			$('#login-opts').slideDown()
 
 		$('#login-opts').mouseleave ->
 			$('#login-opts').hide()
+
+		$('.ben-holder').slideDown(1500)
 
 
 

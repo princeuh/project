@@ -4,4 +4,5 @@ class ApplicationController < ActionController::Base
   include ClubMembersHelper
   include EmployeeSessionsHelper
   include BeneficiarySessionsHelper
+  include StatusSessionsHelper
 end

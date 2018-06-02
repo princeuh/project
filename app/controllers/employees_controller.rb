@@ -1,5 +1,4 @@
 class EmployeesController < ApplicationController
-  before_action :logged_in_employee
 	def index
     	@employees = Employee.all
   	end
@@ -24,6 +23,7 @@ class EmployeesController < ApplicationController
     @allEmployees = Employee.all
     @investor= Investor.all
     @clubs = Club.all
+    @beneficiaries = Beneficiary.all
 
   end
 

@@ -23,9 +23,10 @@ class ProposalsController < ApplicationController
 		@proposal = @investor.proposals.create(proposal_params)
 		if @proposal.save
 			#redirect to the proposal show page
+			flash[:success] = "Your proposal has been successfully submitted. View the status of all Proposals by clicking the Proposal Tab."
 			redirect_to current_user
 		else
-			render 'new'
+			render current_user
 		end
 	end
 

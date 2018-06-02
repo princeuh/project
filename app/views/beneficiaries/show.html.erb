@@ -1,11 +1,34 @@
-<% provide(:title, "#{@beneficiary.firstname}'s Dashboard") %>
+<% provide(:title, "#{@beneficiary.enterprise_name}'s Dashboard") %>
+<div class="content">
 <div id="ben-opts">
-	<p id="bene-apply" class="bene-options"> News </p>
+	<p id="bene-news" class="bene-options"> News </p>
 	<p id="bene-apply" class="bene-options"> Apply </p>
-	<p class="bene-options"> Clubs </p>
-	<p class="bene-options"> Account </p>
+	<p id="bene-clubs" class="bene-options"> Clubs </p>
+	<p id="bene-account" class="bene-options"> Account </p>
 </div>
-<%= link_to "LogOut", beneficiary_logout_path, :id => "bene-logout", method: :delete, :class=> "app-links" %>
+<%= link_to "LogOut", beneficiary_logout_path , :id => "bene-logout", method: :delete, :class=> "app-links" %>
 
 <div id="ben-content">
+	<div class="allOptions" id="ben-apply-account">
+		<p> Apply for funding </p>
+		
+	</div>
+
+	<div class="allOptions" id="ben-clubs-account">
+		<%= render 'clubs/employee_clubs' %>
+		
+	</div>
+
+	<div class="allOptions" id="ben-account-account">
+		<%= render 'edit' %>
+		
+	</div>
+
+	<div class="allOptions" id="ben-news-account">
+		<p> View news </p>
+		
+	</div>
+
+
+</div>
 </div>

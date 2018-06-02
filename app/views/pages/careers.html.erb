@@ -1,5 +1,10 @@
 <% provide(:title, "Careers") %>
 <div class="content">
-	<h1 style="text-align:center;"> Careers </h1>
+	<h4  class="contact-header" style="margin-top: 100px;"> CAREERS </h4>
 	<%= render 'careers/available_careers' %>
+
+	<button class="dash-bttn" id="careers-apply"> Application Status </button>
+	<div class="check-application">
+		<%= render 'status_sessions/status' %>
+	</div>
 </div>

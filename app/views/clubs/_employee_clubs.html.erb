@@ -1,6 +1,4 @@
-<h4> All Clubs </h4>
 <%  @clubs.each do |club| %>
-
 <div class="flip-container">
 	<div class="flipper">
 		<div class="front">	
@@ -12,11 +10,12 @@
 
 </div>
 <div class="back">
-	<p> Target Amount USD :<%= club.fund_target %></p>
-	<p> Invested Amount :<%= club.amt_invested %></p>
-	<p> Member Count : <%= club.number_of_members %></p>
+	<p> Target Amount USD : <%= club.fund_target %></p>
+
 	<p> Proposal : <%= club.proposal %></p>
 	<% if employee_logged_in? %>
+	<p> Invested Amount :<%= club.amt_invested %></p>
+	<p> Member Count : <%= club.number_of_members %></p>
 
 	<%= link_to "Edit", edit_club_path(club) %>
 	<%= link_to 'Destroy', club_path(club),

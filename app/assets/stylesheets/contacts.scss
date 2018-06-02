@@ -3,37 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @media screen and (max-width: 2560px) {
-#contact-info{
-	width: 50%;
-	margin: auto;
-	height: 450px;
-	overflow: auto;
-}
-
-#contact-second{
-	position: absolute;
-	left: 40%;
-	top: 20%;
-}
 
 
 }
 
-@media screen and (max-width: 480px) {
-
-#contact-info{
-	width: 100%;
-	position: fixed;
-	left: 50px;
-	height: 550px;
-	overflow: auto;
-}
-
-#contact-second{
-	position: fixed;
-	left: 100px;
-	top: 580px;
-}
-
+@media screen and (max-width: 1242px) {
 
 }

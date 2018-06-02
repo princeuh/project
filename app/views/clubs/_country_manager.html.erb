@@ -1,0 +1,18 @@
+<%  @clubs.each do |club| %>
+<div class="flip-container">
+	<div class="flipper">
+		<div class="front">	
+<%= image_tag("clubAvatar.png", class: "clubIcon" , width: "100", height: "100") %><br>
+	<p> Country Manager :<%= club.country_manager %></p>-
+	<p> Club Name : <%= club.name %></p>
+	<p> Country   :<%= club.focus_country %></p>
+</div>
+<div class="back">
+	<p> Target Amount :<%= club.fund_target %></p>
+	<p> Invested Amount :<%= club.amt_invested %></p>
+	<p> Member Count : <%= club.number_of_members %></p>
+	<p> Proposal : <%= club.proposal %></p>
+</div>
+</div>
+</div>
+<% end %>

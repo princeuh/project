@@ -1,0 +1,20 @@
+
+<%  @beneficiaries.each do |ben| %>
+<div class="flip-container">
+	<div class="flipper">
+		<div class="front">	
+<%= image_tag("clubAvatar.png", class: "clubIcon" , width: "100", height: "100") %><br>
+	<p> Primary Contact :<%= ben.firstname %> <%= ben.lastname %></p>
+	<p>Enterprise Name : <%= ben.enterprise_name%></p>
+	<p>Email : <%= ben.email %></p>
+	
+</div>
+<div class="back">
+	<p> Address   :<%= ben.address %></p>
+	<p>City : <%= ben.city %></p>
+	<p> Country :<%= ben.country %></p>
+	<p> Phone Number :<%= ben.phone_number%></p>
+</div>
+</div>
+</div>
+<% end %>

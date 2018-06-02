@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180503143223) do
+ActiveRecord::Schema.define(version: 2018_06_02_094957) do
 
   create_table "beneficiaries", force: :cascade do |t|
     t.string "firstname"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20180503143223) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "remember_digest"
+    t.string "enterprise_name"
     t.index ["email"], name: "index_beneficiaries_on_email", unique: true
   end
 
@@ -81,6 +82,8 @@ ActiveRecord::Schema.define(version: 20180503143223) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.boolean "is_admin"
+    t.string "avatar"
+    t.string "employee_rank"
     t.index ["email"], name: "index_employees_on_email", unique: true
   end
 
@@ -110,7 +113,27 @@ ActiveRecord::Schema.define(version: 20180503143223) do
     t.string "password_digest"
     t.string "remember_digest"
     t.integer "investment_total"
+    t.boolean "paid"
+    t.integer "cust_id"
     t.index ["email"], name: "index_investors_on_email", unique: true
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string "caption"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "picture"
+    t.text "summary"
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.integer "employee_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "picture"
+    t.index ["employee_id"], name: "index_posts_on_employee_id"
   end
 
   create_table "proposals", force: :cascade do |t|
@@ -123,6 +146,20 @@ ActiveRecord::Schema.define(version: 20180503143223) do
     t.integer "target_amt"
     t.boolean "is_accepted"
     t.index ["investor_id"], name: "index_proposals_on_investor_id"
+  end
+
+  create_table "resumes", force: :cascade do |t|
+    t.string "firstname"
+    t.string "lastname"
+    t.text "bioSketch"
+    t.string "attachment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email"
+    t.string "password_digest"
+    t.integer "career_id"
+    t.string "status"
+    t.index ["career_id"], name: "index_resumes_on_career_id"
   end
 
 end

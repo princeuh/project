@@ -1,0 +1,21 @@
+<h4  class="contact-header" style="margin-top: 0;"> ALL RESUMES </h4>
+<%  @resumes.each do |resume| %>
+
+<div class="flip-container">
+	<div class="flipper">
+	<div class="front">	
+	<%= image_tag("avatar-01.png", class: "resumeIcon" , width: "100", height: "100") %><br>
+
+	<p> Name : <%= resume.firstname %> <%= resume.lastname %></p>
+	<p> Email  :<%= resume.email %></p>
+
+</div>
+<div class="back">
+	<p> BioSketch :<%= resume.bioSketch %></p>
+	<p> Download :<%= resume.attachment_url %></p>
+</div>
+</div>
+</div>
+
+
+<% end %>

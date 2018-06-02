@@ -1,0 +1,29 @@
+<%provide(:title, "Upload Resume")%>
+<div class="content">
+	<div class="forms">
+	<%= form_for(@resume) do |f| %>
+      <%= f.label :firstname %>
+      <%= f.text_field :firstname %>
+
+      <%= f.label :lastname %>
+      <%= f.text_field :lastname %>
+
+
+      <%= f.label :bioSketch %>
+      <%= f.text_area :bioSketch %>
+
+       <%= f.file_field :attachment %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Submit Resume" %>
+    <% end %>
+</div>
+</div>

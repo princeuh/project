@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def create
   	  investor = Investor.find_by(email: params[:session][:email].downcase)
-    if investor && investor.authenticate(params[:session][:password])
+      if investor && investor.authenticate(params[:session][:password])
       # Log the user in and redirect to the user's show page.
           log_in investor
           params[:session][:remember_me] == '1' ? remember(investor) : forget(investor)

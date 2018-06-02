@@ -1,21 +1,22 @@
 <header>
 
-	<nav>
+	<nav id="nav-links">
 		<ul>
-      <%= image_tag("nema-bollon-logo.png", :alt => "icon", :id => "nemaIcon") %>
-      <% if logged_in? || beneficiary_logged_in?  %>
+     
+      <% if logged_in? || beneficiary_logged_in?  || employee_logged_in? || status_logged_in?%>
 
 
       <% else %>
-		  <li><%= link_to "Home", root_url,  :id => "home-link"  %></li>
-        <li><%= link_to "Open Account", open_account_path , :id  => "account-link"%></li>
-        <li><%= link_to "Enterprise",  enterprise_path,  :id  => "enterprise-link"  %></li>
-        <li><%= link_to "Venture Clubs", ventures_path,  :id  => "venture-link"  %></li>
-        <li><%= link_to "About", about_path,  :id  => "about-link"  %></li>
-  		<li><%= link_to "Team", team_path,  :id  => "team-link" %></li>
-      <li style="float:right;"> <%=  image_tag("login.png", alt: "login", width: 60, height:60, :id => "show-login-opts" ) %></li>
-      <li style="float:right"><%= link_to "Get Funded", get_funded_path %></li>
-
+		    <li><%= link_to "Home", root_url, :class => "app-links", :id => "home-link"  %></li>
+        <li><%= link_to "Open Account", open_account_path, :class => "app-links", :id  => "account-link"%></li>
+        <li><%= link_to "Enterprise",  enterprises_path, :class => "app-links", :id  => "enterprise-link"  %></li>
+        <li><%= link_to "Venture Clubs", ventures_path , :class => "app-links", :id  => "venture-link"  %></li>
+         <li><%= link_to "News", news_path , :class => "app-links", :id  => "news-link"  %></li>
+        <li><%= link_to "About", about_path , :class => "app-links", :id  => "about-link"  %></li>
+  		  <li><%= link_to "Team", team_path , :class => "app-links", :id  => "team-link" %></li>
+        <li style="float:right;"> <%=  image_tag("login.png", alt: "login", width: 60, height:60, :class => "app-links", :id => "show-login-opts" ) %></li>
+        <li style="float:right"><%= link_to "Get Funded", apply_funding_path, :class => "app-links" %></li>
+        <%= image_tag("nema-bollon-logo.png", :alt => "icon", :id => "nemaIcon") %>
       <% end %> 
 
 
