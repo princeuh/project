@@ -1,6 +1,6 @@
 class PaymentsController < ApplicationController
   def check_out
-  	Stripe.api_key = "sk_test_ErANBi8jGcyUrgaJnNQkzWYR"
+  	Stripe.api_key = "pk_test_FPhseII9qABn0XiQKaXv2HLb"
   	# Token is created using Checkout or Elements!
 	# Get the payment token ID submitted by the form:
 	token = params[:stripeToken]
@@ -20,6 +20,7 @@ class PaymentsController < ApplicationController
 
 	if @option == 'monthly-fee' && charged == '1'	
 		current_user.update_attribute(:paid, true)
+
 	elsif  @option == 'investment' 
 		Stripe::Subscription.create({
 				:customer => current_user.cust_id,
