@@ -1,0 +1,31 @@
+
+<div class="forms">
+<h4  class="contact-header"> UPDATE EMPLOYEE ACCOUNT </h4>
+<%= form_for(@employee, url:   employee_path) do |f| %>
+	<%= f.label :firstname %><br>
+	<%= f.text_field :firstname %><br>
+
+	<%= f.label :lastname%><br>
+	<%= f.text_field :lastname %><br>
+
+	<%= f.label :role %><br>
+	<%= f.select :role, ['CEO', 'Business Manager', 'Software Engineer', 'Fundraising Coordinator'] %><br>
+
+	<%= f.label :email %><br>
+	<%= f.email_field :email %><br>
+
+
+	<%= f.label :password %><br>
+	<%= f.password_field :password  %><br>
+
+	<%= f.label :password_confirmation %><br>
+	<%= f.password_field :password_confirmation %><br>
+
+	<%= f.label :is_admin %><br>
+	<%= f.check_box :is_admin %><br> 
+
+	<%= f.submit "Update Account"%>
+
+
+<% end %>
+</div>

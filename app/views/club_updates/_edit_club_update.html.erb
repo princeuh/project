@@ -1,0 +1,17 @@
+<div class="content">
+<div id="career-new">
+<h4  class="contact-header">  EDIT CLUB UPDATE </h4>
+<%= form_with scope: :club_update, url:  club_update_path, local: true do |form| %>
+	<%= form.label :title%><br>
+	<%= form.text_field :title %><br>
+
+	<%= form.label :Content %><br>
+	<%= form.text_area :content %><br>
+
+	<%= form.submit "Update Club Update" %>
+
+	<%= f.file_field :picture %>
+
+<% end %>
+</div>
+</div>

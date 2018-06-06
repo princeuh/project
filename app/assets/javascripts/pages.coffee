@@ -37,6 +37,9 @@ $(document).on "turbolinks:load", ->
 		else if b == '/news'
 			$('li a').removeClass('current_link')
 			$('#news-link').addClass('current_link')
+		else if b == '/apply_funding'
+			$('li a').removeClass('current_link')
+			$('#apply-link').addClass('current_link')
 
 
 		$('#show-login-opts').mouseover ->
@@ -47,7 +50,13 @@ $(document).on "turbolinks:load", ->
 
 		$('.ben-holder').slideDown(1500)
 
+		$('.highlights').delay(800).fadeIn().fadeOut(800)
 
+		$('.deem-paragraph').mouseenter ->
+			$(this).css("color", "#8dc2e6")
+
+		$('.deem-paragraph').mouseleave ->
+			$(this).css("color", "#8dc2e640")
 
 
 

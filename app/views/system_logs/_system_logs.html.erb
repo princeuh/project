@@ -1,0 +1,12 @@
+<% @logs.each do |log| %>
+<div class="flip-container">
+	<div class="front">	
+		<p> System Event : <%= log.system_event %></p>
+		<p> Time  : <%= log.event_time %></p>
+
+		</div>
+		<div class="back">
+
+		</div>
+		</div>
+<% end %>

@@ -1,4 +1,5 @@
-class ContactsController < ApplicationController	
+class ContactsController < ApplicationController
+	before_action :logged_in_employee, :only [:index, :show, :destroy]	
 	def index
 		@contacts = Contact.all
 	end
@@ -10,7 +11,6 @@ class ContactsController < ApplicationController
 	def create
 		@contact = Contact.new(contact_params)
 		if @contact.save
-			
 			flash.now[:success] = "Your inquiry has been submitted. Someone will be intouch soon."
 		else 
 			flash.now[:error] = "Unable to send your Inquiry. Please try again."
@@ -32,4 +32,12 @@ class ContactsController < ApplicationController
 	 def contact_params
 	 	params.require(:contact).permit(:firstname, :lastname, :email, :subject, :inquiry)
 	 end
+
+	private
+	  def logged_in_employee
+        unless employee_logged_in?
+          flash[:danger] = "Please log in."
+          redirect_to employee_account_url
+        end
+      end
 end

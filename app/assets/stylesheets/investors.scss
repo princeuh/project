@@ -4,92 +4,6 @@
 
 
 @media screen and (max-width: 2560px) {
-	#dash-header{
-		margin-top: 145px;
-	}
-
-	#acct-profile{
-		left: 30%;
-	}
-
-	#acct-contacts{
-		left: 45%;
-	}
-
-	#acct-email{
-		left: 60%;
-	}
-
-	#acct-pass{
-		left: 75%;
-	}
-	
-	.notification-slider{
-		position: fixed;
-		bottom: 0;
-		left: 0;
-	}
-
-	#investor-prop{
-		height: 550px;
-		width: 65%;
-		position: absolute;
-		top: 25px;
-		left: 20%;
-	}
-
-
-	#emerg-sub{
-		position:relative;
-	}
-
-	.dash-account{
-		display: none;
-	}
-
-	#dash-profile, #dash-contacts, #dash-email, #dash-pass{
-		position: absolute;
-		left: 45%;
-		top: 100px;
-	}
-
-	#investment-amt{
-		background-color:  rgba(255, 255, 255, 0.80);
-		overflow: auto;
-		white-space: nowrap;
-		width: 25%;
-		border-radius: 10px;
-  		-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 188, 212, 0.09) inset;
-	}
-
-	.invest-amt{
-		display: inline-block;
-		padding: 14px;
-		text-align: center;
-		cursor: pointer;
-	}
-
-	#show-amt{
-		display: none;
-	}
-
-	#charge-card{
-		position: fixed;
-		top: 25%;
-		width: 97%;
-		left: 6%;
-		display: none;
-	}
-	#selected-amt{
-		position: fixed;
-		top: 344px;
-		left: 65%;
-		font-size: 7.5em;
-		color: #4caf50;
-	}
-
 
 
 
@@ -98,46 +12,6 @@
 
 @media screen and (max-width: 1242px) {
 
-	#investor-prop{
-		height: 550px;
-		width: 70%;
-		position: absolute;
-		top: 25px;
-		left: 15%;
-	}
-
-	#acct-profile{
-		left: 35%;
-	}
-
-	#acct-contacts{
-		left: 55%;
-	}
-
-	#acct-email{
-		top: 700px;
-		left: 20%;
-	}
-
-	#acct-pass{
-		left: 45%;
-		top: 700px;
-	}
-
-	.dash-account{
-		height: 650px;
-		width: 80%;
-		position: fixed;
-		top: 100px;
-		left: 15%;
-		overflow: auto;
-		display: none;
-
-	}
-
-	#emerg-sub{
-		position:relative;
-	}
 
 
 

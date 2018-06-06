@@ -1,0 +1,28 @@
+
+<div class="forms">
+<h4  class="contact-header"> UPDATE INVESTOR ACCOUNT </h4>
+<%= form_for(@investor, url:   investor_path) do |f| %>
+	<%= f.label :firstname %><br>
+	<%= f.text_field :firstname %><br>
+
+	<%= f.label :lastname %><br>
+	<%= f.text_field :lastname %><br>
+
+	<%= f.label :email%><br>
+	<%= f.email_field :email %><br>
+
+	<%= f.label :password %><br>
+	<%= f.password_field :password %><br>
+
+	<%= f.label :password_confirmation %><br>
+	<%= f.password_field :password_confirmation %><br>
+
+	<%= f.hidden_field :is_investor, :value => true %>
+	<%= f.hidden_field :investment_total %>
+	<br><br>
+
+	<%= f.submit "Update Account"%>
+
+
+<% end %>
+</div>

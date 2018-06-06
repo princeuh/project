@@ -1,0 +1,13 @@
+<%  @club_updates.each do |club_update| %>
+<div class="flip-container">
+	<div class="front">	
+		<%= image_tag("avatar-01.png", class: "clubIcon" , width: "110", height: "100") %><br>
+	<h4> <%= club_update.title %></h4>
+	</div>
+	<div class="back">
+	<p>  <%= club_update.content %></p>
+	<%= image_tag club_update.picture.url if club_update.picture? %>
+	</div>
+</div>
+
+<% end %>

@@ -5,6 +5,7 @@ class ExecutorsController < ApplicationController
 		@executor = current_user.executors.build(executor_params)
 		if @executor.save
 			flash[:success] = "Executors Saved"
+			SystemLog.new( system_event: "Investor #{current_user.lastname}, #{current_user.firstname}, #{current_user.email} added Executors or Estate Admins to account.", event_time: Time.now).save
 			redirect_to investor_path(@investor)
 		else 
 			flash[:error] = "Unable to save"
@@ -19,8 +20,8 @@ class ExecutorsController < ApplicationController
 	def update
 		@investor = Investor.find(params[:investor_id])
 		@executor = @investor.executor.find(params[:id])
-
 		if @executor.update(executor_params)
+			SystemLog.new( system_event: "Investor #{current_user.lastname}, #{current_user.firstname}, #{current_user.email} updated Executors or Estate Admins on their account.", event_time: Time.now).save
 			redirect_to current_user
 		else
 			render 'edit'
@@ -30,6 +31,7 @@ class ExecutorsController < ApplicationController
 	def destroy
 		@investor = Investor.find(params[:investor_id])
 		@executor = @investor.executors.find(params[:id])
+		SystemLog.new( system_event: "Investor #{current_user.lastname}, #{current_user.firstname}, #{current_user.email} removed Executors or Estate Admins on their account.", event_time: Time.now).save
 		@executor.destroy
 		redirect_to investor_path(@investor)
 	end

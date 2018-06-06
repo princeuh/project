@@ -12,9 +12,12 @@
 
 
 	<% if !current_user.paid %>
+	<h4 class="contact-header"> Your account will be charged a monthly $1 fee to stay active. Please subscribe to continue. </h4> 
 		<% @charge = 1 %>
+		<% @c_id = 'none' %>
 		<% @charge_type = "monthly-fee" %>
 		<%= render 'payments/process_payment' %>
+
 	<% else %>
 
 	<div id="dash-header">
@@ -30,16 +33,12 @@
 	<div id="investor-news" class="allOptions default-news" >
 		
 		<div id="news-main">
-			<p> Contains the News Items pulled from the Admins news cycle </p>
-		</div>
-
-		<div id="news-reminders">
-			<p> Contains reminders and notifications </p>
+			<%= render 'club_updates/club_update' %>
 		</div>
 	</div>
 
 	<div  id="investor-myClubs" class="allOptions" >
-
+		<%= render 'club_members/my_clubs' %>	
 	</div>
 
 

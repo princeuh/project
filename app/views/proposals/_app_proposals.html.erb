@@ -1,0 +1,13 @@
+<% @proposals.each do |prop| %>
+<div class="flip-container">
+	<div class="front">	
+			<%= image_tag("proposalAvatar.png", class: "honor" , width: "80", height: "100") %>
+			<p> Title : <%= prop.title %></p>
+		</div>
+		<div class="back">
+				<p> Country : <%= prop.country %></p>
+				<p> Target Amount : <%= prop.target_amt %></p>
+				<p> Content :<%= prop.content%></p>
+		</div>
+		</div>
+<% end %>

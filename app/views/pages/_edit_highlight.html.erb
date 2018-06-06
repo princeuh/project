@@ -1,0 +1,19 @@
+<div class="forms">
+<h4  class="contact-header"> UPDATE INVESTOR ACCOUNT </h4>
+<%= form_for(@investor, url:   investor_path) do |f| %>
+<%= form_with scope: :page, url: pages_path, local: true do |form| %>
+	<%= form.label :Caption %><br>
+	<%= form.text_field :caption %><br>
+
+	<%= form.label :Summary %><br>
+	<%= form.text_area :summary, cols: "50", rows: "10"%><br>
+
+	
+	<%= form.file_field :picture, :class => "fileInput", :id => "file_bttn", accept: 'image/jpeg,image/gif,image/png'%>
+	<%= form.label :UploadImage %><br>
+
+	<%= form.submit "Update Highlight" %>
+
+
+<% end %>
+</div>

@@ -1,4 +1,3 @@
-
 <%  @joined.each do |c| %>
 	<% club = Club.find_by(id: c.club_id) %>
 <div class="flip-container">
@@ -11,7 +10,7 @@
 		</div>
 		<div class="back">
 			<p> Target Amount :<%= club.fund_target %></p>
-			<p> Invested Amount :<%= club.amt_invested %></p>
+			<p> My Invested Amount :<%= c.amount_invested %></p>
 			<p> Member Count : <%= club.number_of_members %></p>
 			<p> Proposal : <%= club.proposal %></p>
 		</div>

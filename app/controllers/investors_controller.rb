@@ -8,7 +8,8 @@ class InvestorsController < ApplicationController
   	@investor = Investor.find(params[:id])
     @clubs = Club.all
     @membership = ClubMember.new
-    #@joined = ClubMember.where(investor_id: current_user.id)
+    @joined = ClubMember.where(investor_id: current_user.id)
+    @club_updates = ClubUpdate.all
   end
 
 
@@ -19,6 +20,9 @@ class InvestorsController < ApplicationController
   	if @investor.save
   		#handle successful save
       log_in @investor
+      @investor.send_activation_email
+      flash[:info] = "Please check your email to activate your account."
+      SystemLog.new( system_event: "Investor #{@investor.lastname}, #{@investor.firstname},  #{@investor.email} account has been created.", event_time: Time.now).save
       flash[:success] = "Welcome to your Nemabollon Account"
       redirect_to @investor
   	else 

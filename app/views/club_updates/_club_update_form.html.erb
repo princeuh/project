@@ -1,0 +1,27 @@
+<div class="content">
+<div id="career-new">
+<h4  class="contact-header">  CREATE A CLUB UPDATE </h4>
+<%= form_with scope: :club_update, url:  club_updates_path, local: true do |form| %>
+	<%= form.label :title%><br>
+	<%= form.text_field :title %><br>
+
+	<%= form.label :Content %><br>
+	<%= form.text_area :content %><br>
+
+	<%= form.submit "Create Club Update" %>
+
+	<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+
+<% end %>
+</div>
+</div>
+
+
+<script type="text/javascript">
+  $('#micropost_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>

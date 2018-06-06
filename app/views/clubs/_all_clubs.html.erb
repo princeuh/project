@@ -4,6 +4,7 @@
 <div class="flip-container">
 	<% if find_investor? %>
 		<%= image_tag("clubmember.png", :id => "active-member" , width: "40", height: "40") %>
+		<button id="increase-amount"> Adjust Investment Amount </button>
 	<% else %>
 		<button id="join_club"> Join </button>
 
@@ -31,8 +32,8 @@
 
 <div id="charge-card">
 	<p id="selected-amt" style="opacity: 1;"> </p>
-	<% @charge = 25 %>
 	<% @charge_type = "investment" %>
+	<% @c_id = club.id %>
 	<%= render 'payments/process_payment' %>
 </div>
 

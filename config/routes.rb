@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'resumes/status'
+  get 'password_resets/new'
+  get 'password_resets/edit'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#home'
 
@@ -65,6 +66,12 @@ Rails.application.routes.draw do
 
    delete '/status_logout', to: 'status_sessions#destroy'
 
+   get 'activate_investor', to: 'account_activations#edit_investor'
+
+   get 'activate_beneficiary', to: 'account_activations#edit_beneficiary'
+
+
+
    resources :beneficiaries
    
    resources :investors do
@@ -75,7 +82,7 @@ Rails.application.routes.draw do
    resources :employees
    resources :clubs 
    resources :club_members
-   resources :club_news
+   resources :club_updates
    resources :posts
 
    resources :careers do
@@ -83,4 +90,8 @@ Rails.application.routes.draw do
    end
 
    resources :pages
+   resources :stripe_logs, only: [:index, :new, :create]
+   resources :system_logs, only: [:index, :create]
+   resources :password_resets,     only: [:new, :create, :edit, :update]
+   resources :news
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_02_094957) do
+ActiveRecord::Schema.define(version: 2018_06_05_190128) do
 
   create_table "beneficiaries", force: :cascade do |t|
     t.string "firstname"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(version: 2018_06_02_094957) do
     t.string "password_digest"
     t.string "remember_digest"
     t.string "enterprise_name"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
+    t.string "user_type"
+    t.string "reset_digest"
+    t.datetime "reset_send_at"
     t.index ["email"], name: "index_beneficiaries_on_email", unique: true
   end
 
@@ -40,6 +46,15 @@ ActiveRecord::Schema.define(version: 2018_06_02_094957) do
     t.integer "investor_id"
     t.integer "club_id"
     t.integer "amount_invested"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "club_updates", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.string "subtitle"
+    t.string "picture"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -84,6 +99,7 @@ ActiveRecord::Schema.define(version: 2018_06_02_094957) do
     t.boolean "is_admin"
     t.string "avatar"
     t.string "employee_rank"
+    t.string "user_type"
     t.index ["email"], name: "index_employees_on_email", unique: true
   end
 
@@ -115,6 +131,13 @@ ActiveRecord::Schema.define(version: 2018_06_02_094957) do
     t.integer "investment_total"
     t.boolean "paid"
     t.integer "cust_id"
+    t.string "stripe_cust_id"
+    t.string "activation_digest"
+    t.boolean "activated", default: false
+    t.datetime "activated_at"
+    t.string "user_type"
+    t.string "reset_digest"
+    t.datetime "reset_send_at"
     t.index ["email"], name: "index_investors_on_email", unique: true
   end
 
@@ -159,7 +182,23 @@ ActiveRecord::Schema.define(version: 2018_06_02_094957) do
     t.string "password_digest"
     t.integer "career_id"
     t.string "status"
+    t.string "user_type"
+    t.string "reset_digest"
+    t.datetime "reset_send_at"
     t.index ["career_id"], name: "index_resumes_on_career_id"
+  end
+
+  create_table "stripe_logs", force: :cascade do |t|
+    t.text "log"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "system_logs", force: :cascade do |t|
+    t.string "system_event"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "event_time"
   end
 
 end

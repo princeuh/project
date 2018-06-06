@@ -1,4 +1,6 @@
 class EmployeesController < ApplicationController
+  before_action :logged_in_employee
+
 	def index
     	@employees = Employee.all
   	end
@@ -11,6 +13,7 @@ class EmployeesController < ApplicationController
   	@employee = Employee.new(employee_params)
   	if @employee.save
   		#saved and logged in employee
+      SystemLog.new( system_event: "Employee account created for #{@employee.lastname},  #{@employee.firstname},  #{@employee.email} by #{current_employee.lastname}, #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now).save
       flash[:success] = "Successfully created employee account"
       redirect_to @employee
   	else
@@ -24,7 +27,8 @@ class EmployeesController < ApplicationController
     @investor= Investor.all
     @clubs = Club.all
     @beneficiaries = Beneficiary.all
-
+    @logs = SystemLog.all
+    @proposals = Proposal.all
   end
 
   def edit
@@ -34,6 +38,7 @@ class EmployeesController < ApplicationController
   def update
     @employee = Employee.find(params[:id])
     if @employee.update(employee_params)
+      SystemLog.new( system_event: "Employee account updated for #{@employee.lastname},  #{@employee.firstname},  #{@employee.email} by #{current_employee.lastname}, #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now).save
       redirect_to @employee
     else
       render 'edit'
@@ -42,6 +47,7 @@ class EmployeesController < ApplicationController
 
   def destroy
     @employee = Employee.find(params[:id])
+    SystemLog.new( system_event: "Employee account destroyed for #{@employee.lastname},  #{@employee.firstname},  #{@employee.email} by #{current_employee.lastname},  #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now).save
     @employee.destroy
 
     redirect_to employees_path

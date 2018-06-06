@@ -1,0 +1,12 @@
+NEMABOLLON ACCOUNT ACTIVATION
+Hello <%= @user.firstname %>
+
+Welcome to the Nemabollon Platform. To ensure security please click the link below to verify that this account belongs to you.
+
+<%= activate_investor_url(@user.activation_token, email: @user.email) %>
+
+<% if @user.user_type == "investor" %>
+	<%= activate_investor_url(@user.activation_token, email: @user.email) %>
+<% else %>
+	<%= activate_beneficiary_url(@user.activation_token, email: @user.email) %>
+<% end %>	

@@ -1,6 +1,7 @@
 class Employee < ApplicationRecord
 	has_many :posts
 	before_save { email.downcase! }
+	before_create :assign_user_type
 	validates :firstname, presence: true
 	validates :lastname, presence: true
 	validates :role, presence: true
@@ -25,4 +26,9 @@ class Employee < ApplicationRecord
                                                   BCrypt::Engine.cost
    	 	BCrypt::Password.create(string, cost: cost)
    	end
+
+
+    def assign_user_type
+      self.user_type = "employee"
+  	end
 end

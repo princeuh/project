@@ -1,0 +1,7 @@
+<% provide(:title, "Show Update") %>
+
+<h4> <%= @club_update.title %></h4>
+
+<p>  <%= @club_update.content %></p>
+<%= image_tag @club_update.picture.url if @club_update.picture? %>
+

@@ -15,7 +15,7 @@ module BeneficiarySessionsHelper
       		@current_user ||= Beneficiary.find_by(id: user_id)
     	elsif (user_id = cookies.signed[:beneficiary_id])
       		user = Beneficiary.find_by(id: user_id)
-      		if user && user.authenticated?(cookies[:remember_token])
+      		if user && user.authenticated?(:remember, cookies[:remember_token])
         		log_in user
         		@current_user = user
       		end

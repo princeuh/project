@@ -66,36 +66,48 @@ $(document).on "turbolinks:load", ->
 				if @id == 'twentyFive'
 					document.getElementById("selected-amt").innerHTML = "$25"
 					$(this).css("color", "#4caf50")
+					$('#checkout_charge_amt').val('25')
 				else if @id == 'fifty'
 					document.getElementById("selected-amt").innerHTML = "$50"
 					$(this).css("color", "#4caf50")
+					$('#checkout_charge_amt').val('50')
 				else if @id == 'hundred'
 					document.getElementById("selected-amt").innerHTML = "$100"
 					$(this).css("color", "#4caf50")
+					$('#checkout_charge_amt').val('100')
 				else if @id == 'fiveHundred'
 					document.getElementById("selected-amt").innerHTML = "$500"
 					$(this).css("color", "#4caf50")
+					$('#checkout_charge_amt').val('500')
 				else if @id == 'thousand'
 					document.getElementById("selected-amt").innerHTML = "$1000"
 					$(this).css("color", "#4caf50")
+					$('#checkout_charge_amt').val('1000')
 				else if @id == 'fiveThousand'
 					document.getElementById("selected-amt").innerHTML = "$5000"
 					$(this).css("color", "#4caf50")
+					$('#checkout_charge_amt').val('5000')
 				else if @id == 'tenThousand'
 					document.getElementById("selected-amt").innerHTML = "$10000"
 					$(this).css("color", "#4caf50")
+					$('#checkout_charge_amt').val('10000')
 				else if @id =='twentyFiveThousand'
 					document.getElementById("selected-amt").innerHTML = "$25000"
 					$(this).css("color", "#4caf50")
+					$('#checkout_charge_amt').val('25000')
 				else if @id == 'fiftyThousand'
 					document.getElementById("selected-amt").innerHTML = "$50000"
 					$(this).css("color", "#4caf50")
+					$('#checkout_charge_amt').val('50000')
 				else if @id == 'hundredThousand'
 					document.getElementById("selected-amt").innerHTML = "$100000"
 					$(this).css("color", "#4caf50")
+					$('#checkout_charge_amt').val('100000')
 				else if @id == 'fiveHundredThousand'
 					document.getElementById("selected-amt").innerHTML = "$500000"
 					$(this).css("color", "#4caf50")
+					$('#checkout_charge_amt').val('500000')
+
 
 			$('#charge-card').click -> 
 				$(this).fadeOut(500)

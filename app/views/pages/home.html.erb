@@ -1,13 +1,49 @@
 <% provide(:title, "Home") %>
 <div class="content">
-<div class="outer-form" style="width:80%; left: 6%; top: 150px;">
-	<%  @highlights.each do |highlight| %>
-	<div class="scrolling-wrapper">
-	 <div class="highlight">
-		<%= image_tag highlight.picture.url if highlight.picture? %>
-		<%= highlight.caption %>
-		<%= highlight.summary %>
+<div id="main-page-content">
+	<%=  image_tag("gs.png",  width: 200, height: 200,alt: "login", :class => "main-imgs", :id => 'main') %>
+	<%=  image_tag("fund.png", width: 120, height: 120, alt: "login", :class => "main-imgs", :id => 'fund') %>
+	<%=  image_tag("growth.png", width: 120, height: 120, alt: "login",  :class => "main-imgs", :id => 'growth') %>
+	<%=  image_tag("roi.png", alt: "login", width: 120, height: 120, :class => "main-imgs", :id => 'roi') %>
+	<%=  image_tag("connect.png", alt: "login", width: 120, height: 120,  :class => "main-imgs", :id => 'connect') %>
+
+	<div class="main-content" id="gs-paragraph">
+		<h4 class="home-header"> Global Solutions </h4>
+		<p class="deem-paragraph"> Provide global investment to fund verified African enterprises </p>
 	</div>
+
+	<div class="main-content" id="connect-paragraph">
+		<h4 class="home-header"> Connect </h4>
+		<p class="deem-paragraph"> Connect with other investors to provide financial and other resources </p>
+	</div>
+
+	<div class="main-content" id="roi-paragraph">
+		<h4 class="home-header"> ROI </h4>
+		<p class="deem-paragraph"> Earn a ROI through funding small and medium enterprise </p>
+	</div>
+
+	<div class="main-content" id="growth-paragraph">
+		<h4 class="home-header"> Economic Growth </h4>
+		<p class="deem-paragraph"> Contribute to economic growth by funding small business which are the backbone of innovation, wealth and development </p>
+	</div>
+
+	<div class="main-content" id="fund-paragraph">
+		<h4 class="home-header"> Fund Enterprise </h4>
+		<p class="deem-paragraph"> Pool resources with other venture club members to fund enterprise </p>
+	</div>
+
+
+</div>
+	<%  @highlights.each do |highlight| %>
+		<div class="highlights">
+		<div class="highlight-image">
+			<%= image_tag highlight.picture.url if highlight.picture? %>
+		</div>
+
+		<div class="highlight-content">
+			<h4 class="highlight-header"><%= highlight.caption %> </h4>
+			<p class="highlight-post"><%= highlight.summary %></p>
+		</div>
 	</div>
 <% end %>
 </div>

@@ -1,0 +1,2 @@
+module ClubUpdatesHelper
+end
