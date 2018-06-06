@@ -14,6 +14,7 @@ class StatusSessionsController < ApplicationController
       		flash.now[:danger] = 'Invalid email/password combination'
       		render root_url
      end
+    end
 
     def destroy
        SystemLog.new( system_event: "#{user.lastname} with resume #{user.email} logged out of system ", event_time: Time.now).save
