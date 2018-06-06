@@ -1,7 +1,5 @@
 class ResumesController < ApplicationController
-  before_action :logged_in_employee, :only [:index]
-
-
+  before_action :logged_in_employee, only: [:index]
   def index
   	@resumes = Resume.all
   end
