@@ -1,5 +1,4 @@
 class CareersController < ApplicationController
-  has_many :resumes, dependent: :destroy
   before_action :logged_in_employee
 	def index
     	@careers = Career.all
