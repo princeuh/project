@@ -1,6 +1,6 @@
 class StripeLogsController < ApplicationController
 	protect_from_forgery :except => :create
-	before_action :logged_in_employee, :only[:index]
+	before_action :logged_in_employee, only: [:index]
 
 	def index
 		@logs = StripeLog.all
