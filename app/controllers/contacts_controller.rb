@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-	before_action :logged_in_employee, :only [:index, :show, :destroy]	
+	before_action :logged_in_employee, only: [:index, :show, :destroy]	
 	def index
 		@contacts = Contact.all
 	end
