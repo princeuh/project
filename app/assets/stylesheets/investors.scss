@@ -4,8 +4,14 @@
 
 
 @media screen and (max-width: 2560px) {
-
-
+	#news-header{
+		position: fixed;
+		background-color: #c37bf93b;
+		top: 0;
+		height: 60px;
+		width: 100%;
+		left: 0;
+	}
 
 
 }

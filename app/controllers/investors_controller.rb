@@ -23,7 +23,6 @@ class InvestorsController < ApplicationController
       @investor.send_activation_email
       flash[:info] = "Please check your email to activate your account."
       SystemLog.new( system_event: "Investor #{@investor.lastname}, #{@investor.firstname},  #{@investor.email} account has been created.", event_time: Time.now).save
-      flash[:success] = "Welcome to your Nemabollon Account"
       redirect_to @investor
   	else 
   		render 'new'
