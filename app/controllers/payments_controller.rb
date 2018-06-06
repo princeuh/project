@@ -1,6 +1,7 @@
 class PaymentsController < ApplicationController
   def check_out
-  	Stripe.api_key = "sk_test_ErANBi8jGcyUrgaJnNQkzWYR"
+  	#Stripe.api_key = "sk_test_ErANBi8jGcyUrgaJnNQkzWYR"
+  	Stripe.api_key = ENV['STRIPE_LIVE_SECRET_KEY']
   	# Token is created using Checkout or Elements!
 	# Get the payment token ID submitted by the form:
 	token = params[:stripeToken]
@@ -21,23 +22,23 @@ class PaymentsController < ApplicationController
 	end
 
 	if @option == 'monthly-fee' && @charged == '1'	
-		#Stripe::Subscription.create({
-		#		:customer => current_user.stripe_cust_id,
-		#		:items => [{
+		Stripe::Subscription.create({
+				:customer => current_user.stripe_cust_id,
+				:items => [{
 						#:plan => 'plan_Cur8EF2z9uZ4Qs',
 			
-			#	}]	 
-		#})
-		#@description = 'Nemabollon Investment'
+				}]	 
+		})
+		@description = 'Nemabollon Investment'
 		SystemLog.new( system_event: " #{current_user.email} service fee subscription created.", event_time: Time.now).save
 
 	elsif  @option == 'investment' 
-		#Stripe::Subscription.create({
-		#		:customer => current_user.stripe_cust_id,
-		#		:items => [{
-						#:plan => assign_plan,
-		#		}]	 
-		#})
+		Stripe::Subscription.create({
+				:customer => current_user.stripe_cust_id,
+				:items => [{
+						:plan => assign_plan,
+				}]	 
+		})
 		#@description = 'Nemabollon Investment'
 		#write the new record to the database
 		if find_investor?
