@@ -1,4 +1,7 @@
 class PaymentsController < ApplicationController
+  require "stripe"
+
+
   def check_out
   	#Stripe.api_key = "sk_test_ErANBi8jGcyUrgaJnNQkzWYR"
   	Stripe.api_key = ENV['STRIPE_LIVE_SECRET_KEY']
@@ -21,14 +24,16 @@ class PaymentsController < ApplicationController
 		current_user.update_attribute(:stripe_cust_id, customer.id)
 	end
 
+
+
+
 	if @option == 'monthly-fee' && @charged == '1'	
 		Stripe::Subscription.create({
 				:customer => current_user.stripe_cust_id,
-				:items => [{
-						#:plan => 'plan_Cur8EF2z9uZ4Qs',
-			
-				}]	 
+				:items => [{ :plan => 'plan_CzPSGgBZzo4nSv'}],	
+						#:plan => 'plan_Cur8EF2z9uZ4Qs',}]	 
 		})
+		debugger
 		@description = 'Nemabollon Investment'
 		SystemLog.new( system_event: " #{current_user.email} service fee subscription created.", event_time: Time.now).save
 
@@ -39,7 +44,7 @@ class PaymentsController < ApplicationController
 						:plan => assign_plan,
 				}]	 
 		})
-		#@description = 'Nemabollon Investment'
+		@description = 'Nemabollon Investment'
 		#write the new record to the database
 		if find_investor?
 			@update_amt = Club.find_by(id: @club_joined)
