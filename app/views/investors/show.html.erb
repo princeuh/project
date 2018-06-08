@@ -25,7 +25,6 @@
 
 <div id="investor-dash">
 	<div id="investor-news" class="allOptions default-news" >
-		
 		<div id="news-main">
 			<%= render 'club_updates/club_update' %>
 		</div>
@@ -142,37 +141,37 @@
 				<%= form_with(model: [@investor, @investor.executors.build], local: true) do |form| %>
 
 				<%= form.label :Primary_Firstname %><br>
-				<%= form.text_field :primary_firstname %>
+				<%= form.text_field :primary_firstname %><br>
 	
 	
 				<%= form.label :Primary_Lastname %><br>
-				<%= form.text_field :primary_lastname%>
+				<%= form.text_field :primary_lastname%><br>
 	
 
 				<%= form.label :Primary_phone_number %><br>
-				<%= form.text_field :primary_phone_number %> 
+				<%= form.text_field :primary_phone_number %><br> 
 
 				<%= form.label :Primary_email %><br>
-				<%= form.text_field :primary_email %> 
+				<%= form.text_field :primary_email %><br> 
 
 				<%= form.label :Primary_country_of_residence %><br>
-				<%= form.text_field :primary_country_of_residence %> 
+				<%= form.text_field :primary_country_of_residence %><br> 
 
 
 				<%= form.label :Secondary_Firstname %><br>
-				<%= form.text_field :secondary_firstname %> 
+				<%= form.text_field :secondary_firstname %><br> 
 
 				<%= form.label :Secondary_Lastname %><br>
-				<%= form.text_field :secondary_lastname%> 
+				<%= form.text_field :secondary_lastname%><br> 
 
 				<%= form.label :Secondary_phone_number %><br>
-				<%= form.text_field :secondary_phone_number %> 
+				<%= form.text_field :secondary_phone_number %><br> 
 
 				<%= form.label :Secondary_email %><br>
-				<%= form.text_field :secondary_email %> 
+				<%= form.text_field :secondary_email %><br> 
 
 				<%= form.label :Secondary_country_of_residence %><br>
-				<%= form.text_field :secondary_country_of_residence %> 
+				<%= form.text_field :secondary_country_of_residence %><br> 
 
 
 				<%= form.submit "Submit Contacts", id: "emerg-sub" %>

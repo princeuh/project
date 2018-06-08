@@ -7,6 +7,8 @@
 	
 	.allOptions{
 		display: none;
+		margin: auto;
+		width: 91%;
 	}
 
 	#ben-content,  #investor-dash{
@@ -16,10 +18,10 @@
 		width: 80%;
 		left: 15%;
 		height: 80%;
-		background-color: rgba(255, 255, 255, 0.35);
-		-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-     	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-     	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.90) inset;
+		//background-color: rgba(255, 255, 255, 0.35);
+		//-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+     	//-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+     	//box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.90) inset;
 	}
 
 	#ben-opts{
@@ -41,9 +43,9 @@
 		left: 18%;
 
 		height: 80%;
-		background-color: rgba(255, 255, 255, 0.35);
-		-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-     	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-     	box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.90) inset;
+		//background-color: rgba(255, 255, 255, 0.35);
+		//-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+     	//-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+     	//box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.90) inset;
 	}
 }

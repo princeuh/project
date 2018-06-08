@@ -163,7 +163,7 @@ p, label{
     input[type=text], textarea, input[type=email],  input[type=number], input[type=password], select {
         width: 80%;
         padding: 12px 20px;
-        margin-left: 25px;
+        margin-left: 45px;
         box-sizing: border-box;
         //border: 2px solid #03d3f4;
         border: 1px solid #b8e2ff;
@@ -201,7 +201,7 @@ input[type=submit]:hover, input[type=submit]:focus {
 
         label{
         position: relative;
-        left: 5%;
+        left: 8%;
     }
 
     .forms{
@@ -355,12 +355,14 @@ to{
 }
 
     .app-links{
-        color: #3f83b1;
+        //color: #3f83b1;
         text-align: center;
         text-decoration: none;
+        color: #b8e1fd;
 
 
     }
+
 
 
 
@@ -375,7 +377,7 @@ to{
 
     label{
         position: relative;
-        left: 5%;
+        left: 10%;
     }
 
 

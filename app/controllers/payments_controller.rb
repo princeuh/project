@@ -3,8 +3,8 @@ class PaymentsController < ApplicationController
 
 
   def check_out
-  	#Stripe.api_key = "sk_test_ErANBi8jGcyUrgaJnNQkzWYR"
-  	Stripe.api_key = ENV['STRIPE_LIVE_SECRET_KEY']
+  	Stripe.api_key = "sk_test_ErANBi8jGcyUrgaJnNQkzWYR"
+  	#Stripe.api_key = ENV['STRIPE_LIVE_SECRET_KEY']
   	# Token is created using Checkout or Elements!
 	# Get the payment token ID submitted by the form:
 	token = params[:stripeToken]
@@ -30,10 +30,13 @@ class PaymentsController < ApplicationController
 	if @option == 'monthly-fee' && @charged == '1'	
 		Stripe::Subscription.create({
 				:customer => current_user.stripe_cust_id,
-				:items => [{ :plan => 'plan_CzPSGgBZzo4nSv'}],	
+				:items => [
+					{ :plan => 'plan_D0Xfo5ytIdv5AI',
+
+					},
+				]	
 						#:plan => 'plan_Cur8EF2z9uZ4Qs',}]	 
 		})
-		debugger
 		@description = 'Nemabollon Investment'
 		SystemLog.new( system_event: " #{current_user.email} service fee subscription created.", event_time: Time.now).save
 
@@ -79,31 +82,61 @@ class PaymentsController < ApplicationController
 
   private 
   	def assign_plan
-  			if @charged == "25"
-				@plan = 'plan_CurFB7ArT1fHoe'
+  			#if @charged == "25"
+			#	@plan = 'plan_CurFB7ArT1fHoe'
+			#elsif @charged == "50"
+			#	@plan = 'plan_CurGCV7Kq9rKOJ'
+			#elsif @charged == "100"
+			#	@plan = 'plan_CurHiGJ7uttcAd'
+			#elsif @charged == "500"
+			#	@plan = 'plan_CurHwQapUFjgoC'
+			#elsif  @charged == "1000"
+			#	@plan = 'plan_CurI9tm0bGfBtB'
+			#elsif  @charged == "5000"
+			#	@plan = 'plan_CurJCnjEEc7RR0'
+			#elsif  @charged == "10000"
+			#	@plan = 'plan_CurKVlm1vJRe9w'
+			#elsif  @charged == "25000"
+			#	@plan = 'plan_CurLMVE5OPdYkk'
+			#elsif  @charged == "50000"
+			#	@plan = 'plan_CurMDazgHofv9U'
+			#elsif  @charged == "100000"
+			#	@plan = 'plan_CurME7P1gA7swr'
+			#elsif @charged == "500000"
+			#	@plan = 'plan_CurNlautns8X2f'
+			#else 
+			#	@plan = "invalid"
+			#end	
+
+
+			if @charged == "25"
+				@plan = 'plan_D0qh1A0GWq0TYC'
 			elsif @charged == "50"
-				@plan = 'plan_CurGCV7Kq9rKOJ'
+				@plan = 'plan_D0qh1A0GWq0TYC'
 			elsif @charged == "100"
-				@plan = 'plan_CurHiGJ7uttcAd'
+				@plan = 'plan_D0qh1A0GWq0TYC'
 			elsif @charged == "500"
-				@plan = 'plan_CurHwQapUFjgoC'
+				@plan = 'plan_D0qh1A0GWq0TYC'
 			elsif  @charged == "1000"
-				@plan = 'plan_CurI9tm0bGfBtB'
+				@plan = 'plan_D0qh1A0GWq0TYC'
 			elsif  @charged == "5000"
-				@plan = 'plan_CurJCnjEEc7RR0'
+				@plan = 'plan_D0qh1A0GWq0TYC'
 			elsif  @charged == "10000"
-				@plan = 'plan_CurKVlm1vJRe9w'
+				@plan = 'plan_D0qh1A0GWq0TYC'
 			elsif  @charged == "25000"
-				@plan = 'plan_CurLMVE5OPdYkk'
+				@plan = 'plan_D0qh1A0GWq0TYC'
 			elsif  @charged == "50000"
-				@plan = 'plan_CurMDazgHofv9U'
+				@plan = 'plan_D0qh1A0GWq0TYC'
 			elsif  @charged == "100000"
-				@plan = 'plan_CurME7P1gA7swr'
+				@plan = 'plan_D0qh1A0GWq0TYC'
 			elsif @charged == "500000"
-				@plan = 'plan_CurNlautns8X2f'
+				@plan = 'plan_D0qh1A0GWq0TYC'
 			else 
 				@plan = "invalid"
 			end	
+
+
+
   	end
 end
 

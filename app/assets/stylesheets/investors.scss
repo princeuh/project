@@ -13,10 +13,160 @@
 		left: 0;
 	}
 
+	#dash-header{
+		height: 100%;
+		width: 250px;
+		background-color: #572C7A;
+		overflow: auto;
+		position: fixed;
+		top: 63px;
+		bottom: 0;
+		left: 0;
+
+    }
+
+    .investor-bttn-options{
+    	padding: 34px 20px;
+		cursor: pointer;
+		color: #7f60a9;
+		font-family: 'Catamaran', sans-serif;
+    }
+
+    .dash-account{
+    	display: none;
+    }
+
+    #dash-contacts{
+    	width: 60%;
+    	position: absolute;
+    	left: 27%;
+    	top: 15%;
+    	 height: 800px;
+    	overflow: auto;
+    	display: none;
+    }
+
+     #dash-profile{
+    	position: fixed;
+    	left: 50%;
+    	top: 150px;
+    	background-color: #c37bf93b;
+    	padding: 76px 80px;
+    	border-radius: 2px;
+    }
+
+    #dash-acct-opts{
+    	position: fixed;
+    	bottom: 10%;
+    	left: 45%;
+    }
+    .dash-bttn{
+        //background-color: #b502af;
+        background-color: #aa0098;
+    	border-radius: 10px;
+    	border: none;
+    	color: white;
+    	padding: 16px 32px;
+    	text-decoration: none;
+    	margin: 4px 2px;
+    	cursor: pointer;
+    	font-family: 'Catamaran', sans-serif;
+
+    }
+
+    #dash-email, #dash-pass{
+    	background-color: #c37bf93b;
+    	position: fixed;
+    	left: 45%;
+    	border-radius: 4px;
+    	top: 350px;
+    	width: 550px;
+    	height: 250px;
+    }
+
+
+	#investment-amt{
+		background-color:  #c37bf93b;
+		overflow: auto;
+		white-space: nowrap;
+		width: 25%;
+		border-radius: 10px;
+  		-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 188, 212, 0.09) inset;
+	}
+
+	.invest-amt{
+		display: inline-block;
+		padding: 14px;
+		text-align: center;
+		cursor: pointer;
+		color: #3f83b1;
+		margin: 0;
+	}
+
+	#logout-bttn{
+		z-index: 10;
+		position: fixed;
+		bottom: 35px;
+	}
+
+
 
 }
 
 @media screen and (max-width: 1242px) {
+
+	
+    #dash-contacts{
+    	width: 60%;
+    	position: fixed;
+    	left: 27%;
+    	top:50px;
+    	overflow: auto;
+    }
+
+    #dash-header{
+		height: 92%;
+		width: 150px;
+		background-color: #572C7A;
+		overflow: auto;
+		position: fixed;
+		top: 63px;
+
+    }
+      #dash-contacts{
+    	width: 75%;
+    	height: 800px;
+    	overflow: auto;
+    	position: fixed;
+    	left: 27%;
+    	top: 100px;
+    }
+
+       #dash-profile{
+    	position: fixed;
+    	left: 35%;
+    	top: 150px;
+    }
+
+       #dash-acct-opts{
+    	position: fixed;
+    	bottom: 10%;
+    	left: 40%;
+    }
+
+
+    #dash-email, #dash-pass{
+    	background-color: #c37bf93b;
+    	position: fixed;
+    	left: 35%;
+    	border-radius: 4px;
+    	top: 300px;
+    	width: 350px;
+    	height: 250px;
+    }
+
 
 
 

@@ -1,5 +1,5 @@
 
-<div class="forms" style="height: 250px; margin-top: 100px;">
+<div class="forms" style="height: 35%; margin-top: 5px;">
 <h4  class="contact-header"> CHARGE </h4>
 <%= form_for(:checkout, url: process_payment_path, html: { :id => 'payment-form'}) do |f| %>
 	<div class="form-row">
@@ -27,6 +27,7 @@
 // Create a Stripe client.
 var stripe = Stripe('pk_test_FPhseII9qABn0XiQKaXv2HLb');
 
+//var stripe = Stripe(ENV['STRIPE_LIVE_PUB_KEY'])
 // Create an instance of Elements.
 var elements = stripe.elements();
 
