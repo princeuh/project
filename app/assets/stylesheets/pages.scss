@@ -114,6 +114,7 @@ li a:hover {
     position: fixed;
     right: 5px;
     top: 65px;
+    z-index: 15;
 }
 
 #show-login{
@@ -361,6 +362,18 @@ to{
         color: #b8e1fd;
 
 
+    }
+
+    #co-address{
+        color: #fde4fc;
+    }
+
+        .log-opts{
+        border-bottom: 1px solid #361d4e38;
+        padding: 12px;
+        border-radius: 5px;
+        font-family: 'Catamaran', sans-serif;
+        background-color: #a5cdff38;
     }
 
 

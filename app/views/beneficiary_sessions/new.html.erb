@@ -1,14 +1,12 @@
 <% provide(:title, "Beneficiary Log In") %>
 <div class="content">
-<div class="outer-form" style="height: 360px;">
-</div>
-<div class="forms" style="height: 350px;">
+<div class="forms" style="height: 350px; margin-top: 120px">
 <h4  class="contact-header">  BENEFICIARY LOGIN </h4>
 <%= form_for(:beneficiary_session, url: beneficiary_login_path) do |f| %>
 	<%= f.label :email %> <br>
 	<%= f.email_field :email %> </br>
 	<%= f.label :password %> <br>
-	<%= link_to "(forgot password)", new_password_reset_path %>
+	<%= link_to "(forgot password)", new_password_reset_path, :class => "reset-password"%>
 	<%= f.password_field :password %> </br>
 	<%= f.label :remember_me, class: "checkbox inline" do %>
   		<%= f.check_box :remember_me %>
