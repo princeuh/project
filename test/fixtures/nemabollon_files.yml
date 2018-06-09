@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content_creator: MyString
+  memo: MyString
+
+two:
+  content_creator: MyString
+  memo: MyString

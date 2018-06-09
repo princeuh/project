@@ -1,0 +1,31 @@
+<div id="memo-table">
+<h4 class="contact-header"> All Files in system </h4>
+<table class ="table-memo">
+   <thead>.
+      <tr>
+         <th class="employee-links">Content Creator</th>
+         <th class="employee-links">Memo Name</th>
+         <th class="employee-links">Download Link</th>
+         <th> </th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <% @memos.each do |memo| %>
+         
+         <tr>
+            <td class="employee-links"><%= memo.content_creator %></td>
+            <td class="employee-links"><%= memo.memo_name %></td>
+            <td><%= link_to "Download Memo", memo.memo_url, :class => "app-links" %></td>
+            <% if current_employee.is_admin? %>
+            <td><%= button_to "Delete",   nemabollon_file_path(memo), method: :delete,  confirm: "Are you sure that you wish to delete?" %></td>
+
+
+            <% end %>
+         </tr>
+         
+      <% end %>
+   </tbody>
+   
+</table>
+</div>

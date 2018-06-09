@@ -1,7 +1,6 @@
-
-<div class="forms">
-<h4  class="contact-header"> UPDATE EMPLOYEE ACCOUNT </h4>
-<%= form_for(@employee, url:   employee_path) do |f| %>
+<div class="forms" id="edit_employee_acct">
+<h4  class="contact-header"> UPDATE YOUR EMPLOYEE ACCOUNT </h4>
+<%= form_for(@employee, url: employee_path) do |f| %>
 	<%= f.label :firstname %><br>
 	<%= f.text_field :firstname %><br>
 

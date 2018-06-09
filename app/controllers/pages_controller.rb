@@ -44,9 +44,10 @@ class PagesController < ApplicationController
       #save and log in the highlight
       flash[:success] = "Successfully added a highlight"
       SystemLog.new( system_event: "#{current_employee.lastname}, #{current_employee.firstname}, #{current_employee.email} created a highlight for the home page #{@highlight.caption}", event_time: Time.now).save
-      redirect_to root_url
+      redirect_to current_employee
     else
       flash[:error] = "Error in data. Unable to save highlight."
+      redirect_to current_employee
     end
   end
 

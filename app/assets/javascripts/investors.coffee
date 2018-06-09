@@ -131,3 +131,8 @@ $(document).on "turbolinks:load", ->
 				$('.alert-danger').remove()
 				return
 			), 10000
+
+			setTimeout ( ->
+				$('.alert-error').remove()
+				remove
+			), 10000

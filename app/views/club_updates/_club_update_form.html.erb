@@ -1,5 +1,5 @@
 <div class="content">
-<div id="career-new">
+<div class="forms" style="height:55%;  margin-top: 120px;">
 <h4  class="contact-header">  CREATE A CLUB UPDATE </h4>
 <%= form_with scope: :club_update, url:  club_updates_path, local: true do |form| %>
 	<%= form.label :title%><br>
@@ -8,9 +8,9 @@
 	<%= form.label :Content %><br>
 	<%= form.text_area :content %><br>
 
-	<%= form.submit "Create Club Update" %>
+	<%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %><br>
 
-	<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+	<%= form.submit "Create Club Update" %>
 
 <% end %>
 </div>

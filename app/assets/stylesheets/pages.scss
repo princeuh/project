@@ -10,7 +10,7 @@
 	}
 
 
-	.alert-danger{
+	.alert-danger, .alert-error{
 		background-color: #ff000017;
     	z-index: 50;
     	color: red;
@@ -131,6 +131,7 @@ li a:hover {
     right: 0;
     top: 0;
      overflow: auto;
+     z-index: -5;
     }
 
 .contact-header{

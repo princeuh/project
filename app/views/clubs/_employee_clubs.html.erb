@@ -10,19 +10,19 @@
 
 </div>
 <div class="back">
-	<p> Target Amount USD : <%= club.fund_target %></p>
+	<p> Target Amount USD : $<%= club.fund_target %></p>
 
 	<p> Proposal : <%= club.proposal %></p>
 	<% if employee_logged_in? %>
-	<p> Invested Amount :<%= club.amt_invested %></p>
+	<p> Invested Amount USD :$<%= club.amt_invested %></p>
 	<p> Member Count : <%= club.number_of_members %></p>
 
-	<%= link_to "Edit", edit_club_path(club) %>
+	<%= link_to "Edit", edit_club_path(club), :class=> "app-links" %>
 	<%= link_to 'Destroy', club_path(club),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+              data: { confirm: 'Are you sure?' },  :class=> "app-links" %>
 
-	<%= link_to "Add Club", new_club_path %>
+	<%= link_to "Add Club", new_club_path,  :class=> "app-links"%>
 <% end %>
 	
 </div>

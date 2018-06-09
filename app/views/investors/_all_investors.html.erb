@@ -4,19 +4,17 @@
 	<div class="flip-container">
 		<div class="flipper">
 		<div class="front">	
-		<%= image_tag("employeeAvatar.png", class: "honor" , width: "100", height: "100") %>
-	<%= investor.firstname %>
-	<%= investor.lastname %>
+		<%= image_tag("employeeAvatar.png", class: "honor" , width: "100", height: "100") %><br>
+	<p class="employee-links"> <%= investor.firstname%>
+	<%= investor.lastname %></p>
 
-	<%= investor.email %>
+	<p class="employee-links"> <%= investor.email%></p>
 		</div>
 		<div class="back">
 
-	<%= link_to "View Investor", investor_path(investor) %>
-	<%= link_to "Edit", edit_investor_path(investor) %>
-	<%= link_to 'Destroy', investor_path(investor),
+	<%= link_to 'Delete Account', investor_path(investor),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+              data: { confirm: 'Are you sure?' },  :class => "employee-links" %>
 
         	</div>
 	</div>

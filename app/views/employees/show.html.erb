@@ -29,14 +29,11 @@
 <p id="emp-owners" class="emp-opts"> Beneficiaries </p>
 <p id="emp-news" class="emp-opts"> Add News </p>
 <% end %>
-</div>
 
 <%= link_to "LogOut", employee_logout_path, :id => "emp-logout", method: :delete, :class=> "app-links" %>
+</div>
 
 <div id="employee-content">
-	<div class="notification-slider">
-		<input type="range" min="0" max="1" value="0" class="slider" id="employeeNofication">
-	</div>
 
 <div id="add-employee" class="empl-opts">
 	<%= render 'employees/add_employee' %>
@@ -73,6 +70,9 @@
 
 <div id="show-proposals" class="empl-opts">
 	<%= render 'proposals/app_proposals' %>
+	<div class ="employee-update-proposal">
+		<%= render 'proposals/apply_prospects' %>
+	</div>
 </div>
 
 <div id="show-contacts" class="empl-opts">
@@ -80,10 +80,18 @@
 </div>
 
 <div id="show-priviledges" class="empl-opts">
-	<p> Update Account</p>
+	<% if current_employee.is_admin? %>
+		<p class="employee-links"> You have Administrative Priviledges on the system </p>
+	<% else %>
+		<p class="employee-links"> Please contact an administrator for approval </p>
+	<% end %>
+
+	<%= render 'employees/edit_employee' %>
+	<%= render 'nemabollon_files/upload_memos' %>
+	<%= render 'nemabollon_files/all_memos' %>
 </div>
 
-<div id="show-news" class="empl-opts">
+<div id="create-club-update" class="empl-opts">
 	<%= render 'club_updates/club_update_form' %>
 </div>
 

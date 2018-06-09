@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_05_190128) do
+ActiveRecord::Schema.define(version: 2018_06_09_165210) do
 
   create_table "beneficiaries", force: :cascade do |t|
     t.string "firstname"
@@ -141,6 +141,14 @@ ActiveRecord::Schema.define(version: 2018_06_05_190128) do
     t.index ["email"], name: "index_investors_on_email", unique: true
   end
 
+  create_table "nemabollon_files", force: :cascade do |t|
+    t.string "content_creator"
+    t.string "memo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "memo_name"
+  end
+
   create_table "pages", force: :cascade do |t|
     t.string "caption"
     t.datetime "created_at", null: false
@@ -168,6 +176,7 @@ ActiveRecord::Schema.define(version: 2018_06_05_190128) do
     t.string "country"
     t.integer "target_amt"
     t.boolean "is_accepted"
+    t.string "proposal_status"
     t.index ["investor_id"], name: "index_proposals_on_investor_id"
   end
 

@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'password_resets/new'
-  get 'password_resets/edit'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#home'
 
@@ -94,4 +92,5 @@ Rails.application.routes.draw do
    resources :system_logs, only: [:index, :create]
    resources :password_resets,     only: [:new, :create, :edit, :update]
    resources :news
+   resources :nemabollon_files, only: [:index, :new, :create, :destroy]
 end

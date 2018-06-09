@@ -5,7 +5,7 @@
 $(document).on "turbolinks:load", ->
 		$('.emp-opts').click ->
 			$('.empl-opts').hide()
-			$('.emp-opts').css("color", " #233766")
+			$('.emp-opts').css("color", "#7f60a9")
 			if @id == 'emp-add'
 				$(this).css("letter-spacing", "2px")
 				$(this).css("color", "#4caf50")
@@ -49,8 +49,15 @@ $(document).on "turbolinks:load", ->
 			else if @id == 'emp-news'
 				$(this).css("letter-spacing", "2px")
 				$(this).css("color", "#4caf50")
-				$('#show-news').show()
+				$('#create-club-update').show()
 			else if @id == 'emp-site'
 				$(this).css("letter-spacing", "2px")
 				$(this).css("color", "#4caf50")
 				$('#show-highlights').show()
+
+
+			$('.update-proposal').click ->
+				$('.employee-update-proposal').fadeIn(500)
+
+			$('.employee-update-proposal').click ->
+				$(this).fadeOut(500)

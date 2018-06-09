@@ -29,6 +29,8 @@ class EmployeesController < ApplicationController
     @beneficiaries = Beneficiary.all
     @logs = SystemLog.all
     @proposals = Proposal.all
+     @club_updates = ClubUpdate.all
+     @memos = NemabollonFile.all
   end
 
   def edit

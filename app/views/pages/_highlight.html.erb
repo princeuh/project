@@ -1,13 +1,13 @@
 
-<div class="outer-form">
+<div class="forms">
 
 <h4 class="contact-header" > CREATE HIGHLIGHT FOR HOME PAGE </h4>
 
 <%= form_with scope: :page, url: pages_path, local: true do |form| %>
-	<%= form.label :Caption %><br>
+	<%= form.label :Header %><br>
 	<%= form.text_field :caption %><br>
 
-	<%= form.label :Summary %><br>
+	<%= form.label :Article %><br>
 	<%= form.text_area :summary, cols: "50", rows: "10"%><br>
 
 	
