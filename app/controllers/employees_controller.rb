@@ -15,9 +15,10 @@ class EmployeesController < ApplicationController
   		#saved and logged in employee
       SystemLog.new( system_event: "Employee account created for #{@employee.lastname},  #{@employee.firstname},  #{@employee.email} by #{current_employee.lastname}, #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now).save
       flash[:success] = "Successfully created employee account"
-      redirect_to @employee
+      redirect_to current_employee
   	else
-  		render 'new'
+      flash[:error] = "Could not create employee account"
+  		render current_employee
   	end
   end
 

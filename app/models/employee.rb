@@ -1,6 +1,6 @@
 class Employee < ApplicationRecord
 	has_many :posts
-	before_save { email.downcase! }
+	 before_save { self.email = email.downcase }
 	before_create :assign_user_type
 	validates :firstname, presence: true
 	validates :lastname, presence: true
