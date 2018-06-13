@@ -50,8 +50,6 @@ $(document).on "turbolinks:load", ->
 
 		$('.ben-holder').slideDown(1500)
 
-		$('.highlights').delay(800).fadeIn().fadeOut(800)
-
 		$('.deem-paragraph').mouseenter ->
 			$(this).css("color", "#8dc2e6")
 

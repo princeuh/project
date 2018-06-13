@@ -1,6 +1,8 @@
 <% provide(:title, "Home") %>
 <div class="content">
-<div id="main-page-content">
+<div id="slideshow">
+<div class="slide-wrapper">
+<div class="highlights">
 	<%=  image_tag("gs.png",  width: 200, height: 200,alt: "login", :class => "main-imgs", :id => 'main') %>
 	<%=  image_tag("fund.png", width: 120, height: 120, alt: "login", :class => "main-imgs", :id => 'fund') %>
 	<%=  image_tag("growth.png", width: 120, height: 120, alt: "login",  :class => "main-imgs", :id => 'growth') %>
@@ -31,15 +33,12 @@
 		<h4 class="home-header"> Fund Enterprise </h4>
 		<p class="deem-paragraph"> Pool resources with other venture club members to fund enterprise </p>
 	</div>
-
-
 </div>
-	<%  @highlights.each do |highlight| %>
-		<div class="highlights">
-		<div class="highlight-image">
-			<%= image_tag highlight.picture.url if highlight.picture? %>
-		</div>
+ 
 
+<%  @highlights.each do |highlight| %>
+	<div class="highlights">
+			<%= image_tag highlight.picture.url if highlight.picture? %>
 		<div class="highlight-content">
 			<h4 class="highlight-header"><%= highlight.caption %> </h4>
 			<p class="highlight-post"><%= highlight.summary %></p>
@@ -47,6 +46,6 @@
 	</div>
 <% end %>
 </div>
-
-
 </div>
+</div>
+

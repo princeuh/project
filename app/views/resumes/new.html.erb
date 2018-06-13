@@ -1,27 +1,28 @@
 <%provide(:title, "Upload Resume")%>
 <div class="content">
-	<div class="forms">
-	<%= form_for(@resume) do |f| %>
-      <%= f.label :firstname %>
-      <%= f.text_field :firstname %>
+	<div class="forms" style="margin-top: 120px;">
+    <h4  class="contact-header"> PLEASE SUBMIT YOUR RESUME </h4>
+	<%= form_for(:resume, url: career_resumes_path) do |f| %>
+      <%= f.label :firstname %><br>
+      <%= f.text_field :firstname %><br>
 
-      <%= f.label :lastname %>
-      <%= f.text_field :lastname %>
+      <%= f.label :lastname %><br>
+      <%= f.text_field :lastname %><br>
 
 
-      <%= f.label :bioSketch %>
-      <%= f.text_area :bioSketch %>
+      <%= f.label :bioSketch %><br>
+      <%= f.text_area :bioSketch %><br>
 
-       <%= f.file_field :attachment %>
+      <%= f.label :email %><br>
+      <%= f.email_field :email %><br>
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %><br>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <%= f.label :password_confirmation, "Confirmation" %><br>
+      <%= f.password_field :password_confirmation %><br>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.file_field :attachment %><br>
 
       <%= f.submit "Submit Resume" %>
     <% end %>

@@ -2,7 +2,7 @@
 </div>
 <div class="forms">
 <h4  class="contact-header"> ADD NEW EMPLOYEE </h4>
-<%= form_for(@employee, url: employees_path) do |f| %>
+<%= form_for(:employee, url: employees_path) do |f| %>
 	<%= f.label :firstname %><br>
 	<%= f.text_field :firstname %><br>
 
@@ -11,6 +11,27 @@
 
 	<%= f.label :role %><br>
 	<%= f.select :role, ['CEO', 'Business Manager', 'Software Engineer', 'Fundraising Coordinator'] %><br>
+
+	<%= f.label :Job_Category%><br>
+	<%= f.select :job_category, ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'] %><br>
+
+	<%= f.label :Job_Location %><br>
+	<%= f.text_field :job_location %><br>
+
+	<%= f.label :Reports_To %><br>
+	<%= f.select :reports_to, ['Board Of Directors', 'Chief Executive Officer'] %><br>
+
+	<%= f.label :Department %><br>
+	<%= f.select :department, ['Office of the Chief Executive Officer', 'Administration and Human Resources', 'Operations', 'Project Management', 'Software Management', 'Accounting and Financing', 'Marketing', 'Public Relations' , 'Information and Broadcasting'] %><br>
+
+	<%= f.label :Section %><br>
+	<%= f.select :section, ['N/A'] %><br>
+
+	<%= f.label :contact_number %><br>
+	<%= f.text_field :contact_number %><br>
+
+	<%= f.label :employee_pid %><br>
+	<%= f.text_field :employee_pid ['1-001', '2-001', '3-001', '4-001', '5-001', '6-001', '7-001', '8-001' , '9-001'] %><br>
 
 	<%= f.label :email %><br>
 	<%= f.email_field :email %><br>

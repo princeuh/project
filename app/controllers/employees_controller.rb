@@ -18,7 +18,7 @@ class EmployeesController < ApplicationController
       redirect_to current_employee
   	else
       flash[:error] = "Could not create employee account"
-  		render current_employee
+  		redirect_to current_employee
   	end
   end
 
@@ -41,10 +41,12 @@ class EmployeesController < ApplicationController
   def update
     @employee = Employee.find(params[:id])
     if @employee.update(employee_params)
+      flash[:success] = "Successfully Updated your Account"
       SystemLog.new( system_event: "Employee account updated for #{@employee.lastname},  #{@employee.firstname},  #{@employee.email} by #{current_employee.lastname}, #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now).save
       redirect_to @employee
     else
-      render 'edit'
+      flash[:error] = "Could not update your account"
+      redirect_to @employee
     end
   end
 
@@ -67,6 +69,5 @@ class EmployeesController < ApplicationController
         redirect_to employee_account_url
       end
     end
-
 end
 

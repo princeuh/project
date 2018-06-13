@@ -13,7 +13,7 @@
 		left: 0;
 	}
 
-	#dash-header, #employee-dash{
+	#dash-header, #employee-dash, #ben-opts{
 		height: 100%;
 		width: 250px;
 		background-color: #572C7A;
@@ -25,11 +25,15 @@
         z-index: 25;
     }
 
+    #ben-opts{
+        top: 0;
+    }
+
     #employee-dash{
         top: 0;
     }
 
-    .investor-bttn-options, .emp-opts{
+    .investor-bttn-options, .emp-opts, .bene-options{
     	padding: 34px 20px;
 		cursor: pointer;
 		color: #7f60a9;
@@ -109,8 +113,8 @@
 		margin: 0;
 	}
 
-	#logout-bttn{
-		z-index: 10;
+	#logout-bttn, #bene-logout{
+		z-index: 50;
 		position: fixed;
 		bottom: 35px;
 	}
@@ -139,6 +143,8 @@
 		top: 63px;
 
     }
+
+    
       #dash-contacts{
     	width: 75%;
     	height: 800px;

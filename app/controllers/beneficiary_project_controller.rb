@@ -1,0 +1,2 @@
+class BeneficiaryProjectController < ApplicationController
+end

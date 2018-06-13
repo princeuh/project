@@ -24,12 +24,14 @@
      	//box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.90) inset;
 	}
 
-	#ben-opts{
-		position: fixed;
-		top: 150px;
-		left: 0;
+	.bene-options{
+		color: #7f60a9;
+		cursor: pointer;
 	}
 
+	#bene-proj-apply{
+		display: none;
+	}
 
 }
 
@@ -41,11 +43,10 @@
 		top: 100px;
 		width: 80%;
 		left: 18%;
-
 		height: 80%;
-		//background-color: rgba(255, 255, 255, 0.35);
-		//-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-     	//-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-     	//box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(255, 255, 255, 0.90) inset;
+	}
+
+	#employee-content{
+		left: 250px;
 	}
 }

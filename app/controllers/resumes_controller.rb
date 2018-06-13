@@ -15,7 +15,7 @@ class ResumesController < ApplicationController
   		status_log_in @resume
       SystemLog.new( system_event: "New resume for #{@resume.lastname} for #{@career.job_title}  added to system", event_time: Time.now).save
   		flash[:success] = "Your application has been submitted. Please use the Application Status link to track your status."
-  		redirect_to @resume
+  		redirect_to career_resume_path(user.career_id, user.id)
   	else
   		flash[:error] = "Something went wrong. Unable to submit your application. Please try again."
   		render 'new'
@@ -33,7 +33,7 @@ class ResumesController < ApplicationController
 
   private
      def resume_params
-     	params.require(:resume).permit(:firstname, :lastname, :bioSketch, :attachment)
+     	params.require(:resume).permit(:firstname, :lastname, :bioSketch, :attachment, :email, :password, :password_confirmation)
      end
 
      def status_params
@@ -43,7 +43,7 @@ class ResumesController < ApplicationController
       def logged_in_employee
         unless employee_logged_in?
           flash[:danger] = "Please log in."
-          redirect_to employee_account_url
+          redirect_to root_url
         end
       end
 end

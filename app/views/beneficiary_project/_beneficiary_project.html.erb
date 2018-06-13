@@ -1,0 +1,11 @@
+<div class="forms" style="margin-top: 120px;">
+    <h4  class="contact-header"> PLEASE SUBMIT YOUR PROJECT PLAN </h4>
+<%= form_for(:beneficiary_project, url: beneficiary_beneficiary_projects_path) do |f| %>
+	<%= f.label :Title %>
+	<%= f.text_field :title %>
+	<%= f.label :Content %>
+	<%= f.text_area :content %>
+	<%= f.submit "Submit Proposal" %>
+	<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %> %>
+<% end %>
+</div>

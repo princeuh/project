@@ -28,7 +28,7 @@
 		display: none;
 		position: absolute;
 		top: 10%;
-		left: 40%;
+		left: 20%;
 		//background-color: #a5cdff38;
 		background-color: #7f60a9;
 		border-radius: 5px;
@@ -36,15 +36,12 @@
 		height: 450px;
 	}
 
-   #edit_employee_acct{
-      position: absolute;
-   }
 
    #memo-table{
       position: fixed;
-      bottom: 200px;
-      right: 100px;
-      height: 450px;
+      top: 150px;
+      left: 40%;
+      height: 650px;
       width: 450px;
       overflow: auto;
       border-radius: 5px;
@@ -135,10 +132,54 @@
    padding-left: 15px;
    padding-right: 15px;
 }
+
+.priv-opts{
+      display: none;
+}
+      #edit-empl-acct ,#upload-empl-files, #show-all-files{
+         position: fixed;
+         bottom: 45px;
+      }
+
+            #upload-empl-files{
+         left: 45%;
+      }
+
+      #show-all-files{
+         left: 55%;
+      }
+
+      #upload-empl{
+         display: none;
+      }
+
 	
 
 }
 
 @media screen and (max-width: 1242px) {
+      #edit_employee_acct{
+         position: fixed;
+         left: 220px;
+      }
+
+      #edit-empl-acct ,#upload-empl-files, #show-all-files{
+         position: absolute;
+      
+      }
+
+      #upload-empl-files{
+         left: 20%;
+      }
+
+      #show-all-files{
+         left: 40%;
+      }
+
+      #upload-empl{
+         display: none;
+      }
+
+
 
 }

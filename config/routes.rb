@@ -52,10 +52,6 @@ Rails.application.routes.draw do
 
    get '/career', to: 'careers#show'
 
-   get '/apply_career', to: 'resumes#new'
-
-   post '/apply_career', to: 'resumes#create'
-
    post '/career_status', to:  'resumes#status'
 
    get '/status_login', to: 'status_sessions#new'
@@ -70,7 +66,9 @@ Rails.application.routes.draw do
 
 
 
-   resources :beneficiaries
+   resources :beneficiaries do 
+      resources :beneficiary_projects
+   end
    
    resources :investors do
    	 resources :proposals
@@ -82,6 +80,7 @@ Rails.application.routes.draw do
    resources :club_members
    resources :club_updates
    resources :posts
+   resources :contacts
 
    resources :careers do
       resources :resumes, only: [:index, :new, :create, :show]

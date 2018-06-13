@@ -377,6 +377,36 @@ to{
         background-color: #a5cdff38;
     }
 
+    #login-opts{
+        display: none;
+    }
+
+    .slide-wrapper {
+        width: 2912px;
+        -webkit-animation: highlight 18s ease infinite;
+    }
+
+    .highlights {
+    float: left;
+     height: 590px;
+    width: 650px;
+
+    }
+
+
+
+
+    @-webkit-keyframes highlight {
+        20% {margin-left: 0px;}
+        30% {margin-left: -728px;}
+        50% {margin-left: -728px;}
+        60% {margin-left: -1456px;}
+        70% {margin-left: -1456px;}
+        80% {margin-left: -2184px;}
+        90% {margin-left: -2184px;}
+    }
+
+
 
 
 

@@ -2,7 +2,7 @@
 <div class="outer-form">
 </div>
 <h4 class="contact-header"> CONTACT </h4>
-<%= form_with scope: :contact, local: true do |form| %>
+<%= form_for(:contact, url: contacts_path) do |form| %>
 	
 	<%= form.label :Firstname %><br>
 	<%= form.text_field :firstname%><br>

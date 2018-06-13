@@ -1,4 +1,12 @@
 <%provide(:title, "Resume")%>
 <div class="content">
+
+<p> Name : <%= @resume.firstname %>
+<%= @resume.lastname %></p>
+
+<p> Email : <%= @resume.email %></p>
+
+<p> BioSketch : <%= @resume.bioSketch %></p>
+
 <%= link_to "LogOut", status_logout_path , :id => "status-logout", method: :delete, :class=> "app-links" %>
 </div>

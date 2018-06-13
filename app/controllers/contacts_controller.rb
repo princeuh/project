@@ -11,9 +11,11 @@ class ContactsController < ApplicationController
 	def create
 		@contact = Contact.new(contact_params)
 		if @contact.save
-			flash.now[:success] = "Your inquiry has been submitted. Someone will be intouch soon."
+			SystemLog.new( system_event: " Inquiry Submitted from Contact Form", event_time: Time.now).save
+			flash[:success] = "Your inquiry has been submitted. Someone will be in touch soon."
+			redirect_to root_url
 		else 
-			flash.now[:error] = "Unable to send your Inquiry. Please try again."
+			flash[:error] = "Unable to send your Inquiry. Please try again."
 		end
 	end
 

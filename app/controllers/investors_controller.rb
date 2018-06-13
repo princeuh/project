@@ -29,6 +29,13 @@ class InvestorsController < ApplicationController
   	end
   end
 
+  def destroy
+    @investor = Investor.find(params[:id])
+    SystemLog.new( system_event: "Investor account destroyed for #{@investor.lastname},  #{@investor.firstname},  #{@investor.email} by #{current_employee.lastname},  #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now).save
+    @investor.destroy
+    redirect_to current_employee
+  end
+
   private
 	def investor_params
 		params.require(:investor).permit(:firstname, :lastname, :email, :password,

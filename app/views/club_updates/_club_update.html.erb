@@ -1,3 +1,4 @@
+<% if @club_updates.count > 0 %>
 <%  @club_updates.each do |club_update| %>
 <div class="flip-container">
 	<div class="front">	
@@ -10,4 +11,8 @@
 	</div>
 </div>
 
+<% end %>
+
+<% else %>
+	<p> There are currently no Club Updates in the system. Please check back later. </p>
 <% end %>

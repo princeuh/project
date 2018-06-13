@@ -10,8 +10,16 @@
 
 <div id="ben-content">
 	<div class="allOptions" id="ben-apply-account">
-		<p> Apply for funding </p>
-		
+		<div id="project_status">
+			<%= render 'view_project_status' %>
+		</div>
+
+		<div id="bene-proj-apply">
+			<%= render 'submit_proposal' %>
+			<button class="dash-bttn" id="close-sub-plan"> X </button>
+		</div>
+		<button class="dash-bttn" id="sub-proj-plan"> Submit Project Plan </button>
+
 	</div>
 
 	<div class="allOptions" id="ben-clubs-account">
@@ -25,8 +33,7 @@
 	</div>
 
 	<div class="allOptions" id="ben-news-account">
-		<p> View news </p>
-		
+		<%= render 'club_updates/club_update' %>
 	</div>
 
 

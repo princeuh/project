@@ -61,3 +61,17 @@ $(document).on "turbolinks:load", ->
 
 			$('.employee-update-proposal').click ->
 				$(this).fadeOut(500)
+
+			$('#upload-empl-files').click ->
+				$('.priv-opts').hide()
+				$('#upload-empl').fadeIn(500)
+
+
+			$('#edit-empl-acct').click ->
+				$('.priv-opts').hide()
+				$('#edit-empl').fadeIn(500)
+
+
+			$('#show-all-files').click ->
+				$('.priv-opts').hide()
+				$('#all-memos-empl').fadeIn(500)

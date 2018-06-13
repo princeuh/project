@@ -81,14 +81,25 @@
 
 <div id="show-priviledges" class="empl-opts">
 	<% if current_employee.is_admin? %>
-		<p class="employee-links"> You have Administrative Priviledges on the system </p>
+		<p class="employee-links" style="text-align:center;"> You have Administrative Priviledges on the system </p>
 	<% else %>
-		<p class="employee-links"> Please contact an administrator for approval </p>
+		<p class="employee-links" style="text-align:center;"> Please contact an administrator for approval </p>
 	<% end %>
+	<div  id="edit-empl" class="priv-opts">
+		<%= render 'employees/edit_employee' %>
+	</div>
+	<div id="upload-empl" class="priv-opts">
+		<%= render 'nemabollon_files/upload_memos' %>
+	</div>
 
-	<%= render 'employees/edit_employee' %>
-	<%= render 'nemabollon_files/upload_memos' %>
-	<%= render 'nemabollon_files/all_memos' %>
+	<div  id="all-memos-empl" class="priv-opts">
+		<%= render 'nemabollon_files/all_memos' %>
+	</div>
+
+
+	<button class="dash-bttn" id="edit-empl-acct">Edit Account </button>
+	<button class="dash-bttn" id="upload-empl-files">Upload File </button>
+	<button class="dash-bttn" id="show-all-files">All Files </button>
 </div>
 
 <div id="create-club-update" class="empl-opts">
