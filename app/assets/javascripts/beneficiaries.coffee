@@ -31,3 +31,13 @@ $(document).on "turbolinks:load", ->
 						$('#project_status').fadeIn(500)
 						$('#sub-proj-plan').fadeIn(500)
 						$(this).hide()
+
+
+				$('#update_project').click -> 
+					$('.edit_project').fadeIn(500)
+
+				$('#view-proj').click -> 
+					$('.proj-plan').fadeIn(500)
+
+				$('.proj-plan').click ->
+					$(this).fadeOut(500)

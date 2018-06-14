@@ -206,7 +206,7 @@ input[type=submit]:hover, input[type=submit]:focus {
         left: 8%;
     }
 
-    .forms{
+    .forms, .proj-plan{
         background-color: #3c2054;
         margin: auto;
         width: 30%;
@@ -216,6 +216,12 @@ input[type=submit]:hover, input[type=submit]:focus {
         overflow: auto;
 
     }
+
+    .proj-plan{
+        display: none;
+    }
+
+
 
     .main-page-content{
         z-index: 45;

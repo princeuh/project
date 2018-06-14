@@ -1,1 +1,11 @@
-<p> edit post </p>
+<div class="forms">
+<h4 class="contact-header" > UPDATE POST  </h4>
+<%= form_for(:post, url:  post_path) do |f| %>
+	<%= f.label :Title %>
+	<%= f.text_field :title %>
+	<%= f.label :Content %>
+	<%= f.text_area :content %>
+	<%= f.submit "Update Post" %>
+	<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %> %>
+<% end %>
+</div>

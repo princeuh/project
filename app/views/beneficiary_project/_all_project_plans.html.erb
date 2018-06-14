@@ -2,14 +2,54 @@
 
 <%  @projplans.each do |proj| %>
 
-<div class="flip-container">
-	<div class="flipper">
-	<div class="front">	
-	<%= image_tag("clubAvatar.png", class: "clubIcon" , width: "100", height: "100") %><br>
+		<div class="front">	
+			<%= image_tag("proposalAvatar.png", class: "honor" , width: "80", height: "100") %>
+			<p> Title : <%= proj.title %></p>
+		</div>
+		<div class="back">
+				<button class="dash-bttn update-proposal" id="update_project"> Update Proposal </button>
+				<button class="dash-bttn update-proposal" id="view-proj"> View Proposal </button>
+		</div>
+		</div>
 
-</div>
-<div class="back">
+		<div class="proj-plan">
+			<h4 class="contact-header" > Title </h4> 
+			<p> <%= proj.title %></p>
+			<h4  class="contact-header" > Introduction </h4>
+			<p> <%= proj.introduction %></p>
+			<h4  class="contact-header" > Description </h4> 
+			<p> <%= proj.description %></p>
+			<h4  class="contact-header" > Company Description </h4> 
+			<p> <%= proj.company_description %></p>
+			<h4  class="contact-header" > Enterprise </h4> 
+			<p><%= proj.enterprise_particulars %></p>
+			<h4  class="contact-header" > Marketing </h4>
+			<p> <%= proj.marketing %></p>
+			<h4  class="contact-header" > Human Resources </h4> 
+			<p> <%= proj.human_resources %></p>
+			<h4  class="contact-header" > Collateral  </h4>
+			<p>  <%= proj.collateral_fund %></p>
+			<h4  class="contact-header" > Management </h4> 
+			<p> <%= proj.management %></p>
+			<h4  class="contact-header" > Project Financing </h4> 
+			<p> <%= proj.project_financing %></p>
+			<h4  class="contact-header" > Financial Analysis </h4> 
+			<p> <%= proj.financial_analysis %></p>
+			<h4  class="contact-header" > Economic Analysis </h4> 
+			<p> <%= proj.economic_analysis %></p>
+			<h4  class="contact-header" > Environmental Implications </h4> 
+			<p> <%= proj.environmental_implications%></p>
+			<h4  class="contact-header" > Social Implications </h4> 
+			<p> <%= proj.social_implications %></p>
+			<h4  class="contact-header" > Transportation </h4> 
+			<p> <%= proj.transport_impacts %></p>
+			<h4 class="contact-header" > Conclusion </h4> 
+			<p> <%= proj.conclusion %></p>
+		</div>
 
-</div>
-</div>
-</div>
+		<div class="edit_project">
+			<%= render 'beneficiary_project/edit_beneficiary' %>
+		</div>
+
+
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_09_165210) do
+ActiveRecord::Schema.define(version: 2018_06_13_215504) do
 
   create_table "beneficiaries", force: :cascade do |t|
     t.string "firstname"
@@ -32,6 +32,29 @@ ActiveRecord::Schema.define(version: 2018_06_09_165210) do
     t.string "reset_digest"
     t.datetime "reset_send_at"
     t.index ["email"], name: "index_beneficiaries_on_email", unique: true
+  end
+
+  create_table "beneficiary_projects", force: :cascade do |t|
+    t.string "title"
+    t.text "introduction"
+    t.text "description"
+    t.text "company_description"
+    t.text "enterprise_particulars"
+    t.text "marketing"
+    t.text "human_resources"
+    t.text "collateral_fund"
+    t.text "management"
+    t.text "project_financing"
+    t.text "financial_analysis"
+    t.text "economic_analysis"
+    t.text "social_implications"
+    t.text "environmental_implications"
+    t.text "transport_impacts"
+    t.text "conclusion"
+    t.integer "beneficiary_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["beneficiary_id"], name: "index_beneficiary_projects_on_beneficiary_id"
   end
 
   create_table "careers", force: :cascade do |t|

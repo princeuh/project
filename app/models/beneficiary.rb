@@ -2,6 +2,7 @@ class Beneficiary < ApplicationRecord
 	attr_accessor :remember_token, :activation_token, :reset_token
   before_create :create_activation_digest, :assign_user_type
 	 before_save { email.downcase! }
+   has_many :beneficiary_projects
 	 validates :firstname, presence: true, length: { maximum: 50 }
 	 validates :lastname, presence: true, length: { maximum: 50 }
 	 validates :address, presence: true
@@ -10,7 +11,7 @@ class Beneficiary < ApplicationRecord
 	 validates :country, presence: true
 	 validates :phone_number, presence: true
 	 VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
-		validates :email, presence: true, length: { maximum: 255 },
+	validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
 

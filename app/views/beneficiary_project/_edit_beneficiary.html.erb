@@ -1,6 +1,6 @@
 <div class="forms" style="margin-top: 120px;">
-    <h4  class="contact-header"> PLEASE SUBMIT YOUR PROJECT PLAN </h4>
-<%= form_for(:beneficiary_project, url: beneficiary_beneficiary_projects_path) do |f| %>
+    <h4  class="contact-header"> EDIT PROJECT PLAN </h4>
+<%= form_for(:beneficiary_project, url: beneficiary_beneficiary_project_path) do |f| %>
 	<%= f.label :Title %><br>
 	<%= f.text_field :title %><br>
 	<%= f.label :Introduction %><br>
@@ -33,7 +33,7 @@
 	<%= f.text_area :transport_impacts%><br>
 	<%= f.label :Conclusion %><br>
 	<%= f.text_area :conclusion%><br>
-	<%= f.submit "Submit Proposal" %><br>
+	<%= f.submit "Update Proposal" %><br>
 	<%= f.file_field :picture  %> %>
 <% end %>
 </div>

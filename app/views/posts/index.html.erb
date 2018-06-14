@@ -1,6 +1,6 @@
 <% provide(:title, "News") %>
 <div class="content">
-	<h4  class="contact-header" style="margin-top: 100px;"> NEWS </h4>
+	<h4  class="contact-header" style="margin-top: 100px;"> UPDATES </h4>
 
 <%  @posts.each do |post| %>
 
@@ -9,7 +9,7 @@
 		<div class="front">	
 	<%= image_tag post.picture.url if post.picture? %><br>
 
-	<p> <%= post.title %></p>
+	<h4> <%= post.title %></h4>
 	<p style="width: 100px; overflow:hidden; text-overflow:ellipsis;"><%= post.content %></p>
 
 </div>

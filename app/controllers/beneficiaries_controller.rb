@@ -37,6 +37,7 @@ class BeneficiariesController < ApplicationController
 		@beneficiary = Beneficiary.find(params[:id])
 		@clubs = Club.all
 		@club_updates = ClubUpdate.all
+		@projplans = BeneficiaryProject.where(beneficiary_id: current_user.id)
 	end
 
 	#allows the beneficiary to update their data
