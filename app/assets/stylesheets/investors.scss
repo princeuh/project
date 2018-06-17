@@ -119,6 +119,53 @@
 		bottom: 35px;
 	}
 
+    #charge-card{
+        display: none;
+        height:650px;
+        position: absolute;
+        width: 100%;
+        top: 25%;
+    }
+
+    #selected-amt{
+       position: absolute;
+       left: 65%; 
+    }
+
+
+    #mobile-payment{
+        width: 45%;
+        height: 35%;
+    }
+
+    .tooltip-background{
+        background-color: #7439a066;
+        position: absolute;
+        top: 15%;
+        left: 35%;
+        padding: 35px;
+        border-radius: 5px;
+        display: none;
+    }
+
+    #investor-proposal{
+        position: absolute;
+        left: 17%;
+        top: 9%;
+    }
+
+    #dash-email{
+        position: absolute;
+        top: 20%;
+        left: 35%;
+    }
+
+    #edit-investor{
+        width: 100%;
+        height: 550px;
+    }
+
+
 
 
 }
@@ -176,6 +223,34 @@
     	width: 350px;
     	height: 250px;
     }
+
+
+    #mobile-payment{
+        width: 80%;
+        height: 35%;
+    }
+
+    #dash-email{
+        position: absolute;
+        top: 10%;
+        left: 35%;
+    }
+
+
+    #investor-proposal{
+        position: absolute;
+        left: 22%;
+        top: 9%;
+    }
+
+    #charge-card{
+        display: none;
+        height:650px;
+        position: absolute;
+        width: 100%;
+        top: 18%;
+    }
+
 
 
 

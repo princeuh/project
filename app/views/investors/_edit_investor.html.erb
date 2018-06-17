@@ -1,5 +1,5 @@
 
-<div class="forms">
+<div class="forms" id="edit-investor">
 <h4  class="contact-header"> UPDATE INVESTOR ACCOUNT </h4>
 <%= form_for(@investor, url:   investor_path) do |f| %>
 	<%= f.label :firstname %><br>
@@ -20,9 +20,7 @@
 	<%= f.hidden_field :is_investor, :value => true %>
 	<%= f.hidden_field :investment_total %>
 	<br><br>
-
 	<%= f.submit "Update Account"%>
-
 
 <% end %>
 </div>

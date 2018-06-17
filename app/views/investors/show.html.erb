@@ -106,7 +106,7 @@
 	
 			<%= form.submit "Submit Proposal" %>
 		<% end %>
-		<button id="close-prop">X</button>
+		<button id="close-prop" class="dash-bttn">X</button>
 	</div>
 	</div>
 	</div>
@@ -118,13 +118,12 @@
 
 
 	<div id="dash-acct-opts">
-		<button class="dash-bttn" id="acct-profile"> Profile </button>
-		<button class="dash-bttn" id="acct-contacts">  Emergency Contacts </button>
-		<button class="dash-bttn" id="acct-email"> Update Email </button>
-		<button class="dash-bttn" id="acct-pass"> Reset Password </button>
+		<button class="dash-bttn investor-bttn" id="acct-profile"> Profile </button>
+		<button class="dash-bttn investor-bttn" id="acct-contacts">  Emergency Contacts </button>
+		<button class="dash-bttn investor-bttn" id="acct-email"> Update Profile </button>
 	</div>
 
-	<div id="dash-profile" class="dash-account acct-default">
+	<div id="dash-profile" class="dash-account">
 		<p class="dash-profile"> Name: <%= @investor.firstname %><span> </span><%= @investor.lastname %></p>
 		<p class="dash-profile">Email: <%= @investor.email %></p>
 		<p class="dash-profile">Investment Total:<%= @investor.investment_total %> </p>
@@ -202,8 +201,7 @@
 
 		</div>
 
-	<div id="dash-email" class="dash-account"> <p> shows email updates </p> </div>
-	<div id="dash-pass" class="dash-account"> <p> shows password updates </p> </div>
+	<div id="dash-email" class="dash-account"> <%= render 'edit_investor' %> </div>
 
 
 

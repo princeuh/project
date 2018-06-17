@@ -35,7 +35,7 @@ $(document).on "turbolinks:load", ->
 					$(this).css("letter-spacing", "2px")
 					$(this).css("color", "#4caf50")
 
-			$('.dash-bttn').click -> 
+			$('.investor-bttn').click -> 
 				$('.dash-account').fadeOut()
 				if @id == 'acct-profile'
 					$('#dash-profile').fadeIn(500)
@@ -43,24 +43,23 @@ $(document).on "turbolinks:load", ->
 					$('#dash-contacts').fadeIn(500)
 				else if @id == 'acct-email'
 					$('#dash-email').fadeIn(500)
-				else if @id == 'acct-pass'
-					$('#dash-pass').fadeIn(500)
 
 
 			$('#active-member').click ->
 					$('#more-payment').show()
 
+
 			$('#join_club').click ->
 					$('#show-amt').fadeIn(500)
-
-			$('.invest-amt').mouseenter ->
-					#$(this).css("background-color", "#aa0098")
-					$(this).css("color", "white")
+				
+			$('#increase-amount').click ->
+				$('#adjust-tooltip').fadeIn().delay(4000).fadeOut(500)
 
 			$('.invest-amt').click ->
-				$('#charge-card').fadeIn()
-				$(this).css("color", "#3f83b1")
-				#$(this).css('background-color', "#c37bf93b")
+				$('#charge-card').fadeIn(500)
+				$('.invest-amt').css("color", "#3f83b1")
+				$('.invest-amt').css("background-color", "#c37bf93b")
+				$('#investment-amt').css('background-color', "#c37bf93b")
 				if @id == 'twentyFive'
 					document.getElementById("selected-amt").innerHTML = "$25"
 					$(this).css("background-color", "#aa0098")
