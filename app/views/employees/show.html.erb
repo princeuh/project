@@ -83,7 +83,7 @@
 	<% if current_employee.is_admin? %>
 		<p class="employee-links" style="text-align:center;"> You have Administrative Priviledges on the system </p>
 	<% else %>
-		<p class="employee-links" style="text-align:center;"> Please contact an administrator for approval </p>
+		<p class="employee-links" style="text-align:center;"> Please contact an administrator for more priviledges</p>
 	<% end %>
 	<div  id="edit-empl" class="priv-opts">
 		<%= render 'employees/edit_employee' %>

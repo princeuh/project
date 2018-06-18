@@ -1,5 +1,7 @@
 <% provide(:title, "Clubs") %>
 <div class="content">
+
+<div class="forms">
 <%= form_for(@club, url:  clubs_path) do |f| %>
 
 <div id="club-info-one">
@@ -36,5 +38,7 @@
 
 
 </div>
-<%= link_to "All Clubs", clubs_path, :class => "app-links" %>
-<%= link_to "Dashboard", current_employee, :class => "app-links" %>
+
+</div>
+<%= link_to "Return to #{current_employee.firstname}'s Dashboard", current_employee, :class => "app-links" %><br>
+<%= link_to "View All Clubs", clubs_path, :class => "app-links" %>

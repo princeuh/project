@@ -1,3 +1,4 @@
+<h4><%= link_to "Add Club", new_club_path,  :class=> "app-links"%></h4>
 <%  @clubs.each do |club| %>
 <div class="flip-container">
 	<div class="flipper">
@@ -17,12 +18,15 @@
 	<p> Invested Amount USD :$<%= club.amt_invested %></p>
 	<p> Member Count : <%= club.number_of_members %></p>
 
-	<%= link_to "Edit", edit_club_path(club), :class=> "app-links" %>
+		<%= link_to "Edit", edit_club_path(club), :class=> "app-links" %>
+
+	<% if current_employee.is_admin? %>
+
 	<%= link_to 'Destroy', club_path(club),
               method: :delete,
               data: { confirm: 'Are you sure?' },  :class=> "app-links" %>
 
-	<%= link_to "Add Club", new_club_path,  :class=> "app-links"%>
+   <% end %>
 <% end %>
 	
 </div>

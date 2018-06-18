@@ -12,9 +12,13 @@
 		</div>
 		<div class="back">
 
+	<% if current_employee.is_admin? %>
+
 	<%= link_to 'Delete Account', investor_path(investor),
               method: :delete,
               data: { confirm: 'Are you sure?' },  :class => "employee-links" %>
+
+    <% end %>
 
         	</div>
 	</div>

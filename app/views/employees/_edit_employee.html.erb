@@ -19,9 +19,10 @@
 
 	<%= f.label :password_confirmation %><br>
 	<%= f.password_field :password_confirmation %><br>
-
+<% if current_employee.is_admin? %>
 	<%= f.label :is_admin %><br>
 	<%= f.check_box :is_admin %><br> 
+<% end %>
 
 	<%= f.submit "Update Account"%>
 

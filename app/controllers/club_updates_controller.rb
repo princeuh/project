@@ -13,6 +13,7 @@ class ClubUpdatesController < ApplicationController
 	#the new clubupdate is saved
 	def create
 		 @clubupdate = ClubUpdate.new(clubupdate_params)
+		 debugger
   		if @clubupdate.save
   		#saved and logged in employee
       		SystemLog.new( system_event: "Blog clubupdate #{@club_update.title} created by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
@@ -54,7 +55,7 @@ class ClubUpdatesController < ApplicationController
 	#clubupdate parameters are sent through strong params
 	private
 		def clubupdate_params
-			params.require(:club_update).permit(:title, :content, :picture)
+			params.require(:club_update).permit(:title, :subtitle, :content, :picture)
 		end
 
 		def logged_in_employee

@@ -24,9 +24,9 @@
 <script>
 
 // Create a Stripe client.
-var stripe = Stripe('pk_test_FPhseII9qABn0XiQKaXv2HLb');
+//var stripe = Stripe('pk_test_FPhseII9qABn0XiQKaXv2HLb');
 
-//var stripe = Stripe(ENV['STRIPE_LIVE_PUB_KEY'])
+var stripe = Stripe(ENV['STRIPE_LIVE_PUB_KEY'])
 // Create an instance of Elements.
 var elements = stripe.elements();
 

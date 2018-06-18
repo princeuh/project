@@ -1,5 +1,7 @@
 <div class="content all-clubs">
-<h4> All Clubs </h4>
+
+<%= link_to "Return to #{current_employee.firstname}'s Dashboard", current_employee, :class => "app-links" %><br>
+<h4 class="contact-header"> ALL CLUBS </h4>
 <%  @clubs.each do |club| %>
 
 <div class="flip-container">
@@ -18,17 +20,18 @@
 	<p> Member Count : <%= club.number_of_members %></p>
 	<p> Proposal : <%= club.proposal %></p>
 	<% if employee_logged_in? %>
-	<%= link_to "Edit", edit_club_path(club) %>
+	<%= link_to "Edit", edit_club_path(club), :class => "app-links"  %>
+	<% if current_employee.is_admin? %>
+
 	<%= link_to 'Destroy', club_path(club),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+              data: { confirm: 'Are you sure?' }, :class => "app-links"  %>
+     <% end %>
     <% end %>
 </div>
 </div>
 </div>
 
 <% end %>
-
-<%= link_to "My Account", current_employee%>
 </div>
 
