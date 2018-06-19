@@ -13,10 +13,9 @@ class ClubUpdatesController < ApplicationController
 	#the new clubupdate is saved
 	def create
 		 @clubupdate = ClubUpdate.new(clubupdate_params)
-		 debugger
   		if @clubupdate.save
   		#saved and logged in employee
-      		SystemLog.new( system_event: "Blog clubupdate #{@club_update.title} created by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
+      		SystemLog.new( system_event: "Blog clubupdate #{@clubupdate.title} created by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
       		redirect_to @clubupdate
   		else
   			flash[:error] = "Unable to create Club Update your file must have one of these extensions *jpg jpeg gif png"
@@ -25,19 +24,19 @@ class ClubUpdatesController < ApplicationController
 	end
 
 	def show
-		@clubupdate = ClubUpdate.find(params[:club_update_id])
+		@clubupdate = ClubUpdate.find(params[:id])
 	end
 
 	#appropriate employees can edit a clubupdate
 	def edit
-		@clubupdate = ClubUpdate.find(params[:club_update_id])
+		@clubupdate = ClubUpdate.find(params[:id])
 	end
 
 	#appropriate employees can update a clubupdate
 	def update
 		@clubupdate = ClubUpdate.find(params[:id])
 		if @clubupdate.update(club_params)
-			SystemLog.new( system_event: "Blog clubupdate #{@club_update.title} updated by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
+			SystemLog.new( system_event: "Blog clubupdate #{@clubupdate.title} updated by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
 			redirect_to @clubupdate
 		else
 			render 'edit'
@@ -47,7 +46,7 @@ class ClubUpdatesController < ApplicationController
 	#appropriate employees can destroy a clubupdate
 	def destroy
 		@clubupdate = ClubUpdate.find(params[:id])
-		SystemLog.new( system_event: "Blog clubupdate #{@club_update.title} deleted from system by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
+		SystemLog.new( system_event: "Blog clubupdate #{@clubupdate.title} deleted from system by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
 		@clubupdate.destroy
 		redirect_to clubupdates_path
 	end

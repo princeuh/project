@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   before_action :logout_users
+  before_action :logout_employees
   before_action :logout_beneficiaries
   before_action :logged_in_employee, only: [:new, :create, :edit, :update, :destroy]
 
@@ -86,9 +87,17 @@ private
     end
   end
 
+  def logout_employees
+    if employee_logged_in?
+      employee_logout
+      redirect_to root_url
+    end
+  end
+
   def logout_beneficiaries
     if beneficiary_logged_in?
       beneficiary_log_out
+       redirect_to root_url
     end
   end
 

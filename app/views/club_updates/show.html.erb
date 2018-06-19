@@ -1,7 +1,8 @@
 <% provide(:title, "Show Update") %>
 
-<h4> <%= @club_update.title %></h4>
+<h4 class="contact-header"> <%= @clubupdate.title %></h4>
 
-<p><%= @club_update.content %></p>
-<%= image_tag @club_update.picture.url if @club_update.picture? %>
+<%= image_tag @clubupdate.picture.url if @clubupdate.picture? %>
+
+<p><%= @clubupdate.content %></p>
 
