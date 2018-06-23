@@ -32,7 +32,8 @@ class PaymentsController < ApplicationController
 				:customer => current_user.stripe_cust_id,
 				:items => [
 					{ #:plan => 'plan_D0Xfo5ytIdv5AI',
-						:plan => 'plan_Cur8EF2z9uZ4Qs',	
+						#:plan => 'plan_Cur8EF2z9uZ4Qs',
+						:plan => 'plan_CzPSGgBZzo4nSv',	
 
 					},
 				]	
