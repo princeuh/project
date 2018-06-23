@@ -32,6 +32,7 @@ class EmployeesController < ApplicationController
     @proposals = Proposal.all
      @club_updates = ClubUpdate.all
      @memos = NemabollonFile.all
+     @events = EmployeeCalendar.all
   end
 
   def edit

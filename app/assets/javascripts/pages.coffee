@@ -56,5 +56,23 @@ $(document).on "turbolinks:load", ->
 		$('.deem-paragraph').mouseleave ->
 			$(this).css("color", "#8dc2e640")
 
+		$('.h-header').mouseenter ->
+			$(this).css("transform", "scale(2.5)")
+
+		$('.h-header').mouseleave ->
+			$(this).css("transform", "scale(1.0)")
+
+		$('.h-header').click ->	
+			$('.h-content').fadeOut(500)
+			$(this).css("color", "#d6bad5")
+			$(this).css("transform", "scale(1.0)")
+			if @id == '1'
+				$('#content-1').fadeIn(500)
+				$(this).css("color", "#C2188D")
+				$(this).css("transform", "scale(2.5)")
+
+
+
+
 
 

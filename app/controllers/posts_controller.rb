@@ -12,7 +12,8 @@ class PostsController < ApplicationController
 
 	#the new post is saved
 	def create
-		 @post = Career.new(post_params)
+		@post = Career.new(post_params)
+		@post.is_approved = false
   		if @post.save
   		#saved and logged in employee
       		SystemLog.new( system_event: "Blog Post #{@post.title} created by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save

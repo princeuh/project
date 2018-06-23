@@ -8,6 +8,7 @@
 <% if @employee.is_admin %>
 
 <p id="emp-updates" class="emp-opts"> Updates and News </p>
+<p id="emp-cal" class="emp-opts"> Calendar </p>
 <p id="emp-add" class="emp-opts"> Add Employee </p>
 <p id="emp-news" class="emp-opts"> Add News </p>
 <p id="emp-priviledges" class="emp-opts"> Priviledges </p>
@@ -22,6 +23,7 @@
 
 <% else %> 
 <p id="emp-updates" class="emp-opts"> My Updates and News </p>
+<p id="emp-cal" class="emp-opts"> Calendar </p>
 <p id="emp-priviledges"   class="emp-opts"> My Priviledges </p>
 <p id="emp-clubs"  class="emp-opts"> All Clubs</p>
 <p id="emp-users" class="emp-opts"> All Users </p>
@@ -34,6 +36,11 @@
 </div>
 
 <div id="employee-content">
+
+
+<div id="show-cal" class="empl-opts">
+	<%= render 'employee_calendar/show_events' %>
+</div>
 
 <div id="add-employee" class="empl-opts">
 	<%= render 'employees/add_employee' %>

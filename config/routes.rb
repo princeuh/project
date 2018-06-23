@@ -81,6 +81,7 @@ Rails.application.routes.draw do
    resources :club_updates
    resources :posts
    resources :contacts
+   resources :employee_calendar
 
    resources :careers do
       resources :resumes, only: [:index, :new, :create, :show]

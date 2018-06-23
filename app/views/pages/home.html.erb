@@ -1,51 +1,29 @@
 <% provide(:title, "Home") %>
 <div class="content">
-<div id="slideshow">
-<div class="slide-wrapper">
-<div class="highlights">
-	<%=  image_tag("gsBlue.png",  width: 200, height: 200,alt: "login", :class => "main-imgs", :id => 'main') %>
-	<%=  image_tag("fundBlue.png", width: 120, height: 120, alt: "login", :class => "main-imgs", :id => 'fund') %>
-	<%=  image_tag("growthBlue.png", width: 120, height: 120, alt: "login",  :class => "main-imgs", :id => 'growth') %>
-	<%=  image_tag("roiBlue.png", alt: "login", width: 120, height: 120, :class => "main-imgs", :id => 'roi') %>
-	<%=  image_tag("connectBlue.png", alt: "login", width: 120, height: 120,  :class => "main-imgs", :id => 'connect') %>
 
-	<div class="main-content" id="gs-paragraph">
-		<h4 class="home-header"> Global Solutions </h4>
-		<p class="deem-paragraph"> Provide global investment to fund verified African enterprises </p>
-	</div>
-
-	<div class="main-content" id="connect-paragraph">
-		<h4 class="home-header"> Connect </h4>
-		<p class="deem-paragraph"> Connect with other investors to provide financial and other resources </p>
-	</div>
-
-	<div class="main-content" id="roi-paragraph">
-		<h4 class="home-header"> ROI </h4>
-		<p class="deem-paragraph"> Earn a ROI through funding small and medium enterprise </p>
-	</div>
-
-	<div class="main-content" id="growth-paragraph">
-		<h4 class="home-header"> Economic Growth </h4>
-		<p class="deem-paragraph"> Contribute to economic growth by funding small business which are the backbone of innovation, wealth and development </p>
-	</div>
-
-	<div class="main-content" id="fund-paragraph">
-		<h4 class="home-header"> Fund Enterprise </h4>
-		<p class="deem-paragraph"> Pool resources with other venture club members to fund enterprise </p>
-	</div>
-</div>
- 
-
-<%  @highlights.each do |highlight| %>
-	<div class="highlights">
+ <% if @highlights.count > 0 %>
+	<%  @highlights.each do |highlight| %>
+	<div class="slidescroll">
+		<div class="bg-image">
 			<%= image_tag highlight.picture.url if highlight.picture? %>
-		<div class="highlight-content">
-			<h4 class="highlight-header"><%= highlight.caption %> </h4>
-			<p class="highlight-post"><%= highlight.summary %></p>
 		</div>
 	</div>
+
+	<div id="left-home">
+		<div class="left-headers">
+			<h4 class="h-header" id=<%= "#{highlight.id}" %>> <%= highlight.caption %> </h4>
+		</div>
+	</div>
+	<div id="right-home">
+		<div class="h-content" id=<%= "content-#{highlight.id}" %>
+			<p> <%= highlight.caption %> </p>
+			<p> <%= highlight.summary %></p>
+		</div>
+	</div>
+	<% end %>
+
 <% end %>
-</div>
-</div>
+
+
 </div>
 

@@ -412,6 +412,61 @@ to{
         90% {margin-left: -2184px;}
     }
 
+        #left-home{
+        left: 0;
+        position: fixed;
+        width: 50%;
+        height: 100%;
+        background-color: #502975ab;
+    }
+
+
+     #right-home{
+        background-color: #3B275B;
+        position: fixed;
+        right:0;
+        width:50%;
+        height: 100%;
+    }
+
+    .left-headers {
+        position: absolute;
+        left: 5%;
+        top: 15%;
+        height: 585px;
+        overflow: auto;
+        width: 450px;
+    }
+
+      .left-headers h4{
+        cursor: pointer;
+      }
+
+      .h-content{
+        position: absolute;
+        right: 5%;
+        top: 15%;   
+        height: 650px;
+        width: 450px;
+        overflow: auto;
+      }
+
+      .h-header{
+        color: #d6bad5;
+        font-size: 1.5em;
+        text-align: center;
+      }
+
+      .slidescroll{
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+      }
+
+      .bg-image{
+        display: inline-block;
+      }
+
 
 
 

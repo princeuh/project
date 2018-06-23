@@ -54,6 +54,10 @@ $(document).on "turbolinks:load", ->
 				$(this).css("letter-spacing", "2px")
 				$(this).css("color", "#4caf50")
 				$('#show-highlights').show()
+			else if @id == 'emp-cal'
+				$(this).css("letter-spacing", "2px")
+				$(this).css("color", "#4caf50")
+				$('#show-cal').show()
 
 
 			$('.update-proposal').click ->

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_13_215504) do
+ActiveRecord::Schema.define(version: 2018_06_23_141256) do
 
   create_table "beneficiaries", force: :cascade do |t|
     t.string "firstname"
@@ -104,6 +104,16 @@ ActiveRecord::Schema.define(version: 2018_06_13_215504) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "employee_calendars", force: :cascade do |t|
+    t.integer "day"
+    t.string "month"
+    t.string "year"
+    t.string "objective"
+    t.string "author"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "employees", force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
@@ -187,6 +197,7 @@ ActiveRecord::Schema.define(version: 2018_06_13_215504) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "picture"
+    t.boolean "is_approved"
     t.index ["employee_id"], name: "index_posts_on_employee_id"
   end
 
