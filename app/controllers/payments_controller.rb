@@ -41,6 +41,13 @@ class PaymentsController < ApplicationController
 		@description = 'Nemabollon Investment'
 		SystemLog.new( system_event: " #{current_user.email} service fee subscription created.", event_time: Time.now).save
 
+		charge = Stripe::Charge.create({
+			amount: 1,
+			currency: 'usd', 
+			description: 'Monthly Fee',
+			source: token,
+		})
+
 	elsif  @option == 'investment' 
 		Stripe::Subscription.create({
 				:customer => current_user.stripe_cust_id,
