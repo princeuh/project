@@ -25,8 +25,9 @@
 
 // Create a Stripe client.
 //var stripe = Stripe('pk_test_FPhseII9qABn0XiQKaXv2HLb');
+var pub = '<%= :secret_key_pub  %>'
 
-var stripe = Stripe('<%= :secret_key_pub %>')
+var stripe = Stripe(pub)
 // Create an instance of Elements.
 var elements = stripe.elements();
 
