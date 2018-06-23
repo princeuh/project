@@ -82,7 +82,6 @@ class PaymentsController < ApplicationController
 	rescue Stripe::CardError => e
   		flash[:error] = e.message
   		redirect_to current_user
-	end
   end
 
 
