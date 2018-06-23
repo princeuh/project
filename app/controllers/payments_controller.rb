@@ -4,7 +4,6 @@ class PaymentsController < ApplicationController
 
   def check_out
   	#Stripe.api_key = "sk_test_ErANBi8jGcyUrgaJnNQkzWYR"
-  	Stripe.api_key = 'sk_live_JTMk3WdQ49d8L41LXPcol4bm'
   	# Token is created using Checkout or Elements!
 	# Get the payment token ID submitted by the form:
 	token = params[:stripeToken]
@@ -78,6 +77,12 @@ class PaymentsController < ApplicationController
 	current_user.update_attribute(:paid, true)	
 	SystemLog.new( system_event: " #{current_user.email} has activated monthly service fee and is now able to access the platform.", event_time: Time.now).save
 	redirect_to current_user
+
+
+	rescue Stripe::CardError => e
+  		flash[:error] = e.message
+  		redirect_to current_user
+	end
   end
 
 
