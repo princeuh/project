@@ -4,7 +4,7 @@ class PaymentsController < ApplicationController
 
   def check_out
   	#Stripe.api_key = "sk_test_ErANBi8jGcyUrgaJnNQkzWYR"
-  	Stripe.api_key = Rails.configuration.stripe[:secret_key]
+  	Stripe.api_key = 'sk_live_JTMk3WdQ49d8L41LXPcol4bm'
   	# Token is created using Checkout or Elements!
 	# Get the payment token ID submitted by the form:
 	token = params[:stripeToken]
