@@ -32,7 +32,7 @@ class PaymentsController < ApplicationController
 				:items => [
 					{ #:plan => 'plan_D0Xfo5ytIdv5AI',
 						#:plan => 'plan_Cur8EF2z9uZ4Qs',
-						:plan => 'plan_D6m6LlKJvHQo0p',
+						:plan => 'plan_D6mVJenH6KSYfY',
 
 
 					},
