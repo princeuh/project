@@ -8,7 +8,7 @@ class StripeLogsController < ApplicationController
 
 	def create
 		event_json = JSON.parse(request.body.read)
-		debugger
+		
 		#save to database
 		@log = StripeLog.new(event_json)
 		if @log.save
