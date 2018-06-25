@@ -5,6 +5,7 @@
 $(document).on "turbolinks:load", ->
 		$('.emp-opts').click ->
 			$('.empl-opts').hide()
+			$('#emp-intro').hide()
 			$('.help').hide()
 			$('.emp-opts').css("color", "#7f60a9")
 			if @id == 'emp-add'
@@ -59,6 +60,10 @@ $(document).on "turbolinks:load", ->
 				$(this).css("letter-spacing", "2px")
 				$(this).css("color", "#4caf50")
 				$('#show-cal').show()
+			else if @id == 'emp-post'
+				$(this).css("letter-spacing", "2px")
+				$(this).css("color", "#4caf50")
+				$('#show-blog').show()
 
 
 			$('.update-proposal').click ->
@@ -173,8 +178,19 @@ $(document).on "turbolinks:load", ->
 					$('#h-system-logs').fadeIn(500)
 				else if @id == 'help-priviledges'
 					$('#h-priviledges').fadeIn(500)
+				else if @id == 'help-blog'
+					$('#h-blog').fadeIn(500)
 
 			$('.help').click ->
 				$(this).fadeOut(500)
+
+			$('.dash-bttn').click ->
+				if @id == 'blog-show'
+					$('#create-new-post').fadeOut(500)
+					$('#show-all-posts').fadeIn(500)
+				else if @id == 'blog-create'
+					$('#show-all-posts').fadeOut(500)
+					$('#create-new-post').fadeIn(500)
+
 
 				

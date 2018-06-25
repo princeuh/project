@@ -1,1 +1,40 @@
-<p> Show the content of the post </p>
+<h4  class="contact-header" style="margin-top: 100px;"> BLOG & SOCIAL MEDIA POSTS </h4>
+
+<% if @posts.count > 0 %>
+<%  @posts.each do |post| %>
+
+<div class="flip-container">
+	<div class="flipper">
+		<div class="front">	
+	<%= image_tag post.picture.url if post.picture? %><br>
+
+	<h4 class="contact-header"> <%= post.title %></h4>
+</div>
+<div class="back">
+	<p><%= post.content %></p>
+	<% if employee_logged_in? %>
+	  <% if post.is_approved? %>
+	  	<p> Published </p>
+	  <% else %>
+	  	<p> Pending Approval </p>
+	  <% end %>
+
+	  
+	<%= link_to "Edit", edit_post_path(post) %>
+	<%= link_to 'Destroy', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+    <% end %>
+</div>
+</div>
+</div>
+
+<% end %>
+</div>
+
+<% else %>
+
+<h4 class="contact-header"> EXCUSE THE SILENCE </h4>
+<p> Looks like there are no published articles at this time. Please create some or come back later. </p>
+
+<% end %>

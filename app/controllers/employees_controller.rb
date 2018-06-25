@@ -11,7 +11,9 @@ class EmployeesController < ApplicationController
 
   def create
   	@employee = Employee.new(employee_params)
-    @employee.avatar = "None"
+    @employee.email = "#{@employee.lastname}#{@employee.firstname}77@nemabollon.com"
+    @employee.password = "nemabollon77"
+    @employee.avatar = "none"
     @employee.user_type = "employee"
   	if @employee.save
   		#saved and logged in employee
@@ -21,7 +23,6 @@ class EmployeesController < ApplicationController
   	else
       flash[:error] = "Could not create employee account"
   		redirect_to current_employee
-
   	end
   end
 
@@ -36,6 +37,7 @@ class EmployeesController < ApplicationController
      @club_updates = ClubUpdate.all
      @memos = NemabollonFile.all
      @events = EmployeeCalendar.all
+     @posts = Post.all
   end
 
   def edit
@@ -64,7 +66,7 @@ class EmployeesController < ApplicationController
 
    private
 	def employee_params
-		params.require(:employee).permit(:firstname, :lastname, :role, :email, :password, :password_confirmation, :is_admin, :job_category, :job_location, :reports_to, :department, :section, :contact_number, :employee_pid, :employee_rank)
+		params.require(:employee).permit(:firstname, :lastname, :role, :email,  :password, :password_confirmation, :is_admin, :job_category, :job_location, :reports_to, :department, :section, :contact_number, :employee_pid, :employee_rank)
 	end
 
    def logged_in_employee

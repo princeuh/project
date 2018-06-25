@@ -16,10 +16,11 @@ class PostsController < ApplicationController
 		@post.is_approved = false
   		if @post.save
   		#saved and logged in employee
+  			flash[:success] = "Your Post is only saved but has not been approved for Publishing. "
       		SystemLog.new( system_event: "Blog Post #{@post.title} created by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
-      		redirect_to @post
+      		redirect_to current_employee
   		else
-  			render 'new'
+  			redirect_to current_employee
   		end
 	end
 
@@ -36,10 +37,12 @@ class PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
 		if @post.update(club_params)
+			flash[:success] = "Updated your post"
 			SystemLog.new( system_event: "Blog Post #{@post.title} updated by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
-			redirect_to @post
+			redirect_to current_employee
 		else
-			render 'edit'
+			flash[:error] = "Unable to update the post"
+			redirect_to current_employee
 		end
 	end
 
@@ -48,7 +51,7 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		SystemLog.new( system_event: "Blog Post #{@post.title} deleted from system by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
 		@post.destroy
-		redirect_to posts_path
+		redirect_to current_employee
 	end
 
 	#post parameters are sent through strong params

@@ -60,7 +60,7 @@ class PagesController < ApplicationController
     @highlight = Page.find(params[:id])
     if @highlight.update(highlight_params)
        SystemLog.new( system_event: "#{current_employee.lastname}, #{current_employee.firstname}, #{current_employee.email} updated a highlight on the home page #{@highlight.caption}", event_time: Time.now).save
-      redirect_to root_url
+      redirect_to current_employee
     else
       flash[:error] = "Unable to update"
     end
@@ -71,7 +71,7 @@ class PagesController < ApplicationController
      SystemLog.new( system_event: "#{current_employee.lastname}, #{current_employee.firstname}, #{current_employee.email} deleted a highlight from the system #{@highlight.caption}", event_time: Time.now).save
     @highlight.destroy
 
-    redirect_to root_url
+    redirect_to current_employee
   end
 
 private 

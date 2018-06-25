@@ -9,6 +9,7 @@
 
 <p id="emp-updates" class="emp-opts"> Updates and News </p>
 <p id="emp-cal" class="emp-opts"> Calendar </p>
+<p id="emp-post" class="emp-opts"> Add Blog Post </p>
 <p id="emp-add" class="emp-opts"> Add Employee </p>
 <p id="emp-news" class="emp-opts"> Add News </p>
 <p id="emp-priviledges" class="emp-opts"> Priviledges </p>
@@ -24,6 +25,7 @@
 <% else %> 
 <p id="emp-updates" class="emp-opts"> My Updates and News </p>
 <p id="emp-cal" class="emp-opts"> Calendar </p>
+<p id="emp-post" class="emp-opts"> Add Blog Post </p>
 <p id="emp-priviledges"   class="emp-opts"> My Priviledges </p>
 <p id="emp-clubs"  class="emp-opts"> All Clubs</p>
 <p id="emp-users" class="emp-opts"> All Users </p>
@@ -36,10 +38,32 @@
 </div>
 
 <div id="employee-content">
+	<div id="emp-intro">
+		<p > Welcome, <%= current_employee.firstname %></p>
+		<% if current_employee.role == 'Social Media Curator' %>
+			<p> You are the Social Media Curator. </p>
+			<p> As Social Media Curator your responsibilities include managing all Nemabollon Social Media Accounts, updating accounts with engaging content.Building a user following through engaging content.</p>
+			<p> Below are the Social Media Account Credentials for your use. Please do not share these with anyone outside the Social Media Department. </p>
+		<% end %>
+	</div>
+
 
 <div id="show-cal" class="empl-opts">
 	<button class="dash-bttn-help" id="help-calendar">?</button>
 	<%= render 'employee_calendar/show_events' %>
+</div>
+
+<div id="show-blog" class="empl-opts">
+	<button class="dash-bttn-help" id="help-blog">?</button>
+	<div id="show-all-posts">
+		<%= render 'posts/show' %>
+	</div>
+
+	<div id="create-new-post">
+		<%= render 'posts/new' %>
+	</div>
+	<button class="dash-bttn" id="blog-show">All Articles</button>
+	<button class="dash-bttn" id="blog-create">Create An Article</button>
 </div>
 
 
@@ -144,6 +168,12 @@
 <div class="help" id="h-add-employee">
 	<p> Welcome to the Add Employee Interface </p>
 	<p> This is the interface HR uses to add new Employee Accounts to the system. </p>
+
+</div>
+
+<div class="help" id="h-blog">
+	<p> Welcome to the Blog Interface</p>
+	<p> This is where the all Social Media Posts are added to the System. </p>
 
 </div>
 <div class="help" id="h-show-investors">
