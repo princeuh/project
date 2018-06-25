@@ -1,18 +1,19 @@
 <% if @club_updates.count > 0 %>
+<div class="scrolling-wrapper">
 <%  @club_updates.each do |club_update| %>
-<div class="flip-container">
-	<div class="front">	
-		<%= image_tag("avatar-01.png", class: "clubIcon" , width: "110", height: "100") %><br>
-	<h4> <%= club_update.title %></h4>
-	</div>
-	<div class="back">
-	<p>  <%= club_update.content %></p>
-	<%= image_tag club_update.picture.url if club_update.picture? %>
-	</div>
+<div class="n-items">
+<%= image_tag club_update.picture.url if club_update.picture? %>
+<div class="news-content">
+<h4 class="contact-header"><%= club_update.title %></h4>
+<p>  <%= club_update.content %></p>
+</div>
 </div>
 
 <% end %>
+</div>
 
 <% else %>
 	<p> There are currently no Club Updates in the system. Please check back later. </p>
 <% end %>
+
+

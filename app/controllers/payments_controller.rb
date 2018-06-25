@@ -138,8 +138,6 @@ class PaymentsController < ApplicationController
 			#	@plan = "invalid"
 			#end	
 
-
-
   	end
 end
 

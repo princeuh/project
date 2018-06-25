@@ -165,6 +165,28 @@
         height: 550px;
     }
 
+    .scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  }
+
+
+
+    .n-items{
+        display: inline-block;
+        margin-left: 50px;
+        width: 200px;
+        height: 200px;
+    }
+
+
+    .n-items img{
+        width: 150px;
+        height: 180px;
+    }
+
 
 
 

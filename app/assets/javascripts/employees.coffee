@@ -5,6 +5,7 @@
 $(document).on "turbolinks:load", ->
 		$('.emp-opts').click ->
 			$('.empl-opts').hide()
+			$('.help').hide()
 			$('.emp-opts').css("color", "#7f60a9")
 			if @id == 'emp-add'
 				$(this).css("letter-spacing", "2px")
@@ -79,3 +80,101 @@ $(document).on "turbolinks:load", ->
 			$('#show-all-files').click ->
 				$('.priv-opts').hide()
 				$('#all-memos-empl').fadeIn(500)
+
+			$('.day-num').click ->
+				if @id == "1"
+					document.getElementById("evt-day-num").innerHTML = "1"
+			
+				else if @id == "2"
+					document.getElementById("evt-day-num").innerHTML = "2"
+				else if @id == "3"
+					document.getElementById("evt-day-num").innerHTML = "3"
+				else if @id == "4"
+					document.getElementById("evt-day-num").innerHTML = "4"
+				else if @id == "5"
+					document.getElementById("evt-day-num").innerHTML = "5"
+				else if @id == "6"
+					document.getElementById("evt-day-num").innerHTML = "6"
+				else if @id == "7"
+					document.getElementById("evt-day-num").innerHTML = "7"
+				else if @id == "8"
+					document.getElementById("evt-day-num").innerHTML = "8"
+				else if @id == "9"
+					document.getElementById("evt-day-num").innerHTML = "9"
+				else if @id == "10"
+					document.getElementById("evt-day-num").innerHTML = "10"
+				else if @id == "11"
+					document.getElementById("evt-day-num").innerHTML = "11"
+				else if @id == "12"
+					document.getElementById("evt-day-num").innerHTML = "12"
+				else if @id == "13"
+					document.getElementById("evt-day-num").innerHTML = "13"
+				else if @id == "14"
+					document.getElementById("evt-day-num").innerHTML = "14"
+				else if @id == "15"
+					document.getElementById("evt-day-num").innerHTML = "15"
+				else if @id == "16"
+					document.getElementById("evt-day-num").innerHTML = "16"
+				else if @id == "17"
+					document.getElementById("evt-day-num").innerHTML = "17"
+				else if @id == "18"
+					document.getElementById("evt-day-num").innerHTML = "18"
+				else if @id == "19"
+					document.getElementById("evt-day-num").innerHTML = "19"
+				else if @id == "20"
+					document.getElementById("evt-day-num").innerHTML = "20"
+				else if @id == "21"
+					document.getElementById("evt-day-num").innerHTML = "21"
+				else if @id == "22"
+					document.getElementById("evt-day-num").innerHTML = "22"
+				else if @id == "23"
+					document.getElementById("evt-day-num").innerHTML = "23"
+				else if @id == "24"
+					document.getElementById("evt-day-num").innerHTML = "24"
+				else if @id == "25"
+					document.getElementById("evt-day-num").innerHTML = "25"
+				else if @id == "26"
+					document.getElementById("evt-day-num").innerHTML = "26"
+				else if @id == "27"
+					document.getElementById("evt-day-num").innerHTML = "27"
+				else if @id == "28"
+					document.getElementById("evt-day-num").innerHTML = "28"
+				else if @id == "29"
+					document.getElementById("evt-day-num").innerHTML = "29"
+				else if @id == "30"
+					document.getElementById("evt-day-num").innerHTML = "30"
+				else if @id == "31"
+					document.getElementById("evt-day-num").innerHTML = "31"
+
+
+			$('.dash-bttn-help').click -> 
+				$('.help').hide()
+				if @id == 'help-calendar'
+					$('#h-calendar').fadeIn(500)
+				else if @id == 'help-add-employee'
+					$('#h-add-employee').fadeIn(500)
+				else if @id == 'help-show-investors'
+					$('#h-show-investors').fadeIn(500)
+				else if @id == 'help-updates'
+					$('#h-updates').fadeIn(500)
+				else if @id == 'help-show-clubs'
+					$('#h-show-clubs').fadeIn(500)
+				else if @id == 'help-show-highlights'
+					$('#h-show-highlights').fadeIn(500)
+				else if @id == 'help-show-employees'
+					$('#h-show-employees').fadeIn(500)
+				else if @id == 'help-show-country-managers'
+					$('#h-country-managers').fadeIn(500)
+				else if @id == 'help-all-beneficiaries'
+					$('#h-all-beneficiaries').fadeIn(500)
+				else if @id == 'help-show-proposals'
+					$('#h-show-proposals').fadeIn(500)
+				else if @id == 'help-system-logs'
+					$('#h-system-logs').fadeIn(500)
+				else if @id == 'help-priviledges'
+					$('#h-priviledges').fadeIn(500)
+
+			$('.help').click ->
+				$(this).fadeOut(500)
+
+				

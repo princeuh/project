@@ -52,54 +52,61 @@
 
 
 <div id="display-month">	
-
 		<div class="show-month" id="january">
 		<div class="days">
-			<% for i in 0..31 %>
+			<% for i in 1..31 %>
 			<div class="day">
-				<h4><%= i %></h4>
+				<h4 class="day-num" id= <%= "#{i}" %> ><%= i %></h4>
 			</div>
 			<% end %>
 		</div>
 
+
 		<div class="task-bar">
 			<div class="evt-day">
-				<h4> 1 </h4>
+				<h4 id="evt-day-num">  </h4>  
 			</div>
 			<div class="evt-tasks">
-			<p> Tasks on this day </p>
+				<p> Tasks on this day </p>
 			</div>
 		</div>
 	</div>
+
+
 
 	<% @events.each do |evt| %>
 	<% if evt.month == 'jan' %>
 	<div class="show-month" id="januarys">
 		<div class="days">
-			<% for i in 0..31 %>
+			<% for i in 1..31 %>
 			<div class="day">
 				<h4 > i </h4>
 			</div>
 			<% end %>
 		</div>
 
-		<div class="task-bar">
+
+
+
+			<div class="task-bar">
 			<div class="evt-day">
-				<h4> 1 </h4>
+				<h4 id="evt-day-num"> 1 </h4>
 			</div>
 			<div class="evt-tasks">
-			<p> Tasks on this day </p>
+				<p> Tasks on this day </p>
 			</div>
-
 		</div>
 	</div>
+
+
+
 
 	<% elsif evt.month == 'feb' %>
 		
 
 	<div class="show-month" id="february">
 		<div class="days">
-			<% for i in 0..28 %>
+			<% for i in 1..28 %>
 			<div class="day">
 				<h4> i </h4>
 			</div>
@@ -107,32 +114,34 @@
 		</div>
 
 		<div class="task-bar">
-						<div class="evt-day">
-				<h4> 1 </h4>
+			<div class="evt-day">
+				<h4 id="evt-day-num"> 1 </h4>
 			</div>
 			<div class="evt-tasks">
-			<p> Tasks on this day </p>
+				<p> Tasks on this day </p>
 			</div>
 		</div>
 	</div>
+
+
 
 	<% elsif evt.month == 'mar' %>
 		
 	<div class="show-month" id="march">
 		<div class="days">
-			<% for i in 0..31 %>
+			<% for i in 1..31 %>
 			<div class="day">
 				<h4> i </h4>
 			</div>
 			<% end %>
 		</div>
 
-		<div class="task-bar">
-						<div class="evt-day">
-				<h4> 1 </h4>
+			<div class="task-bar">
+			<div class="evt-day">
+				<h4 id="evt-day-num"> 1 </h4>
 			</div>
 			<div class="evt-tasks">
-			<p> Tasks on this day </p>
+				<p> Tasks on this day </p>
 			</div>
 		</div>
 	</div>
@@ -141,172 +150,187 @@
 	<% elsif evt.month == 'apr' %>
 	<div class="show-month" id="april">
 		<div class="days">
-			<% for i in 0..30 %>
+			<% for i in 1..30 %>
 			<div class="day">
 				<h4> i </h4>
 			</div>
 			<% end %>
 		</div>
 
-		<div class="task-bar">
-						<div class="evt-day">
-				<h4> 1 </h4>
+			<div class="task-bar">
+			<div class="evt-day">
+				<h4 id="evt-day-num"> 1 </h4>
 			</div>
 			<div class="evt-tasks">
-			<p> Tasks on this day </p>
+				<p> Tasks on this day </p>
 			</div>
 		</div>
 	</div>
+
+
 
 	<% elsif evt.month == 'may' %>
 
 	<div class="show-month" id="may">
 		<div class="days">
-			<% for i in 0..31 %>
+			<% for i in 1..31 %>
 			<div class="day">
 				<h4> i </h4>
 			</div>
 			<% end %>
 		</div>
 
-		<div class="task-bar">
-						<div class="evt-day">
-				<h4> 1 </h4>
+			<div class="task-bar">
+			<div class="evt-day">
+				<h4 id="evt-day-num"> 1 </h4>
 			</div>
 			<div class="evt-tasks">
-			<p> Tasks on this day </p>
+				<p> Tasks on this day </p>
 			</div>
 		</div>
 	</div>
+
+
 
 	<% elsif evt.month == 'jun' %>
 
 	<div class="show-month" id="june">
 		<div class="days">
-			<% for i in 0..30 %>
+			<% for i in 1..30 %>
 			<div class="day">
 				<h4> i </h4>
 			</div>
 			<% end %>
 		</div>
 
-		<div class="task-bar">
-						<div class="evt-day">
-				<h4> 1 </h4>
+			<div class="task-bar">
+			<div class="evt-day">
+				<h4 id="evt-day-num"> 1 </h4>
 			</div>
 			<div class="evt-tasks">
-			<p> Tasks on this day </p>
+				<p> Tasks on this day </p>
 			</div>
 		</div>
 	</div>
+
 
 	<% elsif evt.month == 'jul' %>
 
 	<div class="show-month" id="july">
 		<div class="days">
-			<% for i in 0..31 %>
+			<% for i in 1..31 %>
 			<div class="day">
 				<h4> i </h4>
 			</div>
 			<% end %>
 		</div>
 
-		<div class="task-bar">
-						<div class="evt-day">
-				<h4> 1 </h4>
+			<div class="task-bar">
+			<div class="evt-day">
+				<h4 id="evt-day-num"> 1 </h4>
 			</div>
 			<div class="evt-tasks">
-			<p> Tasks on this day </p>
+				<p> Tasks on this day </p>
 			</div>
 		</div>
 	</div>
+
+
 
 	<% elsif evt.month == 'aug' %>
 
 	<div class="show-month" id="august">
 		<div class="days">
-			<% for i in 0..31 %>
+			<% for i in 1..31 %>
 			<div class="day">
 				<h4> i </h4>
 			</div>
 			<% end %>
 		</div>
 
-		<div class="task-bar">
-						<div class="evt-day">
-				<h4> 1 </h4>
+				<div class="task-bar">
+			<div class="evt-day">
+				<h4 id="evt-day-num"> 1 </h4>
 			</div>
 			<div class="evt-tasks">
-			<p> Tasks on this day </p>
+				<p> Tasks on this day </p>
 			</div>
 		</div>
 	</div>
+
+
 
 	<% elsif evt.month == 'sept' %>
 	<div class="show-month" id="september">
 		<div class="days">
-			<% for i in 0..30 %>
+			<% for i in 1..30 %>
 			<div class="day">
 				<h4> i </h4>
 			</div>
 			<% end %>
 		</div>
 
-		<div class="task-bar">
-						<div class="evt-day">
-				<h4> 1 </h4>
+			<div class="task-bar">
+			<div class="evt-day">
+				<h4 id="evt-day-num"> 1 </h4>
 			</div>
 			<div class="evt-tasks">
-			<p> Tasks on this day </p>
+				<p> Tasks on this day </p>
 			</div>
 		</div>
 	</div>
+
+
 
 	<% elsif evt.month == 'oct' %>
 	<div class="show-month" id="october">
 		<div class="days">
-			<% for i in 0..31 %>
+			<% for i in 1..31 %>
 			<div class="day">
 				<h4> i </h4>
 			</div>
 			<% end %>
 		</div>
 
-		<div class="task-bar">
-						<div class="evt-day">
-				<h4> 1 </h4>
+			<div class="task-bar">
+			<div class="evt-day">
+				<h4 id="evt-day-num"> 1 </h4>
 			</div>
 			<div class="evt-tasks">
-			<p>  </p>
+				<p> Tasks on this day </p>
 			</div>
 		</div>
 	</div>
+
+
 
 	<% elsif evt.month == 'nov' %>
 	<div class="show-month" id="november">
 		<div class="days">
-			<% for i in 0..30 %>
+			<% for i in 1..30 %>
 			<div class="day">
 				<h4> i </h4>
 			</div>
 			<% end %>
 		</div>
 
-		<div class="task-bar">
-						<div class="evt-day">
-				<h4> 1 </h4>
+				<div class="task-bar">
+			<div class="evt-day">
+				<h4 id="evt-day-num"> 1 </h4>
 			</div>
 			<div class="evt-tasks">
-			<p> Tasks on this day </p>
+				<p> Tasks on this day </p>
 			</div>
 		</div>
 	</div>
+
+
 
 	<% elsif evt.month == 'dec' %>
 
 	<div class="show-month" id="december">
 		<div class="days">
-			<% for i in 0..31 %>
+			<% for i in 1..31 %>
 			<div class="day">
 				<h4> i </h4>
 			</div>
@@ -314,17 +338,19 @@
 		</div>
 
 		<div class="task-bar">
-						<div class="evt-day">
-				<h4> 1 </h4>
+			<div class="evt-day">
+				<h4 id="evt-day-num"> 1 </h4>
 			</div>
 			<div class="evt-tasks">
-			<p> Tasks on this day </p>
+				<p> Tasks on this day </p>
 			</div>
 		</div>
 	</div>
 
 	<% end %>
+	<% end %>
 
 </div>
 
-<% end %>
+
+

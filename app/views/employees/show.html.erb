@@ -12,7 +12,7 @@
 <p id="emp-add" class="emp-opts"> Add Employee </p>
 <p id="emp-news" class="emp-opts"> Add News </p>
 <p id="emp-priviledges" class="emp-opts"> Priviledges </p>
-<p id="emp-clubs" class="emp-opts"> All Clubs</p>
+<p id="emp-clubs" class="emp-opts"> All Clubs </p>
 <p id="emp-users" class="emp-opts"> All Users </p>
 <p id="emp-managers" class="emp-opts"> Country Managers </p>
 <p id="emp-owners" class="emp-opts"> All Enterprises </p>
@@ -37,45 +37,54 @@
 
 <div id="employee-content">
 
-
 <div id="show-cal" class="empl-opts">
+	<button class="dash-bttn-help" id="help-calendar">?</button>
 	<%= render 'employee_calendar/show_events' %>
 </div>
 
+
 <div id="add-employee" class="empl-opts">
+	<button class="dash-bttn-help" id="help-add-employee">?</button>
 	<%= render 'employees/add_employee' %>
 </div>
 
 <div id="show-investors" class="empl-opts">
+	<button class="dash-bttn-help" id="help-show-investors">?</button>
 	<%= render 'investors/all_investors' %>
 </div>
 
 <div id="show-updates" class="empl-opts">
+	<button class="dash-bttn-help" id="help-updates">?</button>
 	<%= render 'club_updates/club_update' %>
 </div>
 
 <div id="show-clubs" class="empl-opts">
+	<button class="dash-bttn-help" id="help-show-clubs">?</button>
 	<%= render 'clubs/employee_clubs' %>
 </div>
 
 <div id="show-highlights" class="empl-opts">
+	<button class="dash-bttn-help" id="help-show-highlights">?</button>
 	<%= render 'pages/highlight' %>
 </div>
 
 <div id="show-employees" class="empl-opts">
-	<%= link_to "All Employees", employees_path %>
+	<button class="dash-bttn-help" id="help-show-employees">?</button>
 	<%= render 'employees/all_employees' %>
 </div>
 
 <div id="show-managers" class="empl-opts">
+	<button class="dash-bttn-help" id="help-show-country-managers">?</button>
 	<%= render 'clubs/country_manager' %>
 </div>
 
 <div id="show-owners" class="empl-opts">
+	<button class="dash-bttn-help" id="help-all-beneficiaries">?</button>
 	<%= render 'beneficiaries/all_benficiaries' %>
 </div>
 
 <div id="show-proposals" class="empl-opts">
+	<button class="dash-bttn-help" id="help-show-proposals">?</button>
 	<%= render 'proposals/app_proposals' %>
 	<div class ="employee-update-proposal">
 		<%= render 'proposals/apply_prospects' %>
@@ -83,10 +92,12 @@
 </div>
 
 <div id="show-contacts" class="empl-opts">
+	<button class="dash-bttn-help" id="help-system-logs">?</button>
 	<%= render 'system_logs/system_logs' %>
 </div>
 
 <div id="show-priviledges" class="empl-opts">
+	<button class="dash-bttn-help" id="help-priviledges">?</button>
 	<% if current_employee.is_admin? %>
 		<p class="employee-links" style="text-align:center;"> You have Administrative Priviledges on the system </p>
 	<% else %>
@@ -110,10 +121,73 @@
 </div>
 
 <div id="create-club-update" class="empl-opts">
+	<button class="dash-bttn-help" id="help-club-update">?</button>
 	<%= render 'club_updates/club_update_form' %>
 </div>
 
 </div>
 
 </div>
+</div>
+
+
+<div class="help" id="h-calendar">
+	<p> Welcome to the System Calendar.</p>
+	<p> This is where all employees will list their tasks and objectives. It is also where all meetings will be shown. </p>
+	<p> It is a valuable resource in keeping track of your own tasks and other tasks in the system. </p>
+	<p> Every employee is expected to add their weekly tasks to the calendar and mark them as completed once they are complete. </p>
+	<p> The Calendar also allows upper management to interact and track different orders of business on the system. </p>
+	<h4> USING THE CALENDAR </h4>
+	<p> Click any month to reveal the tasks and other options for that month </p>
+	<p> Use the interface to add your own tasks and update your progress which will be reflected on the calendar </p>
+</div>
+<div class="help" id="h-add-employee">
+	<p> Welcome to the Add Employee Interface </p>
+	<p> This is the interface HR uses to add new Employee Accounts to the system. </p>
+
+</div>
+<div class="help" id="h-show-investors">
+	<p> View all Investors </p>
+	<p> This interface allows you to view all investors in the system. Some details are priviledged and only accessible to the Employees with appropriate credentials. </p>
+	<p> If you are unable to find what you are searching for please contact a supervisor.</p>
+</div>
+<div class="help" id="h-updates">
+	<p> View all Company Updates </p>
+	<p> This interface allows you to view all company news and updates in the system. </p>
+</div>
+<div class="help" id="h-show-clubs">
+	<p> View all Clubs </p>
+	<p> This interface allows you to view all Clubs in the system.</p>
+	<p> The Clubs are the core of the application. These are the investments made by the Investors into projects.</p>
+	<p> The Clubs are made up of Projects that are owned by Beneficiaries. The Beneficiaries use their approved Project Applications to apply for Funding which they are credited from the Club. </p>
+</div>
+<div class="help" id="h-show-highlights">
+	<p> View Application Highlights </p>
+	<p> This interface allows you to add highlights which are posted to the home page. </p>
+	<p> These highlights reflect the best news to share with the world. </p>
+</div>
+<div class="help" id="h-show-employees">
+	<p> View All Employees </p>
+	<p> This interface allows you to view all Employees in the system. </p>
+</div>
+<div class="help" id="h-country-managers">
+		<p> View All Country Managers </p>
+	<p> This interface allows you to view all Country Managers in the system. </p>
+</div>
+
+<div class="help" id="h-all-beneficiaries">
+		<p> View All Beneficiaries </p>
+	<p> This interface allows you to view all Beneficiaries in the system. </p>
+</div>
+<div class="help" id="h-show-proposals">
+		<p> View All Proposals </p>
+	<p> This interface allows you to view all Proposals in the system. </p>
+</div>
+<div class="help" id="h-system-logs">
+		<p> View System Logs </p>
+	<p> This interface allows you to view all the activity in the system. </p>
+</div>
+<div class="help" id="h-priviledges">
+		<p> View My Priviledges</p>
+	<p> This interface allows you to know what actions you may perform on the system. </p>
 </div>

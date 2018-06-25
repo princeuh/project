@@ -104,6 +104,11 @@
         overflow: auto;
     }
 
+    .evt-tasks{
+        width: 330px;
+        height: 450px;
+    }   
+
 
 }
 
@@ -151,18 +156,18 @@
 
     .days{
         position: fixed;
-        left: 19%;
-        width: 50%;
+        left: 264px;
+        width: 520px;
         height: 565px;
         border-radius: 5px;      
     }
 
     .task-bar{
         position: fixed;
-        right: 5%;
-        top: 120px;
-        width: 25%;
-        height: 680px;
+        top: 642px;
+        left: 264px;
+        width: 520px;
+        height: 180px;
         background-color: #3B275B;  
     }
 
@@ -172,5 +177,15 @@
         border-radius: 50%;
         border: 2px solid #a5cdff;
     }
+
+    .evt-day{
+        left: 75%;
+    }
+
+        .evt-tasks{
+        width: 360px;
+        height: 117px;
+    }   
+
 
 }
