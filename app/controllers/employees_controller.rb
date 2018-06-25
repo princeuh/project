@@ -11,10 +11,13 @@ class EmployeesController < ApplicationController
 
   def create
   	@employee = Employee.new(employee_params)
+    @employee.avatar = "None"
+    @employee.user_type = "employee"
   	if @employee.save
   		#saved and logged in employee
       SystemLog.new( system_event: "Employee account created for #{@employee.lastname},  #{@employee.firstname},  #{@employee.email} by #{current_employee.lastname}, #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now).save
       flash[:success] = "Successfully created employee account"
+      #redirect_to @employee
       redirect_to current_employee
   	else
       flash[:error] = "Could not create employee account"
@@ -61,7 +64,7 @@ class EmployeesController < ApplicationController
 
    private
 	def employee_params
-		params.require(:employee).permit(:firstname, :lastname, :role, :email, :password, :password_confirmation, :is_admin, :job_category, :job_location, :reports_to, :department, :section, :contact_number, :employee_pid)
+		params.require(:employee).permit(:firstname, :lastname, :role, :email, :password, :password_confirmation, :is_admin, :job_category, :job_location, :reports_to, :department, :section, :contact_number, :employee_pid, :employee_rank)
 	end
 
    def logged_in_employee

@@ -10,7 +10,9 @@
 	<%= f.text_field :lastname %><br>
 
 	<%= f.label :role %><br>
-	<%= f.select :role, ['CEO', 'Business Manager', 'Software Engineer', 'Fundraising Coordinator'] %><br>
+	<%= f.select :role, ['CEO', 'Social Media Curator' ,'Business Manager', 'Software Engineer', 'Fundraising Coordinator'] %><br>
+	<%= f.label :EmployeeRank%><br>
+	<%= f.select :employee_rank, ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'] %><br>
 
 	<%= f.label :Job_Category%><br>
 	<%= f.select :job_category, ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'] %><br>
@@ -36,17 +38,16 @@
 	<%= f.label :email %><br>
 	<%= f.email_field :email %><br>
 
-
 	<%= f.label :password %><br>
-	<%= f.password_field :password, :value => "nemabollon", :disabled => true %><br>
+	<%= f.password_field :password %><br>
 
 	<%= f.label :password_confirmation %><br>
-	<%= f.password_field :password_confirmation, :value => "nemabollon", :disabled => true %><br>
+	<%= f.password_field :password_confirmation %><br>
 
-<% if current_employee.is_admin? %>
+
 	<%= f.label :is_admin %><br>
 	<%= f.check_box :is_admin %><br>
-<% end %> 
+
 
 	<%= f.submit "Add Employee" %>
 
