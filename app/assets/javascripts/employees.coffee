@@ -180,6 +180,8 @@ $(document).on "turbolinks:load", ->
 					$('#h-priviledges').fadeIn(500)
 				else if @id == 'help-blog'
 					$('#h-blog').fadeIn(500)
+				else if @id == 'social-media-curator'
+					$('#h-social').fadeIn(500)
 
 			$('.help').click ->
 				$(this).fadeOut(500)
