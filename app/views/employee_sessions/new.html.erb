@@ -3,7 +3,7 @@
 <div class="forms" style="height:35%;  margin-top: 120px;">
 <h4 class="contact-header"> EMPLOYEE LOGIN</h4>
 <%= form_for(:employee_session, url: employee_login_path) do |f| %>
-	<%= f.label :email %> <br>
+	<%= f.label :username %> <br>
 	<%= f.email_field :email %> </br>
 	<%= f.label :password %> <br>
 	<%= f.password_field :password %> </br>
