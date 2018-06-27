@@ -142,7 +142,7 @@ li a:hover {
 }
 
 .terms-content{
-        -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
     -moz-column-count: 3; /* Firefox */
     column-count: 3;
     -webkit-column-gap: 40px; /* Chrome, Safari, Opera */
@@ -375,12 +375,22 @@ to{
         color: #fde4fc;
     }
 
-        .log-opts{
+        .log-opts, #cont{
         border-bottom: 1px solid #361d4e38;
         padding: 12px;
         border-radius: 5px;
         font-family: 'Catamaran', sans-serif;
         background-color: #a5cdff38;
+    }
+
+    #cont{
+        position: fixed;
+        bottom: 100px;
+        left: 35%;
+    }
+
+    #cont h1{
+        color: #3157a0;
     }
 
     #login-opts{
@@ -465,6 +475,12 @@ to{
 
       .bg-image{
         display: inline-block;
+      }
+
+      #samplePic{
+        width: 100%;
+        height: 100%;
+
       }
 
 

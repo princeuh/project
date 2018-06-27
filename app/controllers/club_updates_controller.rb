@@ -16,7 +16,7 @@ class ClubUpdatesController < ApplicationController
   		if @clubupdate.save
   		#saved and logged in employee
       		SystemLog.new( system_event: "Blog clubupdate #{@clubupdate.title} created by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
-      		redirect_to @clubupdate
+      		redirect_to current_employee
   		else
   			flash[:error] = "Unable to create Club Update your file must have one of these extensions *jpg jpeg gif png"
   			redirect_to current_employee

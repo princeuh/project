@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
 	#the new post is saved
 	def create
-		@post = Career.new(post_params)
+		@post = Post.new(post_params)
 		@post.is_approved = false
   		if @post.save
   		#saved and logged in employee
@@ -20,6 +20,7 @@ class PostsController < ApplicationController
       		SystemLog.new( system_event: "Blog Post #{@post.title} created by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
       		redirect_to current_employee
   		else
+  			flash[:error] = "There was an error, your post could not be saved. "
   			redirect_to current_employee
   		end
 	end

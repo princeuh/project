@@ -1,8 +1,12 @@
 <% provide(:title, "Show Update") %>
-
-<h4 class="contact-header"> <%= @clubupdate.title %></h4>
+<%= link_to "Return to #{current_employee.firstname}'s Dashboard", current_employee, :class => "app-links" %><br>
 
 <%= image_tag @clubupdate.picture.url if @clubupdate.picture? %>
 
+<h1> <%= @clubupdate.title %></h1>
+<h4> <%= @clubupdate.subtitle %></h4>
+
 <p><%= @clubupdate.content %></p>
+
+
 

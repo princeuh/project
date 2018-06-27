@@ -194,5 +194,12 @@ $(document).on "turbolinks:load", ->
 					$('#show-all-posts').fadeOut(500)
 					$('#create-new-post').fadeIn(500)
 
+			$('.n-items').click ->
+				$(this).animate({
+					width: "70%",
+					marginLeft: "0.6in",
+					position: "absolute"
+				}, 1500)
+
 
 				

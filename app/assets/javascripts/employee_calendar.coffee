@@ -54,5 +54,8 @@ $(document).on "turbolinks:load", ->
 			$('#display-month').fadeIn(500)
 			$('#december').show()
 
+	$('.day-num').click -> 
+		alert '<%= @d %>'
+
 			
 		
