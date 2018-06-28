@@ -6,16 +6,16 @@ class ClubMembersController < ApplicationController
 		@member = ClubMember.new(club_member_params)
 		if @member.save
 			flash[:success] = "You are a member"
-			SystemLog.new( system_event: " #{@member.investor_id.lastname},  #{@member.investor_id.email } joined #{@member.club_id.name} and invested #{@member.amount_invested} ", event_time: Time.now).save
+			SystemLog.new( system_event: " #{@member.investor_id.lastname},  #{@member.investor_id.email } joined #{@member.club_id.name} and invested #{@member.amount_invested} ", event_time: Time.now, users_id: @member.investor_id).save
 		else 
 			flash[:error] = "Unable to process request. Please try again or contact an admin"
-			SystemLog.new( system_event: " #{@member.investor_id.lastname},  #{@member.investor_id.email } unable to join #{@member.club_id.name} ", event_time: Time.now).save
+			
 		end
 	end
 
 	def destroy
 		@member = ClubMember.find(params[:id])
-		 SystemLog.new( system_event: "#{@member.investor_id.lastname} is not a club member of #{@member.club_id.name} removed by #{current_employee.lastname},  #{current_employee.firstname}.", event_time: Time.now).save
+		 SystemLog.new( system_event: "#{@member.investor_id.lastname} is not a club member of #{@member.club_id.name} removed by #{current_employee.lastname},  #{current_employee.firstname}.", event_time: Time.now, users_id: current_employee.id).save
 		@member.destroy
 	end
 

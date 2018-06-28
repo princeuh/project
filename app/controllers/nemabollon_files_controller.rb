@@ -13,6 +13,7 @@ class NemabollonFilesController < ApplicationController
 		@memo.content_creator = current_employee.email
 		if @memo.save
 			flash[:success] = "Your file was successfully uploaded"
+			SystemLog.new( system_event: "Memo #{@memo.memo_name} uploaded file to system by #{current_employee.lastname}, #{current_employee.email}.", event_time: Time.now, users_id: current_employee.id).save
 			redirect_to current_employee
 		else 
 			flash[:error] = "Upload Unsuccessful. Please try again"
@@ -22,7 +23,7 @@ class NemabollonFilesController < ApplicationController
 
 	def destroy
 		@memo = NemabollonFile.find(params[:id])
-		SystemLog.new( system_event: "Memo #{@memo.memo_name} deleted from system by #{current_employee.lastname}, #{current_employee.email}.", event_time: Time.now).save
+		SystemLog.new( system_event: "Memo #{@memo.memo_name} deleted from system by #{current_employee.lastname}, #{current_employee.email}.", event_time: Time.now, users_id: current_employee.id).save
 		@memo.destroy
 		flash[:success] = "Memo successfully deleted"
 		redirect_to current_employee

@@ -13,7 +13,7 @@ class ResumesController < ApplicationController
     @resume  = @career.resumes.create(resume_params)
   	if @resume.save
   		status_log_in @resume
-      SystemLog.new( system_event: "New resume for #{@resume.lastname} for #{@career.job_title}  added to system", event_time: Time.now).save
+      SystemLog.new( system_event: "New resume for #{@resume.lastname} for #{@career.job_title}  added to system", event_time: Time.now, users_id: @resume.id ).save
   		flash[:success] = "Your application has been submitted. Please use the Application Status link to track your status."
   		redirect_to career_resume_path(user.career_id, user.id)
   	else
@@ -28,7 +28,6 @@ class ResumesController < ApplicationController
 
   def status
   	@status = Resume.find_by(email: params[:email])
-
   end
 
   private

@@ -7,7 +7,7 @@ class BeneficiarySessionsController < ApplicationController
     if beneficiary && beneficiary.authenticate(params[:beneficiary_session][:password])
       # Log the user in and redirect to the user's show page.
           beneficiary_log_in beneficiary
-          SystemLog.new( system_event: "Beneficiary #{beneficiary.email} logged into system.", event_time: Time.now).save
+          SystemLog.new( system_event: "Beneficiary #{beneficiary.email} logged into system.", event_time: Time.now, users_id: beneficiary.id ).save
           params[:beneficiary_session][:remember_me] == '1' ? remember(beneficiary) : forget_b(beneficiary)
           redirect_to beneficiary
     else
@@ -18,7 +18,7 @@ class BeneficiarySessionsController < ApplicationController
   end
 
   def destroy
-    SystemLog.new( system_event: "Beneficiary #{beneficiary.email} logged out of the system.", event_time: Time.now).save
+    SystemLog.new( system_event: "Beneficiary #{beneficiary.email} logged out of the system.", event_time: Time.now, users_id: beneficiary.id ).save
     beneficiary_log_out if beneficiary_logged_in?
     redirect_to root_url
   end

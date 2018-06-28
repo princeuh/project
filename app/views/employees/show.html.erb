@@ -1,11 +1,16 @@
 <% provide(:title, @employee.firstname) %>
 <div class="content">
 <div class='emp-avatar'>
-<%= image_tag("employeeAvatar.png", width: "100", height: "100") %>
+ <%= image_tag @employee.avatar.url if @employee.avatar? %>
+ <%= link_to "", current_employee, :class => "current_employee_reroute" %>
+ <p id="change-pic"> Change Picture </p>
 </div>
+
+
 <div id="employee-dash">
 
 <% if @employee.is_admin %>
+<div class="employee-dash-opt">
 
 <p id="emp-updates" class="emp-opts"> Club Updates </p>
 <p id="emp-cal" class="emp-opts"> Calendar </p>
@@ -36,10 +41,11 @@
 
 <%= link_to "LogOut", employee_logout_path, :id => "emp-logout", method: :delete, :class=> "app-links" %>
 </div>
+</div>
 
 <div id="employee-content">
 	<div id="emp-intro">
-		<p > Welcome, <%= current_employee.firstname %></p>
+		<p > Welcome, <%= @employee.firstname %></p>
 			<% if current_employee.role == 'Social Media Curator' %>
 			<p> You are the Social Media Curator. </p>
 			<p> As Social Media Curator your responsibilities include managing all Nemabollon Social Media Accounts, updating accounts with engaging content.Building a user following through engaging content.</p>
@@ -50,8 +56,6 @@
 			<p style="font-size:0.85em"> password: LakeOfBlessings77 </p>
 			<p> You are now the curator of these accounts and determine what is posted to them. Have fun. </p>
 			<% end %>
-
-		
 	</div>
 
 
@@ -62,6 +66,8 @@
 
 <div id="show-blog" class="empl-opts">
 	<button class="dash-bttn-help" id="help-blog">?</button>
+		<button class="dash-bttn" id="blog-show">All Articles</button>
+	<button class="dash-bttn" id="blog-create">Create An Article</button>
 	<div id="show-all-posts">
 		<%= render 'posts/show' %>
 	</div>
@@ -69,8 +75,6 @@
 	<div id="create-new-post">
 		<%= render 'posts/new' %>
 	</div>
-	<button class="dash-bttn" id="blog-show">All Articles</button>
-	<button class="dash-bttn" id="blog-create">Create An Article</button>
 </div>
 
 
@@ -227,4 +231,10 @@
 <div class="help" id="h-priviledges">
 		<p> View My Priviledges</p>
 	<p> This interface allows you to know what actions you may perform on the system. </p>
+</div>
+
+<div class="upload-avatar">
+	<button class="avatar-bttn">X</button>
+	<%= render 'avatar' %>
+
 </div>

@@ -9,7 +9,7 @@ class EmployeeCalendarController < ApplicationController
 	def create
 		@event = EmployeeCalendar.new(cal_params)
 		if @event.save
-			SystemLog.new( system_event: "#{current_employee.lastname} created an event", event_time: Time.now).save
+			SystemLog.new( system_event: "#{current_employee.lastname} created an event", event_time: Time.now, users_id: current_employee.id).save
 			flash[:success] = "Your objective has been successfully created."
 			redirect_to current_employee
 		else 
@@ -30,7 +30,7 @@ class EmployeeCalendarController < ApplicationController
 		@event  = EmployeeCalendar.find(params[:id])
 		if @event.update(cal_params)
       		flash[:success] = "Successfully updated your Event"
-      		SystemLog.new( system_event: "#{current_employee.lastname} updated an event", event_time: Time.now).save
+      		SystemLog.new( system_event: "#{current_employee.lastname} updated an event", event_time: Time.now, users_id: current_employee.id).save
       		redirect_to current_employee
     	else
       		flash[:error] = "Could not update the Objective"
@@ -41,7 +41,7 @@ class EmployeeCalendarController < ApplicationController
 	def destroy
 		@event  = EmployeeCalendar.find(params[:id])
 		@event.destroy
-		SystemLog.new( system_event: "#{current_employee.lastname} deleted an event", event_time: Time.now).save
+		SystemLog.new( system_event: "#{current_employee.lastname} deleted an event", event_time: Time.now, users_id: current_employee.id).save
 		flash[:success] = "Your objective was successfully deleted."
 		redirect_to current_employee
 	end

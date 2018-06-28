@@ -3,9 +3,14 @@
 <%= form_for(:post, url: posts_path) do |f| %>
 	<%= f.label :Title %><br>
 	<%= f.text_field :title %><br>
-	<%= f.label :Content %><br>
-	<%= f.text_area :content %><br>
-	<%= f.file_field :picture %> <br>
-	<%= f.submit "Upload Post" %>
+
+
+		<%= f.label :Content %><br>
+	<%= f.text_field :content %><br>
+
+	<%= f.file_field :picture, ,  accept: 'image/jpeg,image/gif,image/png' %> <br>
+	<%= f.submit "Upload Post"  %>
 <% end %>
 </div>
+
+

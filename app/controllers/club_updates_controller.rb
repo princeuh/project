@@ -15,7 +15,8 @@ class ClubUpdatesController < ApplicationController
 		 @clubupdate = ClubUpdate.new(clubupdate_params)
   		if @clubupdate.save
   		#saved and logged in employee
-      		SystemLog.new( system_event: "Blog clubupdate #{@clubupdate.title} created by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
+  			flash[:success] = "Created Club Update. Please View it in your Club Updates."
+      		SystemLog.new( system_event: "Blog clubupdate #{@clubupdate.title} created by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now, users_id: current_employee.id).save
       		redirect_to current_employee
   		else
   			flash[:error] = "Unable to create Club Update your file must have one of these extensions *jpg jpeg gif png"
@@ -36,17 +37,19 @@ class ClubUpdatesController < ApplicationController
 	def update
 		@clubupdate = ClubUpdate.find(params[:id])
 		if @clubupdate.update(club_params)
-			SystemLog.new( system_event: "Blog clubupdate #{@clubupdate.title} updated by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
-			redirect_to @clubupdate
+			flash[:success] = "Successfully updated the club."
+			SystemLog.new( system_event: "Blog clubupdate #{@clubupdate.title} updated by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now, users_id: current_employee.id).save
+			redirect_to current_employee
 		else
-			render 'edit'
+			flash[:error] = "Something went wrong. Unable to update the club."
+			redirect_to current_employee
 		end
 	end
 
 	#appropriate employees can destroy a clubupdate
 	def destroy
 		@clubupdate = ClubUpdate.find(params[:id])
-		SystemLog.new( system_event: "Blog clubupdate #{@clubupdate.title} deleted from system by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
+		SystemLog.new( system_event: "Blog clubupdate #{@clubupdate.title} deleted from system by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now, users_id: current_employee.id).save
 		@clubupdate.destroy
 		redirect_to clubupdates_path
 	end

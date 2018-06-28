@@ -3,6 +3,18 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on "turbolinks:load", ->
+		$('.emp-avatar').mouseenter ->
+			$('#change-pic').fadeIn(500).delay(5000).fadeOut(500)
+
+		$('#change-pic').click ->
+			$('.upload-avatar').fadeIn(500)
+
+		$('.avatar-bttn').click ->
+			$('.upload-avatar').hide()
+
+		
+
+
 		$('.emp-opts').click ->
 			$('.empl-opts').hide()
 			$('#emp-intro').hide()
@@ -200,6 +212,7 @@ $(document).on "turbolinks:load", ->
 					marginLeft: "0.6in",
 					position: "absolute"
 				}, 1500)
+
 
 
 				

@@ -36,7 +36,7 @@ class PaymentsController < ApplicationController
 						#:plan => 'plan_Cur8EF2z9uZ4Qs',}]	 
 		})
 		@description = 'Nemabollon Investment'
-		SystemLog.new( system_event: " #{current_user.email} service fee subscription created.", event_time: Time.now).save
+		SystemLog.new( system_event: " #{current_user.email} service fee subscription created.", event_time: Time.now, users_id: current_user.id).save
 
 	elsif  @option == 'investment' 
 		Stripe::Subscription.create({
@@ -54,7 +54,7 @@ class PaymentsController < ApplicationController
 			@update_member_amt = ClubMember.find_by(investor_id: current_user.id)
 			@update_member_amt.amount_invested += @charged.to_i
 			@update_member_amt.update_attribute(:amount_invested, @update_member_amt.amount_invested)
-			SystemLog.new( system_event: " #{current_user.email} investment subscription has been updated for $ #{assign_plan} plan.", event_time: Time.now).save
+			SystemLog.new( system_event: " #{current_user.email} investment subscription has been updated for $ #{assign_plan} plan.", event_time: Time.now, users_id: current_user.id).save
 			flash[:success] = "Your investment is successful. View your updates under the myClubs tab."
 		else
 			ClubMember.new(investor_id: current_user.id, club_id: @club_joined, amount_invested: @charged ).save
@@ -63,7 +63,7 @@ class PaymentsController < ApplicationController
 			@update_amt.number_of_members += 1
 			@update_amt.update_attribute(:amt_invested, @update_amt.amt_invested)
 			@update_amt.update_attribute(:number_of_members, @update_amt.number_of_members)
-			SystemLog.new( system_event: " #{current_user.email} investment subscription created for $ #{assign_plan}.", event_time: Time.now).save
+			SystemLog.new( system_event: " #{current_user.email} investment subscription created for $ #{assign_plan}.", event_time: Time.now, users_id: current_user.id).save
 			flash[:success] = "Your investment is successful. View your clubs under the myClubs tab."
 		end
 		
@@ -72,7 +72,7 @@ class PaymentsController < ApplicationController
 	end
 
 	current_user.update_attribute(:paid, true)	
-	SystemLog.new( system_event: " #{current_user.email} has activated monthly service fee and is now able to access the platform.", event_time: Time.now).save
+	SystemLog.new( system_event: " #{current_user.email} has activated monthly service fee and is now able to access the platform.", event_time: Time.now, users_id: current_user.id).save
 	redirect_to current_user
 
 

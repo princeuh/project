@@ -22,7 +22,7 @@ class InvestorsController < ApplicationController
       log_in @investor
       @investor.send_activation_email
       flash[:info] = "Please check your email to activate your account."
-      SystemLog.new( system_event: "Investor #{@investor.lastname}, #{@investor.firstname},  #{@investor.email} account has been created.", event_time: Time.now).save
+      SystemLog.new( system_event: "Investor #{@investor.lastname}, #{@investor.firstname},  #{@investor.email} account has been created.", event_time: Time.now, users_id: current_user.id).save
       redirect_to @investor
   	else 
   		render 'new'
@@ -31,7 +31,7 @@ class InvestorsController < ApplicationController
 
   def destroy
     @investor = Investor.find(params[:id])
-    SystemLog.new( system_event: "Investor account destroyed for #{@investor.lastname},  #{@investor.firstname},  #{@investor.email} by #{current_employee.lastname},  #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now).save
+    SystemLog.new( system_event: "Investor account destroyed for #{@investor.lastname},  #{@investor.firstname},  #{@investor.email} by #{current_employee.lastname},  #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now, users_id: current_user.id).save
     @investor.destroy
     redirect_to current_employee
   end

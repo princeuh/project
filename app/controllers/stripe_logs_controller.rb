@@ -13,10 +13,10 @@ class StripeLogsController < ApplicationController
 		@log = StripeLog.new(event_json)
 		if @log.save
 			#write to system logs
-			SystemLog.new( system_event: "System received and saved Stripe payment data", event_time: Time.now).save
+			SystemLog.new( system_event: "System received and saved Stripe payment data", event_time: Time.now, users_id: @log.id).save
 		else 
 			#write to system logs
-			SystemLog.new(system_event: "System received and failed to save Stripe payment data", event_time: Time.now).save
+			SystemLog.new(system_event: "System received and failed to save Stripe payment data", event_time: Time.now, users_id: @log.id).save
 		end
 	end
 

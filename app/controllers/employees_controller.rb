@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :logged_in_employee
+  before_action :logged_in_employee,  only: [:edit, :update]  
 
 	def index
     	@employees = Employee.all
@@ -17,12 +17,16 @@ class EmployeesController < ApplicationController
     @employee.user_type = "employee"
   	if @employee.save
   		#saved and logged in employee
-      SystemLog.new( system_event: "Employee account created for #{@employee.lastname},  #{@employee.firstname},  #{@employee.email} by #{current_employee.lastname}, #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now).save
+      #SystemLog.new( system_event: "Employee account created for #{@employee.lastname},  #{@employee.firstname},  #{@employee.email} by #{current_employee.lastname}, #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now, users_id: current_employee.id).save
       flash[:success] = "Successfully created employee account"
-      redirect_to current_employee
+     # redirect_to current_employee
+      redirect_to @employee
+
   	else
       flash[:error] = "Could not create employee account"
-  		redirect_to current_employee
+  		#redirect_to current_employee
+       redirect_to root_url
+
   	end
   end
 
@@ -48,7 +52,7 @@ class EmployeesController < ApplicationController
     @employee = Employee.find(params[:id])
     if @employee.update(employee_params)
       flash[:success] = "Successfully Updated your Account"
-      SystemLog.new( system_event: "Employee account updated for #{@employee.lastname},  #{@employee.firstname},  #{@employee.email} by #{current_employee.lastname}, #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now).save
+      SystemLog.new( system_event: "Employee account updated for #{@employee.lastname},  #{@employee.firstname},  #{@employee.email} by #{current_employee.lastname}, #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now, users_id: current_employee.id).save
       redirect_to @employee
     else
       flash[:error] = "Could not update your account"
@@ -56,9 +60,21 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def update_avatar
+    @avatar = Employee.find(params[:id])
+    if @avatar.update_attribute(:avatar, params[:employee][:avatar])
+        flash[:success] = "Successfully Updated your Account"
+        SystemLog.new( system_event: "Employee account updated for #{current_employee.lastname}, #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now, users_id: current_employee.id).save
+        redirect_to @avatar
+    else 
+       flash[:error] = "Could not update your account"
+       redirect_to @avatar
+    end
+  end
+
   def destroy
     @employee = Employee.find(params[:id])
-    SystemLog.new( system_event: "Employee account destroyed for #{@employee.lastname},  #{@employee.firstname},  #{@employee.email} by #{current_employee.lastname},  #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now).save
+    SystemLog.new( system_event: "Employee account destroyed for #{@employee.lastname},  #{@employee.firstname},  #{@employee.email} by #{current_employee.lastname},  #{current_employee.firstname},  #{current_employee.email} .", event_time: Time.now, users_id: current_employee.id).save
     @employee.destroy
 
     redirect_to employees_path
@@ -66,8 +82,12 @@ class EmployeesController < ApplicationController
 
    private
 	def employee_params
-		params.require(:employee).permit(:firstname, :lastname, :role, :email,  :password, :password_confirmation, :is_admin, :job_category, :job_location, :reports_to, :department, :section, :contact_number, :employee_pid, :employee_rank)
+		params.require(:employee).permit(:firstname, :lastname, :role, :email,  :password, :password_confirmation, :is_admin, :job_category, :job_location, :reports_to, :department, :section, :contact_number, :employee_pid, :employee_rank, :avatar)
 	end
+
+  def employee_edit_params
+      params.require(:employee).permit(:avatar)
+  end
 
    def logged_in_employee
       unless employee_logged_in?

@@ -1,1 +1,4 @@
 <% provide(:title, "Show") %>
+<%= image_tag post.picture.url if post.picture? %><br>
+<%= post.title %>
+<p><%= post.content %></p>

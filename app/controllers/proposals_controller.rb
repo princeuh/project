@@ -24,7 +24,7 @@ class ProposalsController < ApplicationController
 		@proposal = @investor.proposals.create(proposal_params)
 		if @proposal.save
 			#redirect to the proposal show page
-			SystemLog.new( system_event: "#{current_user.lastname}, #{current_user.email} created a proposal #{@proposal.title}", event_time: Time.now).save
+			SystemLog.new( system_event: "#{current_user.lastname}, #{current_user.email} created a proposal #{@proposal.title}", event_time: Time.now, users_id: current_user.id).save
 			flash[:success] = "Your proposal has been successfully submitted. View the status of all Proposals by clicking the Proposal Tab."
 			redirect_to current_user
 		else
@@ -36,7 +36,7 @@ class ProposalsController < ApplicationController
 	def destroy
 		@investor = Investor.find(params[:investor_id])
 		@investor = @investor.proposals.find(params[:id])
-		SystemLog.new( system_event: "#{current_user.lastname}, #{current_user.email} destroyed their proposal #{@proposal.title} ", event_time: Time.now).save
+		SystemLog.new( system_event: "#{current_user.lastname}, #{current_user.email} destroyed their proposal #{@proposal.title} ", event_time: Time.now, users_id: current_user.id).save
 		@investor.destroy
 		redirect_to current_user
 	end

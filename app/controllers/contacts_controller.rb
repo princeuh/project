@@ -11,7 +11,7 @@ class ContactsController < ApplicationController
 	def create
 		@contact = Contact.new(contact_params)
 		if @contact.save
-			SystemLog.new( system_event: " Inquiry Submitted from Contact Form", event_time: Time.now).save
+			SystemLog.new( system_event: " Inquiry Submitted from Contact Form", event_time: Time.now, users_id: @contact.id).save
 			flash[:success] = "Your inquiry has been submitted. Someone will be in touch soon."
 			redirect_to root_url
 		else 
@@ -25,6 +25,8 @@ class ContactsController < ApplicationController
 
 	def destroy
 		@contact = Contact.find(params[:id])
+		SystemLog.new( system_event: " Applicant deleted from Database by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now, users_id: current_employee.id).save
+		flash[:success] = "This applicant has been deleted."
 		@contact.destroy
 
 		redirect_to contacts_path

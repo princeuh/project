@@ -1,8 +1,7 @@
-
 <div class="forms">
 <h4 class="contact-header" > CREATE HIGHLIGHT FOR HOME PAGE </h4>
 
-<%= form_with scope: :page, url: pages_path, local: true do |form| %>
+<%= form_for(:page, url: pages_path) do |form| %>
 	<%= form.label :Header %><br>
 	<%= form.text_field :caption %><br>
 
@@ -10,8 +9,7 @@
 	<%= form.text_area :summary, cols: "50", rows: "10"%><br>
 
 	
-	<%= form.file_field :picture, :class => "fileInput", :id => "file_bttn", accept: 'image/jpeg,image/gif,image/png'%>
-	<%= form.label :UploadImage %><br>
+	<%= form.file_field :picture %><br>
 
 	<%= form.submit "Create Highlight" %>
 

@@ -18,7 +18,7 @@ class BeneficiariesController < ApplicationController
 		if @beneficiary.save
 			log_in @beneficiary
 			 @beneficiary.send_activation_email
-			SystemLog.new( system_event: "Beneficiary account created  by #{@beneficiary.lastname}, #{@beneficiary.enterprise_name}.", event_time: Time.now).save
+			SystemLog.new( system_event: "Beneficiary account created  by #{@beneficiary.lastname}, #{@beneficiary.enterprise_name}.", event_time: Time.now, users_id: @beneficiary.id ).save
       		flash[:success] = "Welcome to your Nemabollon Account"
 			redirect_to @beneficiary
 		else
@@ -44,7 +44,7 @@ class BeneficiariesController < ApplicationController
 	def update
 		@beneficiary = Beneficiary.find(params[:id])
 		if @beneficiary.update(ben_params)
-			SystemLog.new( system_event: "Beneficiary account updated by #{@beneficiary.lastname}, #{@beneficiary.enterprise_name}.", event_time: Time.now).save
+			SystemLog.new( system_event: "Beneficiary account updated by #{@beneficiary.lastname}, #{@beneficiary.enterprise_name}.", event_time: Time.now, users_id: @beneficiary.id).save
 			flash[:success] = "Your account has been updated."
 			redirect_to @beneficiary
 		else 
@@ -56,7 +56,7 @@ class BeneficiariesController < ApplicationController
 	#allows the employee to destroy the beneficiary
 	def destroy
 		@beneficiary = Beneficiary.find(params[:id])
-		SystemLog.new( system_event: " #{ @beneficiary.enterprise_name} account deleted by #{current_employee.lastname}, #{current_employee.firstname} ", event_time: Time.now).save
+		SystemLog.new( system_event: " #{ @beneficiary.enterprise_name} account deleted by #{current_employee.lastname}, #{current_employee.firstname} ", event_time: Time.now, users_id: @beneficiary.id).save
 		@beneficiary.destroy
 		redirect_to beneficiaries_path
 	end

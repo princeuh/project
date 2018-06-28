@@ -8,29 +8,30 @@
 		<div class="front">	
 	<%= image_tag post.picture.url if post.picture? %><br>
 
+
 	<h4 class="contact-header"> <%= post.title %></h4>
 </div>
 <div class="back">
 	<p><%= post.content %></p>
 	<% if employee_logged_in? %>
 	  <% if post.is_approved? %>
-	  	<p> Published </p>
+	  	<p> Status : Published </p>
 	  <% else %>
-	  	<p> Pending Approval </p>
+	  	<p> Status : Pending Approval </p>
 	  <% end %>
 
-	  
-	<%= link_to "Edit", edit_post_path(post) %>
-	<%= link_to 'Destroy', post_path(post),
+	<%= link_to "View Article", edit_post_path(post),  :class => "app-links" %><br>
+	<%= link_to "Edit Article", edit_post_path(post),  :class => "app-links" %><br>
+	<%= link_to 'Destroy Article', post_path(post),
               method: :delete,
-              data: { confirm: 'Are you sure?' } %>
+              data: { confirm: 'Are you sure?' },  :class => "app-links" %>
     <% end %>
 </div>
 </div>
 </div>
 
 <% end %>
-</div>
+
 
 <% else %>
 

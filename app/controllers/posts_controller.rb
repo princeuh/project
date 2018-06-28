@@ -14,24 +14,25 @@ class PostsController < ApplicationController
 	def create
 		@post = Post.new(post_params)
 		@post.is_approved = false
+		@post.employee_id = current_employee.id
   		if @post.save
   		#saved and logged in employee
   			flash[:success] = "Your Post is only saved but has not been approved for Publishing. "
-      		SystemLog.new( system_event: "Blog Post #{@post.title} created by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
+      		SystemLog.new( system_event: "Blog Post #{@post.title} created by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now, users_id: current_employee.id).save
       		redirect_to current_employee
   		else
-  			flash[:error] = "There was an error, your post could not be saved. "
+  			flash[:error] = "There was an error, your post could not be saved."
   			redirect_to current_employee
   		end
 	end
 
 	def show
-		@post = Post.find(params[:post_id])
+		@post = Post.find(params[:id])
 	end
 
 	#appropriate employees can edit a post
 	def edit
-		@post = Post.find(params[:post_id])
+		@post = Post.find(params[:id])
 	end
 
 	#appropriate employees can update a post
@@ -39,7 +40,7 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		if @post.update(club_params)
 			flash[:success] = "Updated your post"
-			SystemLog.new( system_event: "Blog Post #{@post.title} updated by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
+			SystemLog.new( system_event: "Blog Post #{@post.title} updated by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now, users_id: current_employee.id).save
 			redirect_to current_employee
 		else
 			flash[:error] = "Unable to update the post"
@@ -50,7 +51,7 @@ class PostsController < ApplicationController
 	#appropriate employees can destroy a post
 	def destroy
 		@post = Post.find(params[:id])
-		SystemLog.new( system_event: "Blog Post #{@post.title} deleted from system by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now).save
+		SystemLog.new( system_event: "Blog Post #{@post.title} deleted from system by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now, users_id: current_employee.id).save
 		@post.destroy
 		redirect_to current_employee
 	end

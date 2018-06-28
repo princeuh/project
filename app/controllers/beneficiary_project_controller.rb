@@ -12,7 +12,7 @@ class BeneficiaryProjectController < ApplicationController
 		@project = @beneficiary.beneficiaryproject.create(proj_params)
 		if @project.save
 			#redirect to the proposal show page
-			SystemLog.new( system_event: "#{current_user.lastname}, #{current_user.email} created a proposal #{@proposal.title}", event_time: Time.now).save
+			SystemLog.new( system_event: "#{current_user.lastname}, #{current_user.email} created a proposal #{@proposal.title}", event_time: Time.now, users_id: current_user.id).save
 			flash[:success] = "Your proposal has been successfully submitted. View the status of all Proposals by clicking the Proposal Tab."
 			redirect_to current_user
 		else
@@ -27,7 +27,7 @@ class BeneficiaryProjectController < ApplicationController
 	def update
 		@project = BeneficiaryProject.find(params[:id])
 		if @project.update(proj_params)
-			SystemLog.new( system_event: "Beneficiary Project updated by #{current_user.lastname}, #{current_user.enterprise_name}.", event_time: Time.now).save
+			SystemLog.new( system_event: "Beneficiary Project updated by #{current_user.lastname}, #{current_user.enterprise_name}.", event_time: Time.now, users_id: current_user.id).save
 			flash[:success] = "Your account has been updated."
 			redirect_to current_user
 		else 
@@ -38,7 +38,7 @@ class BeneficiaryProjectController < ApplicationController
 
 	def destroy
 		@project = BeneficiaryProject.find(params[:id])
-		SystemLog.new( system_event: " #{@project.title}  deleted by #{current_user.lastname}, #{current_user.firstname} ", event_time: Time.now).save
+		SystemLog.new( system_event: " #{@project.title}  deleted by #{current_user.lastname}, #{current_user.firstname} ", event_time: Time.now, users_id: current_user.id).save
 		@project .destroy
 		redirect_to current_user
 	end

@@ -60,9 +60,13 @@ Rails.application.routes.draw do
 
    delete '/status_logout', to: 'status_sessions#destroy'
 
-   get 'activate_investor', to: 'account_activations#edit_investor'
+   get '/activate_investor', to: 'account_activations#edit_investor'
 
-   get 'activate_beneficiary', to: 'account_activations#edit_beneficiary'
+   get '/activate_beneficiary', to: 'account_activations#edit_beneficiary'
+
+   patch '/avatar/:id', to: 'employees#update_avatar', as: 'avatar'
+
+   put '/avatar/:id', to: 'employees#update_avatar'
 
 
 

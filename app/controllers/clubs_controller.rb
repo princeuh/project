@@ -11,9 +11,12 @@ class ClubsController < ApplicationController
 	def create
 		@club = Club.new(club_params)
 		if @club.save
-			redirect_to @club
+			flash[:success] = "Successfully created the Club."
+			 SystemLog.new( system_event: "Club #{@club.name} created by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now, users_id: current_employee.id).save
+			redirect_to current_employee
 		else
-			render 'new'
+			flash[:error] = "Unable to create Club.You may be missing some information to create the club."
+			redirect_to current_employee
 		end
 	end
 
@@ -28,17 +31,22 @@ class ClubsController < ApplicationController
 	def update
 		@club = Club.find(params[:id])
 		if @club.update(club_params)
-			redirect_to @club
+			flash[:success] = "Successfully updated the Club."
+			 SystemLog.new( system_event: "Club #{@club.name} created by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now, users_id: current_employee.id).save
+			redirect_to current_employee
 		else
-			render 'edit'
+			flash[:error] = "Unable to update the Club.You may be missing some information."
+			redirect_to current_employee
 		end
 	end
 
 	def destroy
 		@club = Club.find(params[:id])
+		flash[:success] = "Successfully removed the Club from the database."
+		SystemLog.new( system_event: "Club #{@club.name} deleted by #{current_employee.lastname}, #{current_employee.firstname}.", event_time: Time.now, users_id: current_employee.id).save
 		@club.destroy
 
-		redirect_to clubs_path
+		redirect_to current_employee
 	end
 
 	private

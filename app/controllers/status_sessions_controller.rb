@@ -7,7 +7,7 @@ class StatusSessionsController < ApplicationController
     	if user && user.authenticate(params[:status_session][:password])
       # Log the user in and redirect to the user's show page.
       		status_log_in user
-          SystemLog.new( system_event: "#{user.lastname} with resume #{user.email} logged into system to check resume status ", event_time: Time.now).save
+          SystemLog.new( system_event: "#{user.lastname} with resume #{user.email} logged into system to check resume status ", event_time: Time.now, users_id: user.id).save
       		#redirect_to user
           redirect_to career_resume_path(user.career_id, user.id)
     	else
@@ -18,7 +18,7 @@ class StatusSessionsController < ApplicationController
     end
 
     def destroy
-      SystemLog.new( system_event: "#{@resume_current_user} with resume logged out of system ", event_time: Time.now).save
+      SystemLog.new( system_event: "#{@resume_current_user} with resume logged out of system ", event_time: Time.now, users_id: @resume_current_user.id).save
     	status_log_out
     	redirect_to root_url
   	end
