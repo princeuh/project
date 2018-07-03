@@ -7,6 +7,25 @@ $(document).on "turbolinks:load", ->
 		if b == '/'
 			$('li a').removeClass('current_link')
 			$('#home-link').addClass('current_link')
+			myIndex = 0
+
+			carousel = ->
+				i = undefined
+				x = document.getElementsByClassName('slides')
+				i = 0
+				while i < x.length
+					x[i].style.display = 'none'
+					i++
+				myIndex++
+				if myIndex > x.length
+					myIndex = 1
+				x[myIndex - 1].style.display = 'block'
+				setTimeout carousel, 2000
+
+				return
+
+			carousel()
+
 		else if b == '/open_account'
 			$('li a').removeClass('current_link')
 			$('#account-link').addClass('current_link')
