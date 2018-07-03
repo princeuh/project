@@ -3,26 +3,19 @@
 	<h4  class="contact-header" style="margin-top: 100px;"> UPDATES </h4>
 
 <%  @posts.each do |post| %>
-
-<div class="flip-container">
-	<div class="flipper">
-		<div class="front">	
+<div class="show-blog">
 	<%= image_tag post.picture.url if post.picture? %><br>
 
-	<h4> <%= post.title %></h4>
-	<p style="width: 100px; overflow:hidden; text-overflow:ellipsis;"><%= post.content %></p>
-
-</div>
-<div class="back">
+	<h4 class="home-header"> <%= post.title %></h4>
+	<div class="blog-content">
 	<p><%= post.content %></p>
+</div>
 	<% if employee_logged_in? %>
 	<%= link_to "Edit", edit_post_path(post) %>
 	<%= link_to 'Destroy', post_path(post),
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
     <% end %>
-</div>
-</div>
 </div>
 
 <% end %>

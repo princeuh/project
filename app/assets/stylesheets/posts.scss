@@ -6,6 +6,22 @@
 @media screen and (max-width: 2560px) {
 
 
+	.show-blog{
+		  border: 2px solid #ab00ff42;
+		  width: 200px;
+		  display: inline-block;
+		  height: 280px;
+		  overflow: auto;
+		  margin: 2.5em;
+	}
+
+	.blog-content{
+		background-color: #ab00ff42;
+		padding: 10px;
+		text-align: center;
+		padding-bottom: 45px;
+	}
+
 }
 
 @media screen and (max-width: 1242px) {
