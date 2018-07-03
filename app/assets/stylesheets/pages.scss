@@ -255,7 +255,7 @@ input[type=submit]:hover, input[type=submit]:focus {
 }
 
 #fund-paragraph{
-    top: 78%;
+    top: 75%;
 }
 
 #fund-paragraph p{
@@ -545,35 +545,48 @@ to{
         height: 100px;
     }
 
+    #fund, #connect{
+        top: 60%;
+    }
+
+    #roi{
+        top: 15%;
+    }
+
     #main{
         left: 45%;
-        top: 45%;
+        top: 40%;
     }
+
 
     #gs-paragraph{
         left: 35%;
-        top: 55%;
+        top: 50%;
     }
 
      #fund-paragraph{
       
         left: 2%;
-        top: 75%;
+        top: 70%;
     }
 
     #connect-paragraph{
     left: 65%;
-    top: 75%;
+    top: 70%;
     }
 
     #roi-paragraph{
     left: 62%;
-    top: 30%
+    top: 25%
+    }
+
+    #growth{
+        top: 15%;
     }
 
     #growth-paragraph{
-        left: 13%;
-        top: 30%
+        left: 10%;
+        top: 25%
     }
 
     .about{
