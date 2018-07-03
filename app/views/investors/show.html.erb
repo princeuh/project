@@ -3,14 +3,32 @@
 
 	<div id="news-header">
 		<h4 style="color:#3f83b1;"> HIGHLIGHTS </h4>
+		<% if @club_updates.count > 0 %>
+		<%  @club_updates.each do |h| %>
+		<p class="headlines"> <%= h.title %> </p>
+		<% end %>
+		<% else %>
+			<p class="headlines"> There are currently no highlights</p>
+		<% end %>
 	</div>
 
 	<% if !current_user.paid %>
-	<h4 class="contact-header"> Your account will be charged a monthly $1 fee to stay active. Please subscribe to continue. </h4> 
+	<h4 class="contact-header"> Your account will be charged a monthly $1.25 fee to stay active. Please subscribe to continue. </h4> 
 		<% @charge = 1 %>
 		<% @c_id = 'none' %>
 		<% @charge_type = "monthly-fee" %>
 		<%= render 'payments/process_payment' %>
+
+		<div class="instruction">
+			<h1 class="sub-header"> Service Fee </h1>
+			<p> A $1.25 monthly service fee is charged to activate your account and keep your account active.</p>
+			<p> This fee ensures you have access to the most up to date information and reports concerning your investments and potential investment opportunities. </p>
+		</div>
+		<div class="instruction benefits">
+			<h1 class="sub-header"> Benefits </h1>
+			<p> Investing in individual or family owned businesses allows you to support and develop the markets where these businesses are located. This allows their goods and services to reach every part of the globe and ensures the continuity of trade, sharing ideas and innovation. </p>
+			<p> This also allows everyone to access economic gains that ensure their financial security and stability. Which improves the accessible standard of living. </p>
+		</div>
 
 	<% else %>
 
