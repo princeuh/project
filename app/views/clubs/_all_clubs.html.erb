@@ -21,12 +21,13 @@
 	<%= image_tag("clubAvatar.png", class: "clubIcon" , width: "100", height: "100") %><br>
 		<p> Club Name : <%= club.name %></p>
 		<p> Country   :<%= club.focus_country %></p>
-		<p> Country Manager :<%= club.country_manager %></p>
+		<p> Target Amount USD :$<%= club.fund_target %></p>
 	<% end %>
 
 </div>
 <div class="back">
-	<p> Target Amount USD :$<%= club.fund_target %></p>
+	
+	<p> Country Manager :<%= club.country_manager %></p>
 	<p> Invested Amount USD :$<%= club.amt_invested %></p>
 	<p> Member Count : <%= club.number_of_members %></p>
 	<p> Proposal : <%= club.proposal %></p>

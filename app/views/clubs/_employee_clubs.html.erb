@@ -7,11 +7,11 @@
 
 	<p> Club Name : <%= club.name %></p>
 	<p> Country   :<%= club.focus_country %></p>
-	<p> Country Manager :<%= club.country_manager %></p>
+	<p> Target Amount USD : $<%= club.fund_target %></p>
 
 </div>
 <div class="back">
-	<p> Target Amount USD : $<%= club.fund_target %></p>
+	<p> Country Manager :<%= club.country_manager %></p>
 
 	<p> Proposal : <%= club.proposal %></p>
 	<% if employee_logged_in? %>
