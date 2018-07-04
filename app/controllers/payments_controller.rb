@@ -30,7 +30,7 @@ class PaymentsController < ApplicationController
 		Stripe::Subscription.create({
 				:customer => current_user.stripe_cust_id,
 				:items => [
-					{ :plan => 'plan_D0Xfo5ytIdv5AI',
+					{ :plan => 'plan_DAXkb1E1nLiUjC',
 					},
 				]	
 						#:plan => 'plan_Cur8EF2z9uZ4Qs',}]	 
