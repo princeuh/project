@@ -11,34 +11,39 @@ class PaymentsController < ApplicationController
 	@charged = params[:checkout][:charge_amt]
 	@club_joined = params[:checkout][:club_joined]
 
-	
+
+
+	if @option == 'monthly-fee' && @charged == '1'	
+		#Stripe::Subscription.create({
+		#		:customer => current_user.stripe_cust_id,
+		#		:items => [
+		#			{ :plan => 'plan_DAXkb1E1nLiUjC',
+		#			},
+		#		]	
+						#:plan => 'plan_Cur8EF2z9uZ4Qs',}]	 
+		#})
+
+		charge = Stripe::Charge.create({
+			amount: 1000, 
+			currency: 'usd',
+			description: "Onetime Registration Fee", 
+			source: token,
+			})
+		SystemLog.new( system_event: " #{current_user.email} service fee subscription created.", event_time: Time.now, users_id: current_user.id).save
+	end
 
 	#we are creating a new customer for subscriptions
-	if current_user.cust_id == 0
-		customer = Stripe::Customer.create({
+
+	if  @option == 'investment' 
+
+		if current_user.cust_id == 0
+			customer = Stripe::Customer.create({
 				:description => "Nemabollon Investor Charges",
 				:email => current_user.email, 
 				:source => token,
 			})
-		current_user.update_attribute(:stripe_cust_id, customer.id)
-	end
+			current_user.update_attribute(:stripe_cust_id, customer.id)
 
-
-
-
-	if @option == 'monthly-fee' && @charged == '1'	
-		Stripe::Subscription.create({
-				:customer => current_user.stripe_cust_id,
-				:items => [
-					{ :plan => 'plan_DAXkb1E1nLiUjC',
-					},
-				]	
-						#:plan => 'plan_Cur8EF2z9uZ4Qs',}]	 
-		})
-		@description = 'Nemabollon Investment'
-		SystemLog.new( system_event: " #{current_user.email} service fee subscription created.", event_time: Time.now, users_id: current_user.id).save
-
-	elsif  @option == 'investment' 
 		Stripe::Subscription.create({
 				:customer => current_user.stripe_cust_id,
 				:items => [{
@@ -67,8 +72,10 @@ class PaymentsController < ApplicationController
 			flash[:success] = "Your investment is successful. View your clubs under the myClubs tab."
 		end
 		
-	else 
-		flash[:error] = "Invalid charge. Please try again or contact your system admin."
+		else 
+			flash[:error] = "Invalid charge. Please try again or contact your system admin."
+
+		end
 	end
 
 	current_user.update_attribute(:paid, true)	

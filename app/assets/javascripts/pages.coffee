@@ -11,7 +11,7 @@ $(document).on "turbolinks:load", ->
 
 			carousel = ->
 				i = undefined
-				x = document.getElementsByClassName('slides')
+				x = document.getElementsByClassName('headlines')
 				i = 0
 				while i < x.length
 					x[i].style.display = 'none'
@@ -19,9 +19,8 @@ $(document).on "turbolinks:load", ->
 				myIndex++
 				if myIndex > x.length
 					myIndex = 1
-				x[myIndex - 1].style.display = 'block'
+				x[myIndex - 1].style.display = "inline-block"
 				setTimeout carousel, 2000
-
 				return
 
 			carousel()
