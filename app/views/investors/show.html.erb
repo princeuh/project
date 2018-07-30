@@ -13,14 +13,14 @@
 	</div>
 
 	<% if !current_user.paid %>
-	<h4 class="contact-header"> Your account will be charged a onetime $10 fee to activate your account. Please press ENTER to process the registration fee. </h4> 
+	<h4 class="contact-header"> Your account will be charged a onetime $10 fee to activate your account. Enter your card number to proceed. </h4> 
 		<% @charge = 1 %>
 		<% @c_id = 'none' %>
 		<% @charge_type = "monthly-fee" %>
 		<%= render 'payments/process_payment' %>
 
 		<div class="instruction">
-			<h1 class="sub-header"> Service Fee </h1>
+			<h1 class="sub-header"> Onetime Registration Fee </h1>
 			<p> A onetime $10 charged is assessed to activate your account and keep your account active. </p>
 			<p> This fee ensures you have access to the most up to date information and reports concerning your investments and potential investment opportunities. </p>
 		</div>
