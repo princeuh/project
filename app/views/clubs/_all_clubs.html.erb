@@ -34,15 +34,6 @@
 </div>
 
 
-
-
-<div id="charge-card">
-	<p id="selected-amt" style="opacity: 1;"> </p>
-	<% @charge_type = "investment" %>
-	<% @c_id = club.id %>
-	<%= render 'payments/process_payment' %>
-</div>
-
 <div id="show-amt" style="position: fixed; top: 5px;">
 	<%= render 'investors/join_club' %>
 </div>
@@ -51,12 +42,18 @@
 </div>
 </div>
 
-
+<div id="charge-card">
+	<p id="selected-amt" style="opacity: 1;"> </p>
+	<% @charge_type = "investment" %>
+	<% @c_id = club.id %>
+	<%= render 'payments/process_payment' %>
+</div>
 
 
 
 
 <% end %>
+
 
 <div id="adjust-tooltip" class="tooltip-background">
 	<p> Your Subscription will be adjusted. This may affect your future benefits. </p>
