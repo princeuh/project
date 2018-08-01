@@ -33,9 +33,8 @@
 	<p> Proposal : <%= club.proposal %></p>
 </div>
 
-<div id="show-amt">
-	<%= render 'investors/join_club' %>
-</div>
+
+
 
 <div id="charge-card">
 	<p id="selected-amt" style="opacity: 1;"> </p>
@@ -43,6 +42,11 @@
 	<% @c_id = club.id %>
 	<%= render 'payments/process_payment' %>
 </div>
+
+<div id="show-amt" style="z-index: 50;">
+	<%= render 'investors/join_club' %>
+</div>
+
 
 </div>
 </div>
