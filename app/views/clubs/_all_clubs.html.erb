@@ -14,7 +14,7 @@
 		<p> Country   :<%= club.focus_country %></p>
 		<p> Country Manager :<%= club.country_manager %></p>
 	<% else %>
-		<button id="join_club" class="dash-bttn"> Join </button>
+		<p> Invest an Amount </p>
 
 	<div class="flipper">
 	<div class="front">	
@@ -43,7 +43,7 @@
 	<%= render 'payments/process_payment' %>
 </div>
 
-<div id="show-amt" style="position: fixed;">
+<div id="show-amt" style="position: fixed; top: 5px;">
 	<%= render 'investors/join_club' %>
 </div>
 
