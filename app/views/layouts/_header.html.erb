@@ -15,8 +15,14 @@
         <li><%= link_to "HOW IT WORKS", ventures_path , :class => "app-links", :id  => "venture-link"  %></li>
          <li><%= link_to "BLOG", news_path , :class => "app-links", :id  => "news-link"  %></li>
   		<!--  <li><%= link_to "Team", team_path , :class => "app-links", :id  => "team-link" %></li> -->
-        <li id="show-login"> <%=  image_tag("login.png", alt: "login", width: 60, height:60, :class => "app-links", :id => "show-login-opts" ) %></li>
         <li><%= link_to "RECEIVE FUNDING", apply_funding_path, :class => "app-links", :id  => "apply-link" %></li>
+        <div id="login-opts">
+          <div class="log-opts"><%= link_to "Investors LogIn", login_path , :class => "app-links" , :id => "login-investor" %></div>
+          <div class="log-opts"><%= link_to "Beneficiaries LogIn", beneficiary_login_path, :class => "app-links", :id => "login-beneficiary" %></div>
+          <div>
+  
+
+
       <% end %> 
 
 
@@ -24,10 +30,6 @@
   	</nav>
   </header>
 
-      <div id="login-opts">
-          <div class="log-opts"><%= link_to "Investors", login_path , :class => "app-links" , :id => "login-investor" %></div>
-          <div class="log-opts"><%= link_to "Beneficiaries", beneficiary_login_path, :class => "app-links", :id => "login-beneficiary" %></div>
-      </div>  
 
 
   

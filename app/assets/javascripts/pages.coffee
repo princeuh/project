@@ -63,6 +63,9 @@ $(document).on "turbolinks:load", ->
 		$('#show-login-opts').mouseover ->
 			$('#login-opts').slideDown()
 
+		$('#show-login').click ->
+			alert "clicked"
+
 		$('#login-opts').mouseleave ->
 			$('#login-opts').hide()
 
